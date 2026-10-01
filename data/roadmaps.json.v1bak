@@ -1,0 +1,185 @@
+[
+  {
+    "slug": "web-pentest-bug-bounty",
+    "title": "Web Pentesting to Bug Bounty",
+    "tagline": "From your first terminal commands to your first paid bug bounty, in one sequenced path.",
+    "audience": "Beginners who want to find real vulnerabilities and get paid for them",
+    "difficulty": "Beginner to Intermediate",
+    "estWeeks": "16-24",
+    "steps": [
+      {
+        "title": "Get comfortable in the terminal",
+        "whyNext": "Every web pentest starts in a Linux terminal: Burp, scanners, and payloads all assume you can move around the command line.",
+        "resourceIds": [
+          "overthewire-bandit",
+          "linux-journey",
+          "explainshell"
+        ],
+        "estMinutes": 480
+      },
+      {
+        "title": "Learn how networks and the web actually work",
+        "whyNext": "You cannot break what you do not understand: HTTP, DNS, and TCP/IP are the substrate every web attack abuses.",
+        "resourceIds": [
+          "freecodecamp-networking",
+          "professor-messer-network-plus",
+          "chris-greer"
+        ],
+        "estMinutes": 600
+      },
+      {
+        "title": "Meet the OWASP Top 10",
+        "whyNext": "The Top 10 names the vulnerability classes you will hunt for the rest of your career; learn the vocabulary before picking up the tools.",
+        "resourceIds": [
+          "owasp-top-10",
+          "portswigger-web-security-academy",
+          "owasp-juice-shop"
+        ],
+        "estMinutes": 600
+      },
+      {
+        "title": "Master Burp Suite and your first labs",
+        "whyNext": "Burp is the web hunter's main weapon; the Academy's free labs teach it through real vulnerability classes.",
+        "resourceIds": [
+          "burp-suite",
+          "portswigger-web-security-academy",
+          "dvwa"
+        ],
+        "estMinutes": 1200
+      },
+      {
+        "title": "Drill payloads and methodology",
+        "whyNext": "Real targets need bypasses, not textbook payloads; these references turn Academy knowledge into working exploits.",
+        "resourceIds": [
+          "payloadsallthethings",
+          "hacktricks",
+          "portswigger-xss-cheat-sheet",
+          "pentesterlab"
+        ],
+        "estMinutes": 900
+      },
+      {
+        "title": "Study how real hunters think",
+        "whyNext": "Methodology and mindset separate people who run scanners from people who get paid; learn from hunters who report real bugs.",
+        "resourceIds": [
+          "stok",
+          "ippsec",
+          "real-world-bug-hunting"
+        ],
+        "estMinutes": 600
+      },
+      {
+        "title": "Practice on realistic targets",
+        "whyNext": "Juice Shop and HTB machines behave like production apps, so your skills transfer when you touch a real scope.",
+        "resourceIds": [
+          "owasp-juice-shop",
+          "hackthebox",
+          "tryhackme",
+          "owasp-webgoat"
+        ],
+        "estMinutes": 1500
+      },
+      {
+        "title": "Start hunting on bounty platforms",
+        "whyNext": "Now you own the full chain: recon, exploitation, reporting. Pick a program, read its scope carefully, and submit your first finding.",
+        "resourceIds": [
+          "hackerone",
+          "bugcrowd",
+          "yeswehack",
+          "intigriti",
+          "web-application-hackers-handbook"
+        ],
+        "estMinutes": 1200
+      }
+    ]
+  },
+  {
+    "slug": "soc-analyst-foundations",
+    "title": "SOC Analyst Foundations",
+    "tagline": "Everything a Tier-1 SOC analyst needs: networking, Linux, ATT&CK, triage, DFIR, and detection.",
+    "audience": "Career switchers aiming at a Tier-1 SOC role",
+    "difficulty": "Beginner to Intermediate",
+    "estWeeks": "12-20",
+    "steps": [
+      {
+        "title": "Networking basics for defenders",
+        "whyNext": "SOC work is reading packets and logs; you need to recognize normal before you can spot abnormal.",
+        "resourceIds": [
+          "freecodecamp-networking",
+          "professor-messer-network-plus",
+          "subnettingpractice"
+        ],
+        "estMinutes": 600
+      },
+      {
+        "title": "Linux for the SOC",
+        "whyNext": "Endpoints are Linux and alerts come with command lines; Bandit makes the terminal second nature.",
+        "resourceIds": [
+          "overthewire-bandit",
+          "linux-journey",
+          "the-linux-command-line"
+        ],
+        "estMinutes": 480
+      },
+      {
+        "title": "Learn the attacker's playbook: MITRE ATT&CK",
+        "whyNext": "ATT&CK is the shared language every SOC uses to describe attacks; learn it before you triage your first alert.",
+        "resourceIds": [
+          "mitre-attack",
+          "sans-dfir-posters",
+          "darknet-diaries"
+        ],
+        "estMinutes": 480
+      },
+      {
+        "title": "Triage real alerts in a simulated SOC",
+        "whyNext": "Alert triage is the Tier-1 job; LetsDefend's alert queue and the BOTS datasets teach the workflow on realistic data.",
+        "resourceIds": [
+          "letsdefend",
+          "splunk-bots",
+          "sans-internet-storm-center"
+        ],
+        "estMinutes": 900
+      },
+      {
+        "title": "Hands-on DFIR investigations",
+        "whyNext": "Alerts become investigations; BTLO and CyberDefenders hand you real artifacts and ask the questions a real analyst answers.",
+        "resourceIds": [
+          "blue-team-labs-online",
+          "cyberdefenders",
+          "memlabs"
+        ],
+        "estMinutes": 1200
+      },
+      {
+        "title": "Detection engineering basics",
+        "whyNext": "Once you have triaged attacks, learn to write the detections yourself: Sigma rules are the core detection-as-code skill.",
+        "resourceIds": [
+          "sigma-rules",
+          "splunk-bots",
+          "velociraptor"
+        ],
+        "estMinutes": 720
+      },
+      {
+        "title": "Build your homelab SIEM",
+        "whyNext": "A Wazuh homelab gives you a SIEM to practice in daily and a story to tell in interviews.",
+        "resourceIds": [
+          "wazuh",
+          "sans-dfir-posters",
+          "john-hammond-youtube"
+        ],
+        "estMinutes": 720
+      },
+      {
+        "title": "Prove it: certify with BTL1",
+        "whyNext": "BTL1 is the hands-on blue-team credential hiring managers recognize; the DFIR Report write-ups show you what exam-level analysis looks like.",
+        "resourceIds": [
+          "security-blue-team-btl1",
+          "the-dfir-report"
+        ],
+        "estMinutes": 2400
+      }
+    ]
+  }
+]

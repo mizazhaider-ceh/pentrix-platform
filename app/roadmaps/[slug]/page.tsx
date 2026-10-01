@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Reveal } from "@/components/Reveal";
+import { DifficultyBadge, formatWeeks, formatSteps } from "@/components/RoadmapCard";
 import {
   getRoadmapBySlug,
   getRoadmaps,
@@ -29,37 +29,6 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: `${roadmap.title} | The PenTrix`,
     description: roadmap.tagline,
   };
-}
-
-function difficultyTone(level: string): string {
-  if (/advanced/i.test(level)) {
-    return "border-rose-400/30 bg-rose-400/10 text-rose-300";
-  }
-  if (/intermediate/i.test(level)) {
-    return "border-gold/30 bg-gold/10 text-gold";
-  }
-  return "border-signal/30 bg-signal/10 text-signal";
-}
-
-function DifficultyBadge({ level }: { level: string }) {
-  return (
-    <span
-      className={`inline-block rounded-full border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.14em] ${difficultyTone(level)}`}
-    >
-      {level}
-    </span>
-  );
-}
-
-function formatWeeks(estWeeks: string | number): string {
-  if (typeof estWeeks === "number") {
-    return `${estWeeks} ${estWeeks === 1 ? "week" : "weeks"}`;
-  }
-  return `${estWeeks} weeks`;
-}
-
-function formatSteps(count: number): string {
-  return `${count} ${count === 1 ? "step" : "steps"}`;
 }
 
 function MetaCell({ label, children }: { label: string; children: ReactNode }) {
@@ -91,7 +60,7 @@ export default function RoadmapDetailPage({ params }: PageProps) {
     <main className="mx-auto w-full max-w-4xl px-6 py-16 sm:py-20">
       <Link
         href="/roadmaps"
-        className="font-mono text-xs uppercase tracking-[0.14em] text-muted transition-colors hover:text-gold"
+        className="font-mono text-xs uppercase tracking-[0.14em] text-muted transition-colors duration-200 hover:text-gold"
       >
         <span aria-hidden="true">←</span> All roadmaps
       </Link>
@@ -104,16 +73,14 @@ export default function RoadmapDetailPage({ params }: PageProps) {
         />
       </div>
 
-      <Reveal>
-        <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
-          <MetaCell label="Audience">{roadmap.audience}</MetaCell>
-          <MetaCell label="Difficulty">
-            <DifficultyBadge level={roadmap.difficulty} />
-          </MetaCell>
-          <MetaCell label="Length">{formatWeeks(roadmap.estWeeks)}</MetaCell>
-          <MetaCell label="Steps">{formatSteps(roadmap.steps.length)}</MetaCell>
-        </dl>
-      </Reveal>
+      <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-4">
+        <MetaCell label="Audience">{roadmap.audience}</MetaCell>
+        <MetaCell label="Difficulty">
+          <DifficultyBadge level={roadmap.difficulty} />
+        </MetaCell>
+        <MetaCell label="Length">{formatWeeks(roadmap.estWeeks)}</MetaCell>
+        <MetaCell label="Steps">{formatSteps(roadmap.steps.length)}</MetaCell>
+      </dl>
 
       <div className="mt-12">
         <Progress slug={roadmap.slug} steps={steps} />

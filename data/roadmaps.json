@@ -1,185 +1,893 @@
 [
-  {
-    "slug": "web-pentest-bug-bounty",
-    "title": "Web Pentesting to Bug Bounty",
-    "tagline": "From your first terminal commands to your first paid bug bounty, in one sequenced path.",
-    "audience": "Beginners who want to find real vulnerabilities and get paid for them",
-    "difficulty": "Beginner to Intermediate",
-    "estWeeks": "16-24",
-    "steps": [
-      {
-        "title": "Get comfortable in the terminal",
-        "whyNext": "Every web pentest starts in a Linux terminal: Burp, scanners, and payloads all assume you can move around the command line.",
-        "resourceIds": [
-          "overthewire-bandit",
-          "linux-journey",
-          "explainshell"
-        ],
-        "estMinutes": 480
-      },
-      {
-        "title": "Learn how networks and the web actually work",
-        "whyNext": "You cannot break what you do not understand: HTTP, DNS, and TCP/IP are the substrate every web attack abuses.",
-        "resourceIds": [
-          "freecodecamp-networking",
-          "professor-messer-network-plus",
-          "chris-greer"
-        ],
-        "estMinutes": 600
-      },
-      {
-        "title": "Meet the OWASP Top 10",
-        "whyNext": "The Top 10 names the vulnerability classes you will hunt for the rest of your career; learn the vocabulary before picking up the tools.",
-        "resourceIds": [
-          "owasp-top-10",
-          "portswigger-web-security-academy",
-          "owasp-juice-shop"
-        ],
-        "estMinutes": 600
-      },
-      {
-        "title": "Master Burp Suite and your first labs",
-        "whyNext": "Burp is the web hunter's main weapon; the Academy's free labs teach it through real vulnerability classes.",
-        "resourceIds": [
-          "burp-suite",
-          "portswigger-web-security-academy",
-          "dvwa"
-        ],
-        "estMinutes": 1200
-      },
-      {
-        "title": "Drill payloads and methodology",
-        "whyNext": "Real targets need bypasses, not textbook payloads; these references turn Academy knowledge into working exploits.",
-        "resourceIds": [
-          "payloadsallthethings",
-          "hacktricks",
-          "portswigger-xss-cheat-sheet",
-          "pentesterlab"
-        ],
-        "estMinutes": 900
-      },
-      {
-        "title": "Study how real hunters think",
-        "whyNext": "Methodology and mindset separate people who run scanners from people who get paid; learn from hunters who report real bugs.",
-        "resourceIds": [
-          "stok",
-          "ippsec",
-          "real-world-bug-hunting"
-        ],
-        "estMinutes": 600
-      },
-      {
-        "title": "Practice on realistic targets",
-        "whyNext": "Juice Shop and HTB machines behave like production apps, so your skills transfer when you touch a real scope.",
-        "resourceIds": [
-          "owasp-juice-shop",
-          "hackthebox",
-          "tryhackme",
-          "owasp-webgoat"
-        ],
-        "estMinutes": 1500
-      },
-      {
-        "title": "Start hunting on bounty platforms",
-        "whyNext": "Now you own the full chain: recon, exploitation, reporting. Pick a program, read its scope carefully, and submit your first finding.",
-        "resourceIds": [
-          "hackerone",
-          "bugcrowd",
-          "yeswehack",
-          "intigriti",
-          "web-application-hackers-handbook"
-        ],
-        "estMinutes": 1200
-      }
-    ]
-  },
-  {
-    "slug": "soc-analyst-foundations",
-    "title": "SOC Analyst Foundations",
-    "tagline": "Everything a Tier-1 SOC analyst needs: networking, Linux, ATT&CK, triage, DFIR, and detection.",
-    "audience": "Career switchers aiming at a Tier-1 SOC role",
-    "difficulty": "Beginner to Intermediate",
-    "estWeeks": "12-20",
-    "steps": [
-      {
-        "title": "Networking basics for defenders",
-        "whyNext": "SOC work is reading packets and logs; you need to recognize normal before you can spot abnormal.",
-        "resourceIds": [
-          "freecodecamp-networking",
-          "professor-messer-network-plus",
-          "subnettingpractice"
-        ],
-        "estMinutes": 600
-      },
-      {
-        "title": "Linux for the SOC",
-        "whyNext": "Endpoints are Linux and alerts come with command lines; Bandit makes the terminal second nature.",
-        "resourceIds": [
-          "overthewire-bandit",
-          "linux-journey",
-          "the-linux-command-line"
-        ],
-        "estMinutes": 480
-      },
-      {
-        "title": "Learn the attacker's playbook: MITRE ATT&CK",
-        "whyNext": "ATT&CK is the shared language every SOC uses to describe attacks; learn it before you triage your first alert.",
-        "resourceIds": [
-          "mitre-attack",
-          "sans-dfir-posters",
-          "darknet-diaries"
-        ],
-        "estMinutes": 480
-      },
-      {
-        "title": "Triage real alerts in a simulated SOC",
-        "whyNext": "Alert triage is the Tier-1 job; LetsDefend's alert queue and the BOTS datasets teach the workflow on realistic data.",
-        "resourceIds": [
-          "letsdefend",
-          "splunk-bots",
-          "sans-internet-storm-center"
-        ],
-        "estMinutes": 900
-      },
-      {
-        "title": "Hands-on DFIR investigations",
-        "whyNext": "Alerts become investigations; BTLO and CyberDefenders hand you real artifacts and ask the questions a real analyst answers.",
-        "resourceIds": [
-          "blue-team-labs-online",
-          "cyberdefenders",
-          "memlabs"
-        ],
-        "estMinutes": 1200
-      },
-      {
-        "title": "Detection engineering basics",
-        "whyNext": "Once you have triaged attacks, learn to write the detections yourself: Sigma rules are the core detection-as-code skill.",
-        "resourceIds": [
-          "sigma-rules",
-          "splunk-bots",
-          "velociraptor"
-        ],
-        "estMinutes": 720
-      },
-      {
-        "title": "Build your homelab SIEM",
-        "whyNext": "A Wazuh homelab gives you a SIEM to practice in daily and a story to tell in interviews.",
-        "resourceIds": [
-          "wazuh",
-          "sans-dfir-posters",
-          "john-hammond-youtube"
-        ],
-        "estMinutes": 720
-      },
-      {
-        "title": "Prove it: certify with BTL1",
-        "whyNext": "BTL1 is the hands-on blue-team credential hiring managers recognize; the DFIR Report write-ups show you what exam-level analysis looks like.",
-        "resourceIds": [
-          "security-blue-team-btl1",
-          "the-dfir-report"
-        ],
-        "estMinutes": 2400
-      }
-    ]
-  }
+ {
+  "slug": "web-pentest-bug-bounty",
+  "title": "Web Pentesting to Bug Bounty",
+  "tagline": "From your first terminal commands to your first paid bug bounty, in one sequenced path.",
+  "audience": "Beginners who want to find real vulnerabilities and get paid for them",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "16-24",
+  "steps": [
+   {
+    "title": "Get comfortable in the terminal",
+    "whyNext": "Every web pentest starts in a Linux terminal: Burp, scanners, and payloads all assume you can move around the command line.",
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-journey",
+     "explainshell"
+    ],
+    "estMinutes": 480
+   },
+   {
+    "title": "Learn how networks and the web actually work",
+    "whyNext": "You cannot break what you do not understand: HTTP, DNS, and TCP/IP are the substrate every web attack abuses.",
+    "resourceIds": [
+     "freecodecamp-networking",
+     "professor-messer-network-plus",
+     "chris-greer"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Meet the OWASP Top 10",
+    "whyNext": "The Top 10 names the vulnerability classes you will hunt for the rest of your career; learn the vocabulary before picking up the tools.",
+    "resourceIds": [
+     "owasp-top-10",
+     "portswigger-web-security-academy",
+     "owasp-juice-shop"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Master Burp Suite and your first labs",
+    "whyNext": "Burp is the web hunter's main weapon; the Academy's free labs teach it through real vulnerability classes.",
+    "resourceIds": [
+     "burp-suite",
+     "portswigger-web-security-academy",
+     "dvwa"
+    ],
+    "estMinutes": 1200
+   },
+   {
+    "title": "Drill payloads and methodology",
+    "whyNext": "Real targets need bypasses, not textbook payloads; these references turn Academy knowledge into working exploits.",
+    "resourceIds": [
+     "payloadsallthethings",
+     "hacktricks",
+     "portswigger-xss-cheat-sheet",
+     "pentesterlab"
+    ],
+    "estMinutes": 900
+   },
+   {
+    "title": "Study how real hunters think",
+    "whyNext": "Methodology and mindset separate people who run scanners from people who get paid; learn from hunters who report real bugs.",
+    "resourceIds": [
+     "stok",
+     "ippsec",
+     "real-world-bug-hunting"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Practice on realistic targets",
+    "whyNext": "Juice Shop and HTB machines behave like production apps, so your skills transfer when you touch a real scope.",
+    "resourceIds": [
+     "owasp-juice-shop",
+     "hackthebox",
+     "tryhackme",
+     "owasp-webgoat"
+    ],
+    "estMinutes": 1500
+   },
+   {
+    "title": "Start hunting on bounty platforms",
+    "whyNext": "Now you own the full chain: recon, exploitation, reporting. Pick a program, read its scope carefully, and submit your first finding.",
+    "resourceIds": [
+     "hackerone",
+     "bugcrowd",
+     "yeswehack",
+     "intigriti",
+     "web-application-hackers-handbook"
+    ],
+    "estMinutes": 1200
+   }
+  ]
+ },
+ {
+  "slug": "soc-analyst-foundations",
+  "title": "SOC Analyst Foundations",
+  "tagline": "Everything a Tier-1 SOC analyst needs: networking, Linux, ATT&CK, triage, DFIR, and detection.",
+  "audience": "Career switchers aiming at a Tier-1 SOC role",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "12-20",
+  "steps": [
+   {
+    "title": "Networking basics for defenders",
+    "whyNext": "SOC work is reading packets and logs; you need to recognize normal before you can spot abnormal.",
+    "resourceIds": [
+     "freecodecamp-networking",
+     "professor-messer-network-plus",
+     "subnettingpractice"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Linux for the SOC",
+    "whyNext": "Endpoints are Linux and alerts come with command lines; Bandit makes the terminal second nature.",
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-journey",
+     "the-linux-command-line"
+    ],
+    "estMinutes": 480
+   },
+   {
+    "title": "Learn the attacker's playbook: MITRE ATT&CK",
+    "whyNext": "ATT&CK is the shared language every SOC uses to describe attacks; learn it before you triage your first alert.",
+    "resourceIds": [
+     "mitre-attack",
+     "sans-dfir-posters",
+     "darknet-diaries"
+    ],
+    "estMinutes": 480
+   },
+   {
+    "title": "Triage real alerts in a simulated SOC",
+    "whyNext": "Alert triage is the Tier-1 job; LetsDefend's alert queue and the BOTS datasets teach the workflow on realistic data.",
+    "resourceIds": [
+     "letsdefend",
+     "splunk-bots",
+     "sans-internet-storm-center"
+    ],
+    "estMinutes": 900
+   },
+   {
+    "title": "Hands-on DFIR investigations",
+    "whyNext": "Alerts become investigations; BTLO and CyberDefenders hand you real artifacts and ask the questions a real analyst answers.",
+    "resourceIds": [
+     "blue-team-labs-online",
+     "cyberdefenders",
+     "memlabs"
+    ],
+    "estMinutes": 1200
+   },
+   {
+    "title": "Detection engineering basics",
+    "whyNext": "Once you have triaged attacks, learn to write the detections yourself: Sigma rules are the core detection-as-code skill.",
+    "resourceIds": [
+     "sigma-rules",
+     "splunk-bots",
+     "velociraptor"
+    ],
+    "estMinutes": 720
+   },
+   {
+    "title": "Build your homelab SIEM",
+    "whyNext": "A Wazuh homelab gives you a SIEM to practice in daily and a story to tell in interviews.",
+    "resourceIds": [
+     "wazuh",
+     "sans-dfir-posters",
+     "john-hammond-youtube"
+    ],
+    "estMinutes": 720
+   },
+   {
+    "title": "Prove it: certify with BTL1",
+    "whyNext": "BTL1 is the hands-on blue-team credential hiring managers recognize; the DFIR Report write-ups show you what exam-level analysis looks like.",
+    "resourceIds": [
+     "security-blue-team-btl1",
+     "the-dfir-report"
+    ],
+    "estMinutes": 2400
+   }
+  ]
+ },
+ {
+  "audience": "Pentesters who can already scan and exploit a network and want the domain-admin playbook",
+  "difficulty": "Intermediate to Advanced",
+  "estWeeks": "12-18",
+  "slug": "active-directory-attack-defense",
+  "steps": [
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "adsecurity-org",
+     "hacktricks",
+     "tryhackme"
+    ],
+    "title": "Learn how Active Directory actually works",
+    "whyNext": "AD attacks abuse normal features, not software bugs. You need domains, trusts, Kerberos, and LDAP in your head before any attack makes sense."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "goad",
+     "htb-academy",
+     "impacket"
+    ],
+    "title": "Build a real AD lab with GOAD",
+    "whyNext": "AD is learned by doing, and you need a domain you are allowed to break. GOAD builds a full multi-domain forest on your machine so every step below has a target."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "bloodhound",
+     "the-hacker-recipes",
+     "impacket"
+    ],
+    "title": "Enumerate and map the domain with BloodHound",
+    "whyNext": "Attackers do not guess paths to Domain Admin, they graph them. Learn collection and query basics now, because every attack later starts from what enumeration reveals."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "responder",
+     "kerbrute",
+     "seclists"
+    ],
+    "title": "Get initial access: LLMNR poisoning and password spraying",
+    "whyNext": "This is how most internal tests start: catch credentials off the wire with Responder or test weak passwords with Kerbrute, before you ever touch a real exploit."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "rubeus",
+     "impacket",
+     "the-hacker-recipes"
+    ],
+    "title": "Abuse Kerberos: Kerberoasting and AS-REP roasting",
+    "whyNext": "The two classic AD attacks. Rubeus requests service tickets and pre-auth-less AS-REPs directly, so you see exactly how Kerberos design choices become credential theft."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "pypykatz",
+     "certipy",
+     "hacktricks"
+    ],
+    "title": "Move laterally and take the domain",
+    "whyNext": "Credentials become access. Dump secrets with Pypykatz, abuse certificate services with Certipy, and chain it all the way to Domain Admin in your lab."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "sigma-rules",
+     "the-dfir-report",
+     "splunk-bots"
+    ],
+    "title": "Detect every attack you just ran",
+    "whyNext": "Each attack you ran left logs. Learn the Windows event IDs and Sigma rules behind them, and practice triage on realistic alert data so you can defend what you can break."
+   },
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "zero-point-security-crto",
+     "adsecurity-org",
+     "blue-team-labs-online"
+    ],
+    "title": "Harden the domain and prove it with CRTO",
+    "whyNext": "Offense teaches the attacks, hardening removes them: tiering, credential hygiene, and patching. CRTO is the hands-on cert that proves you can do both sides at exam depth."
+   }
+  ],
+  "tagline": "Break a full AD lab with the same attacks used in real breaches, then learn to detect and stop each one.",
+  "title": "Active Directory Attack & Defense"
+ },
+ {
+  "audience": "Students with basic Linux and networking who want offensive cloud security skills",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "10-16",
+  "slug": "cloud-security-aws-azure",
+  "steps": [
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "aws-cloud-practitioner-essentials",
+     "microsoft-learn-az-900"
+    ],
+    "title": "Learn how the cloud actually works",
+    "whyNext": "Cloud attacks exploit cloud concepts: trust policies, resource policies, regions, and the shared responsibility model. Build that mental model now, or every later technique looks like random commands."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "hacktricks-cloud",
+     "aws-cloud-practitioner-essentials"
+    ],
+    "title": "IAM: identity is the perimeter",
+    "whyNext": "In the cloud there is no firewall to hide behind; almost every breach starts with an overprivileged role or a misunderstood trust policy. Learn IAM before you touch any attack technique."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "flaws-cloud",
+     "flaws2-cloud",
+     "scoutsuite"
+    ],
+    "title": "Steal data from misconfigured storage",
+    "whyNext": "Public S3 buckets are the classic cloud finding, and reading one bucket policy teaches you resource-based policies faster than any doc. Flaws.cloud lets you make the mistake safely, then ScoutSuite shows you how auditors spot it."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "flaws-cloud",
+     "portswigger-web-security-academy",
+     "hacktricks-cloud"
+    ],
+    "title": "Turn SSRF into cloud credentials with IMDS",
+    "whyNext": "The instance metadata service turns an ordinary SSRF into stolen IAM credentials. This one chain shows up in labs, CTFs, and real breaches, so drill it until it is muscle memory."
+   },
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "cloudgoat",
+     "pacu",
+     "hacktricks-cloud"
+    ],
+    "title": "Chain permissions into privilege escalation",
+    "whyNext": "Real cloud pentests are rarely one bug; they are small permissions chained into admin through passrole abuse, policy gaps, and trust relationships. CloudGoat gives you vulnerable AWS accounts to practice the full chain, and Pacu is the framework you run the attacks with."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "azurehound",
+     "az-500-azure-security-engineer",
+     "hacktricks-cloud"
+    ],
+    "title": "Attack the Azure side: Entra ID and subscriptions",
+    "whyNext": "Most companies run both clouds, and Azure fails differently: service principals, conditional access, and Entra roles instead of IAM policies. AzureHound maps a tenant so you can see the paths an attacker would take."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "prowler",
+     "scoutsuite",
+     "checkov"
+    ],
+    "title": "Audit and harden like a defender",
+    "whyNext": "Offense teaches you where the gaps are; now run the scanners enterprises actually use. Prowler and ScoutSuite show you what a clean baseline looks like, which makes the dirty ones obvious."
+   },
+   {
+    "estMinutes": 1200,
+    "resourceIds": [
+     "stratus-red-team",
+     "aws-security-specialty",
+     "hacking-the-cloud"
+    ],
+    "title": "Detect attacks in CloudTrail, then certify",
+    "whyNext": "The final skill is reading the logs: Stratus Red Team fires real attack techniques at your account so you learn what malicious looks like in CloudTrail. The AWS Security Specialty cert then proves the whole journey on a resume."
+   }
+  ],
+  "tagline": "From your first AWS console login to chaining misconfigurations into full account takeovers, across both major clouds.",
+  "title": "Cloud Security (AWS + Azure)"
+ },
+ {
+  "slug": "ctf-player-path",
+  "title": "CTF Player Path",
+  "tagline": "From your first picoCTF challenge to competing with a team on CTFtime.",
+  "audience": "Beginners who want to go from their first flag to competitive team play",
+  "difficulty": "Beginner to Advanced",
+  "estWeeks": "24-36",
+  "steps": [
+   {
+    "title": "Solve your first flags on picoCTF",
+    "whyNext": "picoCTF runs year-round with challenges ordered by difficulty, so you learn the core loop first: read the challenge, poke at it, grab the flag, submit it. That loop is the whole game, and it transfers to every other platform.",
+    "resourceIds": [
+     "picoctf",
+     "root-me"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Learn crypto the practical way",
+    "whyNext": "Crypto shows up in every CTF, and it rewards writing code over guessing. CryptoHack teaches encoding, XOR, and modular arithmetic by making you break things, while CyberChef and dCode handle the quick decodings in between.",
+    "resourceIds": [
+     "cryptohack",
+     "cyberchef",
+     "dcode"
+    ],
+    "estMinutes": 720
+   },
+   {
+    "title": "Break your first websites",
+    "whyNext": "Web is the most approachable real category after general skills. Natas walks you through server-side tricks one level at a time, and Hacker101 fills in the attack vocabulary you will reuse on every web challenge.",
+    "resourceIds": [
+     "natas-overthewire",
+     "hacker101",
+     "portswigger-web-security-academy"
+    ],
+    "estMinutes": 900
+   },
+   {
+    "title": "Pull flags out of files and memory",
+    "whyNext": "Forensics is pattern recognition, and it is where beginners score early points. MemLabs hands you memory dumps with questions attached, and Wireshark plus CyberChef cover the network captures and file carving around them.",
+    "resourceIds": [
+     "memlabs",
+     "wireshark",
+     "cyberchef"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Read binaries with reverse engineering",
+    "whyNext": "Rev turns scary binaries into readable logic. crackmes.one has thousands of tiny challenges sorted by difficulty, and the free Reverse Engineering for Beginners book teaches the assembly you need alongside them, with Ghidra doing the heavy lifting.",
+    "resourceIds": [
+     "crackmes-one",
+     "re-for-beginners",
+     "ghidra"
+    ],
+    "estMinutes": 900
+   },
+   {
+    "title": "Break binaries with pwn.college",
+    "whyNext": "Pwn is rev with consequences: once you can read a binary, pwn.college teaches you to exploit it from first principles, and pwntools becomes the Python library you write every exploit with.",
+    "resourceIds": [
+     "pwn-college",
+     "pwntools",
+     "gef"
+    ],
+    "estMinutes": 1200
+   },
+   {
+    "title": "Drill advanced pwn with ROP Emporium and Nightmare",
+    "whyNext": "Modern binaries have stack canaries, ASLR, and NX, so simple overflows stop working. ROP Emporium teaches return-oriented programming one gadget at a time, and Nightmare's documented writeups show the full path from binary to shell.",
+    "resourceIds": [
+     "rop-emporium",
+     "nightmare",
+     "liveoverflow"
+    ],
+    "estMinutes": 900
+   },
+   {
+    "title": "Go competitive: CTFtime, writeups, and a team",
+    "whyNext": "CTFtime is the calendar and scoreboard for the whole scene: pick a beginner-friendly event, play it, then read the winning writeups for every challenge you missed. WeChall tracks your progress across challenge sites, and both platforms are where teams recruit new players.",
+    "resourceIds": [
+     "ctftime",
+     "wechall",
+     "hackthebox"
+    ],
+    "estMinutes": 600
+   }
+  ]
+ },
+ {
+  "audience": "Beginners who want to investigate real incidents, not just watch others do it",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "14-20",
+  "slug": "dfir-foundations",
+  "steps": [
+   {
+    "estMinutes": 240,
+    "resourceIds": [
+     "nist-sp-800-86",
+     "sans-dfir-posters"
+    ],
+    "title": "Learn the forensic process before touching evidence",
+    "whyNext": "DFIR starts with discipline: order of volatility, chain of custody, and the collect, examine, analyze, report cycle. Skip this and your analysis is guesswork no manager or court would trust."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "autopsy",
+     "sleuth-kit",
+     "file-system-forensic-analysis"
+    ],
+    "title": "Carve a disk image apart",
+    "whyNext": "Disk images are where most investigations start. NTFS structures, deleted files, and carving are the bread and butter of every forensic case, so this is where your hands-on skill begins."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "eric-zimmerman-ez-tools",
+     "kape",
+     "13cubed"
+    ],
+    "title": "Read Windows artifacts like a timeline",
+    "whyNext": "Once you can read a disk, learn where Windows hides the story: registry hives, Prefetch, event logs, and shell artifacts. KAPE and Zimmerman's tools turn days of manual parsing into minutes."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "volatility-3",
+     "memlabs",
+     "art-of-memory-forensics"
+    ],
+    "title": "Analyze memory to catch what disk forensics misses",
+    "whyNext": "Fileless malware and injected code never touch the disk. Volatility on a memory capture finds running processes, hidden code, and network connections that disk analysis cannot see."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "wireshark",
+     "malware-traffic-analysis",
+     "cyberchef"
+    ],
+    "title": "Hunt through network traffic and logs",
+    "whyNext": "Packets and logs show what happened on the wire: C2 beacons, exfiltration, lateral movement. Brad Duncan's pcap exercises teach this on real infection traffic."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "tcm-malware-analysis-triage",
+     "malware-analysis-for-hedgehogs",
+     "the-dfir-report"
+    ],
+    "title": "Triage malware found during an investigation",
+    "whyNext": "Responders constantly hit suspicious binaries mid-case. Basic static and behavioral triage tells you what a sample does and whether it matters, before anyone commits to full reverse engineering."
+   },
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "the-dfir-report",
+     "incident-report-template"
+    ],
+    "title": "Write the incident report",
+    "whyNext": "Findings only matter if people can act on them. The DFIR Report shows how real analysts write; the template gives you the structure for your first report."
+   },
+   {
+    "estMinutes": 1200,
+    "resourceIds": [
+     "blue-team-labs-online",
+     "cyberdefenders",
+     "giac-gcfa"
+    ],
+    "title": "Close real cases and earn the credential",
+    "whyNext": "Blue Team Labs and CyberDefenders hand you full cases with evidence and questions to answer. GCFA is the certification that proves you can do the whole job."
+   }
+  ],
+  "tagline": "From securing evidence to writing the incident report, one sequenced path.",
+  "title": "DFIR: Digital Forensics & Incident Response"
+ },
+ {
+  "audience": "Students who know basic IT and want to test real networks the way professionals do",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "10-16",
+  "slug": "network-pentesting-infrastructure",
+  "steps": [
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "freecodecamp-networking",
+     "professor-messer-network-plus",
+     "subnettingpractice"
+    ],
+    "title": "Learn how TCP/IP and networks actually work",
+    "whyNext": "Scanning and exploitation are just protocol behavior turned against itself. Learn packets, ports, and routing now so every tool later makes sense."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-basics-for-hackers",
+     "tryhackme"
+    ],
+    "title": "Get comfortable in a Linux terminal",
+    "whyNext": "Every tool in this roadmap runs on Linux. Bandit and the book below drill the exact commands you will type daily: file handling, users, permissions, and piping output."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "nmap",
+     "nmap-network-scanning",
+     "nmap-cheat-sheet"
+    ],
+    "title": "Master Nmap: discovery and scanning",
+    "whyNext": "Scanning is phase one of every network pentest. Learn host discovery, scan types, version detection, and NSE scripts properly now, because enumeration and exploitation both depend on a clean, accurate scan."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "netexec",
+     "seclists",
+     "hacktricks"
+    ],
+    "title": "Enumerate services: SMB, DNS, SNMP and more",
+    "whyNext": "Open ports are only a list. Enumeration turns that list into usernames, shares, configs, and credentials, which is where real findings come from."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "nessus-essentials",
+     "tcm-practical-ethical-hacking",
+     "hacktricks"
+    ],
+    "title": "Find the holes: vulnerability scanning and analysis",
+    "whyNext": "Not every open service is exploitable. A scanner like Nessus triages your targets fast, and learning to read its output honestly is what separates signal from noise."
+   },
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "metasploit-framework",
+     "metasploit-unleashed",
+     "metasploitable-2",
+     "ippsec"
+    ],
+    "title": "Exploit with Metasploit",
+    "whyNext": "Now findings become shells. Metasploit is the industry standard framework, and Metasploitable 2 gives you a legal target built for exactly this step."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "ligolo-ng",
+     "chisel",
+     "sshuttle",
+     "metasploit-framework"
+    ],
+    "title": "Pivot: reach the networks you cannot see",
+    "whyNext": "A compromised host is also a router. Pivoting turns one foothold into the whole internal network, which is how real engagements actually progress."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "public-pentesting-reports",
+     "tcm-pnpt",
+     "tcm-practical-ethical-hacking"
+    ],
+    "title": "Write the pentest report",
+    "whyNext": "The report is the deliverable the client pays for. Study real published reports, then write findings with clear impact, evidence, and fixes a sysadmin can actually apply."
+   }
+  ],
+  "tagline": "From your first packets on the wire to a complete network pentest report, in one sequenced path.",
+  "title": "Network Pentesting & Infrastructure"
+ },
+ {
+  "audience": "Beginners who want to gather intelligence legally and feed it into pentests or investigations",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "8-14",
+  "slug": "osint-reconnaissance",
+  "steps": [
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "osint-framework",
+     "osint-techniques-bazzell"
+    ],
+    "title": "Passive vs active: set your rules first",
+    "whyNext": "OSINT starts with knowing where the legal and ethical lines are: passive collection leaves no trace, active touches the target. Get this wrong and a fun exercise becomes a crime, so it comes before any tool."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "google-hacking-database",
+     "osint-techniques-bazzell"
+    ],
+    "title": "Google dorking and advanced search",
+    "whyNext": "Search engines are the fastest OSINT tool you own and completely passive. A handful of operators pulls exposed files, login portals, and credentials out of the open web without you ever touching a target server."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "theharvester",
+     "crt-sh",
+     "osint-framework"
+    ],
+    "title": "Map the target: domains and subdomains",
+    "whyNext": "Every engagement starts with knowing what exists. Certificate Transparency logs reveal subdomains nobody would guess, and theHarvester automates the first sweep across public sources."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "sherlock",
+     "whatsmyname",
+     "epieos"
+    ],
+    "title": "Track usernames, emails, and people",
+    "whyNext": "People reuse usernames everywhere. Sherlock checks hundreds of sites for one handle, and Epieos ties emails to linked accounts, turning a single name into a full profile."
+   },
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "haveibeenpwned",
+     "osint-techniques-bazzell"
+    ],
+    "title": "Check breach data before you go further",
+    "whyNext": "Breaches are where recon meets real risk: Have I Been Pwned tells you what is already public about a target, and this step teaches you to handle found credentials responsibly instead of trying them."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "bellingcat-guides",
+     "osint-framework"
+    ],
+    "title": "Social media and image intelligence",
+    "whyNext": "Posts carry timelines and locations; photos carry backgrounds worth geolocating. Bellingcat's published methods show you how to turn a public post into a verified fact, one screenshot at a time."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "shodan",
+     "wayback-machine",
+     "osint-framework"
+    ],
+    "title": "See infrastructure and history: Shodan and the Wayback Machine",
+    "whyNext": "Subdomains tell you what exists; Shodan tells you what is running and exposed, and the Wayback Machine shows what used to be there. Together they fill the gaps that passive DNS misses."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "trace-labs-search-party",
+     "bellingcat-guides",
+     "osint-techniques-bazzell"
+    ],
+    "title": "Write it up like a professional",
+    "whyNext": "Findings that are not documented did not happen. A report with sources and screenshots that anyone can reproduce is what separates a hobbyist from someone a team, a bounty triager, or a client trusts."
+   }
+  ],
+  "tagline": "From Google dorking to breach data to reports a client would actually pay for, all without touching the target.",
+  "title": "OSINT & Reconnaissance"
+ },
+ {
+  "audience": "Students with basic programming skills who want to understand what software really does",
+  "difficulty": "Intermediate to Advanced",
+  "estWeeks": "16-24",
+  "slug": "reverse-engineering-malware-analysis",
+  "steps": [
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "open-security-training-intro-x86",
+     "azeria-labs",
+     "pwn-college"
+    ],
+    "title": "Learn x86 assembly the free, hard way",
+    "whyNext": "Every disassembler shows you assembly. Kovah's free course plus the binary bomb lab builds the reading skill first, before any tool hides the complexity from you."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "compiler-explorer-godbolt",
+     "practical-binary-analysis"
+    ],
+    "title": "Watch the compiler turn C into assembly",
+    "whyNext": "Reversing is easier when you know what compiled C looks like. Godbolt shows the mapping live, and Practical Binary Analysis turns that intuition into a method."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "ghidra",
+     "cutter",
+     "detect-it-easy"
+    ],
+    "title": "Do your first static analysis",
+    "whyNext": "Now open real binaries: strings, imports, and control flow in Ghidra or Cutter. Detect It Easy tells you what you are looking at before you dive in."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "flare-vm",
+     "remnux",
+     "x64dbg"
+    ],
+    "title": "Build a safe malware lab",
+    "whyNext": "Never analyze malware on your host. FLARE-VM builds your Windows analysis VM, REMnux covers the Linux side, and snapshots let you nuke and revert after every detonation."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "anyrun",
+     "oalabs",
+     "malware-analysis-for-hedgehogs"
+    ],
+    "title": "Watch malware behave in a sandbox",
+    "whyNext": "Before you debug anything, watch what a sample does: processes, files, registry, network. ANY.RUN lets you drive the infection interactively; OALABS shows how analysts read that behavior."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "unpac-me",
+     "practical-malware-analysis",
+     "detect-it-easy"
+    ],
+    "title": "Beat the packer",
+    "whyNext": "Most real malware is packed. UnpacMe automates the first pass; when it fails, you unpack by hand. This step teaches both, because packers are the gate to every real sample."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "x64dbg",
+     "0ffset-training",
+     "tcm-malware-analysis-triage"
+    ],
+    "title": "Debug it live",
+    "whyNext": "Dynamic analysis with x64dbg: set breakpoints on suspicious API calls, dump memory, and watch the malware's logic unfold. Zero2Automated's training makes this methodical instead of chaotic."
+   },
+   {
+    "estMinutes": 1200,
+    "resourceIds": [
+     "flare-on",
+     "vx-underground",
+     "oalabs",
+     "giac-grem"
+    ],
+    "title": "Reverse a real family, then prove you can",
+    "whyNext": "Pick a family from VX-Underground, write up exactly what it does, and attempt Flare-On. GREM is the certification that turns this skill into a job title."
+   }
+  ],
+  "tagline": "From reading your first assembly instruction to unpacking real malware, one sequenced path.",
+  "title": "Reverse Engineering & Malware Analysis"
+ },
+ {
+  "slug": "security-certifications-guide",
+  "title": "Security Certifications Guide",
+  "tagline": "Which cert for which job, what each one actually proves, and what it costs in 2026.",
+  "audience": "Students deciding which security certifications are worth their time and money",
+  "difficulty": "Beginner to Advanced",
+  "estWeeks": "48-72",
+  "steps": [
+   {
+    "title": "Map the cert landscape before spending a dollar",
+    "whyNext": "Certs cost real money, from about 200 to 1700 dollars, and HR listings name names. The roadmap shows where every major cert sits, and CEH is listed here because you will see it in job posts and should know what it actually signals before paying for it.",
+    "resourceIds": [
+     "security-certification-roadmap-paul-jerimy",
+     "ceh-v13"
+    ],
+    "estMinutes": 180
+   },
+   {
+    "title": "Build the base: networking, Linux, and the terminal",
+    "whyNext": "Every cert on this list assumes you can read a packet and live in a terminal. CompTIA officially recommends Network+ before Security+, and Bandit makes the command line second nature before a hands-on exam ever tests it.",
+    "resourceIds": [
+     "professor-messer-network-plus",
+     "freecodecamp-networking",
+     "overthewire-bandit"
+    ],
+    "estMinutes": 600
+   },
+   {
+    "title": "Security+: the HR gatekeeper",
+    "whyNext": "Security+ is the most requested cert in job listings and a common filter for government and entry roles. It is theory-heavy, but Professor Messer's free course keeps your prep cost at zero; the exam itself costs about $425 in 2026.",
+    "resourceIds": [
+     "comptia-security-plus",
+     "professor-messer-security-plus"
+    ],
+    "estMinutes": 720
+   },
+   {
+    "title": "eJPT: your first hands-on pentest cert",
+    "whyNext": "After Security+ theory, eJPT proves you can actually do the work: it is an open-book, hands-on exam over 48 hours, and at about $200 it is the cheapest practical credential that still means something on a junior resume.",
+    "resourceIds": [
+     "ine-ejpt",
+     "tcm-practical-ethical-hacking"
+    ],
+    "estMinutes": 480
+   },
+   {
+    "title": "PJPT: own the network, write the report",
+    "whyNext": "PJPT gives you two days on a real internal network to compromise the domain controller, then two more to write a professional report, which is half of the actual pentester job. At $249 with the training course included, it is the best-value practical exam at this level.",
+    "resourceIds": [
+     "tcm-pjpt",
+     "tcm-practical-ethical-hacking"
+    ],
+    "estMinutes": 480
+   },
+   {
+    "title": "OSCP: the exam hiring managers name",
+    "whyNext": "OSCP is the cert interviewers actually ask about: 24 hours of live exploitation plus a written report. Take it after the junior practicals above, because at $1,749 for the course, lab time, and one attempt, you do not want to walk in underprepared.",
+    "resourceIds": [
+     "oscp-pen-200",
+     "hackthebox"
+    ],
+    "estMinutes": 2400
+   },
+   {
+    "title": "Specialize for the role you want",
+    "whyNext": "Past OSCP, generic certs stop paying off. The right specialist cert talks directly to the job: CRTO for red team, BTL1 for blue team, the AWS Security Specialty for cloud, or PNPT if you want a harder network pentest credential.",
+    "resourceIds": [
+     "zero-point-security-crto",
+     "security-blue-team-btl1",
+     "aws-security-specialty",
+     "tcm-pnpt"
+    ],
+    "estMinutes": 1200
+   },
+   {
+    "title": "CISSP later, skills always",
+    "whyNext": "CISSP is a management-level cert that expects about five years of experience and costs $749, so it belongs at the end of this path, not the start. Until then, regular lab time and CTFs keep your skills sharper than collecting more exams.",
+    "resourceIds": [
+     "isc2-cissp",
+     "ctftime"
+    ],
+    "estMinutes": 600
+   }
+  ]
+ }
 ]

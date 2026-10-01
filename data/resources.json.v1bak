@@ -1,0 +1,3127 @@
+[
+  {
+    "id": "hacktricks-cloud",
+    "title": "HackTricks Cloud",
+    "summary": "An encyclopedic collection of cloud pentesting techniques for AWS, Azure, GCP, Kubernetes, and CI/CD. Actively maintained by the HackTricks wiki.",
+    "url": "https://github.com/hacktricks-wiki/hacktricks-cloud",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "flaws-cloud",
+    "title": "flaws.cloud",
+    "summary": "Scott Piper's classic six-level AWS misconfiguration CTF. Still the canonical first introduction to AWS security.",
+    "url": "http://flaws.cloud",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "flaws2-cloud",
+    "title": "flaws2.cloud",
+    "summary": "You play the same scenario twice: once as the attacker, once as the defender reading CloudTrail logs. Teaches exploitation and detection side by side.",
+    "url": "http://flaws2.cloud",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "hacking-the-cloud",
+    "title": "Hacking the Cloud",
+    "summary": "Nick Frichette's encyclopedia of offensive cloud techniques with concrete commands you can run. A practical companion to the cloud CTFs.",
+    "url": "https://hackingthe.cloud",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cloudgoat",
+    "title": "CloudGoat",
+    "summary": "Rhino Security Labs' 'vulnerable by design' AWS deployment with around 20 Terraform scenarios, from IAM privilege escalation to EC2 SSRF through IMDS. Deploys vulnerable infrastructure you can practice on.",
+    "url": "https://github.com/RhinoSecurityLabs/cloudgoat",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "prowler",
+    "title": "Prowler",
+    "summary": "The most popular open-source multi-cloud security scanner, covering AWS, GCP, Azure, Kubernetes, and Microsoft 365 against CIS, NIST, and PCI-DSS benchmarks.",
+    "url": "https://github.com/prowler-cloud/prowler",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "scoutsuite",
+    "title": "ScoutSuite",
+    "summary": "NCC Group's read-only multi-cloud auditor. It enumerates your cloud and produces an interactive HTML report of misconfigurations.",
+    "url": "https://github.com/nccgroup/ScoutSuite",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pacu",
+    "title": "Pacu",
+    "summary": "Described as the Metasploit of AWS: an open-source AWS exploitation framework for IAM privilege escalation, backdoors, and Lambda attacks.",
+    "url": "https://github.com/RhinoSecurityLabs/pacu",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "stratus-red-team",
+    "title": "Stratus Red Team",
+    "summary": "Datadog's granular cloud adversary emulation, described as Atomic Red Team for the cloud. Attack techniques are mapped to MITRE ATT&CK across AWS, Azure, GCP, Entra, and Kubernetes.",
+    "url": "https://github.com/DataDog/stratus-red-team",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "aws-security-specialty",
+    "title": "AWS Certified Security - Specialty (SCS-C03)",
+    "summary": "The industry-recognized AWS cloud security credential: 65 questions in 170 minutes.",
+    "url": "https://aws.amazon.com/certification/certified-security-specialty/",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Certification",
+    "level": "Advanced",
+    "cost": {
+      "model": "paid",
+      "price": "~$300 USD"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "az-500-azure-security-engineer",
+    "title": "AZ-500 Microsoft Certified: Azure Security Engineer Associate",
+    "summary": "The official Azure security credential. Note: 2026 Microsoft sources report AZ-500 is being retired and replaced by SC-500, so confirm its status on Microsoft Learn before booking.",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/",
+    "domains": [
+      "Cloud Security"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "~$165 USD"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-llm-top-10",
+    "title": "OWASP Top 10 for LLM Applications (2025)",
+    "summary": "The canonical risk list for LLM apps, from prompt injection (LLM01) to unbounded consumption (LLM10), using the 2025 reorganization.",
+    "url": "https://genai.owasp.org/llm-top-10/",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "portswigger-llm-attacks",
+    "title": "PortSwigger Web LLM Attacks",
+    "summary": "Eight free hands-on labs from the Burp makers covering excessive agency, LLM API exploitation, indirect prompt injection, insecure output handling, and AI agent abuse.",
+    "url": "https://portswigger.net/web-security/learning-paths/llm-attacks",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "gandalf-lakera",
+    "title": "Gandalf by Lakera",
+    "summary": "A prompt-injection game where you trick an AI defender into revealing secret passwords across increasingly hardened levels. An agentic variant exists too.",
+    "url": "https://gandalf.lakera.ai",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "garak",
+    "title": "Garak",
+    "summary": "NVIDIA's maintained LLM vulnerability scanner, a red-teaming and assessment toolkit for generative AI. Stable release 0.17.0 landed September 2026.",
+    "url": "https://github.com/NVIDIA/garak",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "promptfoo",
+    "title": "Promptfoo",
+    "summary": "Declarative YAML-based LLM red-teaming and evals with OWASP LLM Top 10 probes you can run in CI. Open-source under the MIT license.",
+    "url": "https://www.promptfoo.dev",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pyrit",
+    "title": "PyRIT",
+    "summary": "Microsoft's Python Risk Identification Tool: an automation framework for red-teaming generative AI, used in Microsoft's own AI Red Team training.",
+    "url": "https://github.com/Azure/PyRIT",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "simon-willison-prompt-injection",
+    "title": "Simon Willison's blog (prompt injection)",
+    "summary": "The September 2022 post that coined the term 'prompt injection', with a helpful SQL-injection analogy. His 'lethal trifecta' piece is a good follow-up read.",
+    "url": "https://simonwillison.net/2022/Sep/12/prompt-injection/",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Blog",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-ai-security-privacy-guide",
+    "title": "OWASP AI Security and Privacy Guide (AI Exchange)",
+    "summary": "Over 200 pages of AI threats and controls aligned to international standards. An OWASP flagship project, now called AI Exchange.",
+    "url": "https://owasp.org/www-project-ai-security-and-privacy-guide/",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "anthropic-many-shot-jailbreaking",
+    "title": "Anthropic Research - Many-Shot Jailbreaking",
+    "summary": "Frontier-lab research on the classic long-context jailbreak technique, and a natural entry point into Anthropic's alignment and security research.",
+    "url": "https://www.anthropic.com/research/many-shot-jailbreaking",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Blog",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "deepmind-securing-ai-agents",
+    "title": "Google DeepMind - Securing the future of AI agents",
+    "summary": "DeepMind's June 2026 AI control roadmap: defending internal systems against misaligned agents through monitoring coverage and red-team exercises.",
+    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Blog",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "lakera-llm-as-judge",
+    "title": "Lakera blog - 'Stop Letting Models Grade Their Own Homework'",
+    "summary": "Vendor research arguing that LLM-as-judge setups fail at prompt-injection defense, and that guardrails need layering. Treat the vendor angle skeptically and validate the claims yourself.",
+    "url": "https://www.lakera.ai/blog/stop-letting-models-grade-their-own-homework-why-llm-as-a-judge-fails-at-prompt-injection-defense",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Blog",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pluralsight-llm-prompt-injection",
+    "title": "Pluralsight - LLM Prompt Injection: Attacks and Defenses",
+    "summary": "A one-hour, seven-minute course by Gavin Johnson-Lynn on securing LLM applications and testing them for weaknesses.",
+    "url": "https://www.pluralsight.com/courses/llm-prompt-injection-attacks-defenses",
+    "domains": [
+      "AI Security"
+    ],
+    "type": "Course",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "letsdefend",
+    "title": "LetsDefend",
+    "summary": "A simulated SOC with a real alert queue: phishing, malware, and network alerts in a Tier-1 triage workflow. Acquired by Hack The Box in September 2025.",
+    "url": "https://letsdefend.io",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "blue-team-labs-online",
+    "title": "Blue Team Labs Online",
+    "summary": "Over 250 DFIR and SOC investigations covering memory dumps, packet captures, and logs. The free BTJA pathway (about six to seven hours) is the standard starting lane.",
+    "url": "https://blueteamlabs.online",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cyberdefenders",
+    "title": "CyberDefenders",
+    "summary": "Dozens of free artifact-based blue-team CTFs in DFIR, threat hunting, and malware analysis. You get real artifacts and investigative questions to work through.",
+    "url": "https://cyberdefenders.org",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "security-blue-team-btl1",
+    "title": "Security Blue Team - BTL1",
+    "summary": "Often called the OSCP of blue team: a 24-hour hands-on lab exam covering phishing, forensics, threat intelligence, SIEM, and incident response, with one free resit within 12 months.",
+    "url": "https://www.securityblue.team/certifications",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Certification",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "~$495 USD / ~£399",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "security-blue-team-btl2",
+    "title": "Security Blue Team - BTL2",
+    "summary": "Advanced security operations: malware analysis, threat hunting, vulnerability management, and advanced SIEM. A free demo course is available to preview it.",
+    "url": "https://www.securityblue.team/certifications",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Certification",
+    "level": "Advanced",
+    "cost": {
+      "model": "paid",
+      "price": "~£1,999",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "mitre-attack",
+    "title": "MITRE ATT&CK",
+    "summary": "The universal language of adversary behavior: 14 Enterprise tactics and their techniques and sub-techniques. Pair it with the ATT&CK Navigator for coverage mapping.",
+    "url": "https://attack.mitre.org/",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Cheatsheet",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "splunk-bots",
+    "title": "Splunk BOTS (Boss of the SOC)",
+    "summary": "Splunk's official blue-team competition and the best free way to practice SPL on real attack data. The version 1 to 3 datasets are public.",
+    "url": "https://bots.splunk.com/",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "wazuh",
+    "title": "Wazuh",
+    "summary": "The leading open-source SIEM plus XDR: manager, agents, rules engine, file integrity monitoring, vulnerability detection, and active response. The default homelab SOC stack.",
+    "url": "https://github.com/wazuh/wazuh",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "velociraptor",
+    "title": "Velociraptor",
+    "summary": "Rapid7's open-source endpoint DFIR and hunting framework: fleet-wide VQL hunts and live evidence collection.",
+    "url": "https://github.com/Velocidex/velociraptor",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sigma-rules",
+    "title": "Sigma rules repository",
+    "summary": "Over 3,000 vendor-agnostic detection rules. Sigma does for logs what Snort does for network traffic and YARA does for files, and it is a core detection-as-code skill.",
+    "url": "https://github.com/SigmaHQ/sigma",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "john-hammond-youtube",
+    "title": "John Hammond (YouTube)",
+    "summary": "Malware analysis, CTF and DFIR walkthroughs, and tool demos from a Principal Security Researcher at Huntress, with over 500,000 subscribers.",
+    "url": "https://youtube.com/@_JohnHammond",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sans-dfir-posters",
+    "title": "SANS DFIR Posters",
+    "summary": "Free printable references: Hunt Evil, Windows Forensic Analysis, memory forensics, and intrusion discovery. Pin them above your desk.",
+    "url": "https://www.sans.org/posters/",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Cheatsheet",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sans-internet-storm-center",
+    "title": "SANS Internet Storm Center",
+    "summary": "Daily practitioner threat diaries from about 40 volunteer handlers, plus the StormCast daily podcast. A habit worth building early.",
+    "url": "https://isc.sans.edu/",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Newsletter",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "the-dfir-report",
+    "title": "The DFIR Report",
+    "summary": "Real incident investigation write-ups with IOCs and ATT&CK mappings. Every report ships with Sigma rules you can use.",
+    "url": "https://thedfirreport.com/",
+    "domains": [
+      "Blue Team / SOC"
+    ],
+    "type": "Newsletter",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "osint-framework",
+    "title": "OSINT Framework",
+    "summary": "An interactive tree categorizing thousands of free OSINT tools by use case: usernames, email, domains, images, dark web. The recon cheat sheet of the field.",
+    "url": "https://osintframework.com",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Cheatsheet",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "trace-labs-search-party",
+    "title": "Trace Labs Search Party CTF",
+    "summary": "A nonprofit crowdsourced missing-persons OSINT CTF that works real cases for law enforcement, with up to four-person teams. The June 2026 global CTF was confirmed active.",
+    "url": "https://www.tracelabs.org/",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sherlock",
+    "title": "Sherlock",
+    "summary": "The standard username hunter across more than 400 platforms, the usual first pass for mapping a handle's digital footprint.",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "whatsmyname",
+    "title": "WhatsMyName",
+    "summary": "A web tool powered by a community-curated dataset of 700+ sites. No install needed, and it complements Sherlock well.",
+    "url": "https://whatsmyname.app",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "theharvester",
+    "title": "theHarvester",
+    "summary": "The classic passive email, subdomain, and host harvester for a target domain, drawing on search engines, DNS, certificate transparency, and LinkedIn.",
+    "url": "https://github.com/laramies/theHarvester",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "epieos",
+    "title": "Epieos",
+    "summary": "Reverse email and phone lookup that reveals linked Google account data, registered services, and Maps reviews. One of the most-used email OSINT tools.",
+    "url": "https://epieos.com",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "osint-techniques-bazzell",
+    "title": "OSINT Techniques (Michael Bazzell)",
+    "summary": "The definitive OSINT reference by a former FBI cyber-crimes task force investigator, updated almost yearly and used as a training manual by agencies.",
+    "url": "https://www.abebooks.com/9798366360401/OSINT-Techniques-Resources-Uncovering-Online/plp",
+    "domains": [
+      "OSINT"
+    ],
+    "type": "Book",
+    "level": "All Levels",
+    "cost": {
+      "model": "paid",
+      "price": "~$40",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ghidra",
+    "title": "Ghidra",
+    "summary": "The NSA's free multi-architecture disassembler and decompiler with a genuinely competitive decompiler. Runs on Windows, macOS, and Linux.",
+    "url": "https://github.com/nationalsecurityagency/ghidra/blob/HEAD/README.md",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ida-free",
+    "title": "IDA Free",
+    "summary": "The industry-standard disassembler. The free edition now bundles a cloud decompiler for students.",
+    "url": "https://hex-rays.com/ida-pro",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium",
+      "price": "€365/yr–€8,599",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "x64dbg",
+    "title": "x64dbg",
+    "summary": "The best free open-source debugger for Windows malware, and an intuitive dynamic-analysis complement to Ghidra.",
+    "url": "https://github.com/x64dbg/x64dbg/blob/HEAD/README.md",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "binary-ninja",
+    "title": "Binary Ninja",
+    "summary": "Fast IL-based analysis with a modern API. A free in-browser version lets students try the decompiler on small binaries immediately.",
+    "url": "https://binary.ninja/2020/05/11/decompiler-stable-release.html",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "Non-Commercial $299 / Commercial $1,199; 75% student discount ($74/$299); free in-browser version for small binaries"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cutter",
+    "title": "Cutter",
+    "summary": "A friendly Qt GUI over rizin and radare2 that lowers the CLI learning curve for static analysis.",
+    "url": "https://github.com/rizinorg/cutter/blob/HEAD/README.md",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "detect-it-easy",
+    "title": "Detect It Easy (DIE)",
+    "summary": "Identifies packers, compilers, and protectors in seconds. The first step before unpacking any sample.",
+    "url": "https://github.com/horsicq/detect-it-easy/blob/HEAD/README.md",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "practical-malware-analysis",
+    "title": "Practical Malware Analysis (Sikorski & Honig, No Starch, 2012, 800 pp)",
+    "summary": "The field's standard hands-on textbook; its lab exercises map directly to a reverse-engineering course syllabus.",
+    "url": "https://nostarch.com/malware",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "List $59.95; used from ~$32.80"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "practical-binary-analysis",
+    "title": "Practical Binary Analysis (Dennis Andriesse, No Starch, 2018, 456 pp)",
+    "summary": "Practical modern binary-analysis techniques with an ELF focus: the natural sequel to Practical Malware Analysis.",
+    "url": "https://www.ieee-security.org/Cipher/BookReviews/2019/Andriesse_by_dietrich.html",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "~$52.58 new"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcm-malware-analysis-triage",
+    "title": "TCM Security: Practical Malware Analysis & Triage",
+    "summary": "A structured video course by Matt Kiely (HuskyHacks) with labs. The cheapest structured paid malware-analysis training path.",
+    "url": "https://tcm-sec.com/academy/practical-malware-analysis-triage/?affcode=770707_rabu644a",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "$29.99/month All-Access; PMRP cert $499"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "0ffset-training",
+    "title": "0ffset Training (formerly Zero2Automated)",
+    "summary": "One-time-payment malware-analysis courses with a certification included. Good value compared to subscriptions.",
+    "url": "https://www.0ffset.net/training/zero2auto/",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "Standard £149.99 one-time; Ultimate Bundle £185.99, includes certification"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "oalabs",
+    "title": "OALABS",
+    "summary": "Free practical malware-analysis walkthroughs on unpacking and config extraction, with a companion research wiki.",
+    "url": "https://www.youtube.com/@OALabs",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "malware-analysis-for-hedgehogs",
+    "title": "MalwareAnalysisForHedgehogs",
+    "summary": "Gentle, practical analysis videos, ideal for a student's very first malware sample.",
+    "url": "https://www.youtube.com/@MalwareAnalysisForHedgehogs",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "crackmes-one",
+    "title": "crackmes.one",
+    "summary": "A huge free archive of graded reverse-engineering challenges. The perfect practice library for RE.",
+    "url": "https://crackmes.one",
+    "domains": [
+      "Reverse Engineering"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "flare-on",
+    "title": "Flare-On (Mandiant / Google)",
+    "summary": "The annual flagship RE CTF from Mandiant, with excellent public writeups. A benchmark challenge set for serious students.",
+    "url": "https://github.com/alexandrubunea/the-flare-on-challenge-writeups",
+    "domains": [
+      "Malware Analysis"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "autopsy",
+    "title": "Autopsy",
+    "summary": "The standard free forensic suite: a GUI over the Sleuth Kit used by law enforcement, with timelines, keyword search, and carving built in.",
+    "url": "https://www.sleuthkit.org/autopsy/",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sleuth-kit",
+    "title": "The Sleuth Kit (TSK)",
+    "summary": "The core CLI toolkit: fls, mmls, fsstat, icat. Learning it teaches the actual forensic primitives behind Autopsy.",
+    "url": "https://www.sleuthkit.org",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "eric-zimmerman-ez-tools",
+    "title": "Eric Zimmerman's EZ Tools",
+    "summary": "The global standard for Windows artifact parsing: MFT, prefetch, registry, shellbags. Single-author tools used worldwide.",
+    "url": "https://ericzimmerman.github.io/",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "kape",
+    "title": "KAPE (Kroll Artifact Parser & Extractor)",
+    "summary": "The standard for rapid Windows triage: it collects and parses artifacts in minutes.",
+    "url": "https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium",
+      "priceNote": "Free for students, law enforcement, and researchers; commercial engagements require a license"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "13cubed",
+    "title": "13Cubed (Richard Davis)",
+    "summary": "The best free Windows DFIR video courses, including a 12-part Memory Forensics and a 22-part Windows Forensics playlist.",
+    "url": "https://www.youtube.com/@13Cubed",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "dfirscience",
+    "title": "DFIRScience",
+    "summary": "Clear DFIR workflow walkthroughs, from evidence to timeline.",
+    "url": "https://www.youtube.com/@DFIRScience",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "the-dfir-report-youtube",
+    "title": "The DFIR Report (YouTube)",
+    "summary": "Real-intrusion case walkthroughs showing how actual incident response teams investigate.",
+    "url": "https://www.youtube.com/@TheDFIRReport",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "YouTube Channel",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "sans-dfir-youtube",
+    "title": "SANS DFIR",
+    "summary": "Free SANS summit talks and a DFIR resource hub from the industry's top training body.",
+    "url": "https://www.youtube.com/@SANSForensics",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "YouTube Channel",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "memlabs",
+    "title": "MemLabs",
+    "summary": "A dedicated memory-forensics CTF set that pairs perfectly with Volatility 3.",
+    "url": "https://github.com/stuxnet999/MemLabs",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "file-system-forensic-analysis",
+    "title": "File System Forensic Analysis (Brian Carrier, Addison-Wesley, 2005, 600 pp)",
+    "summary": "The definitive reference on file-system internals, written by the author of the Sleuth Kit.",
+    "url": "https://www.amazon.com/dp/0321268172",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Book",
+    "level": "Advanced",
+    "cost": {
+      "model": "paid",
+      "price": "~$30.97–$35.16"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "volatility-3",
+    "title": "Volatility 3",
+    "summary": "The standard memory-forensics framework, rewritten for modern memory formats.",
+    "url": "https://github.com/volatilityfoundation/volatility3/blob/HEAD/README.md",
+    "domains": [
+      "Forensics"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cryptohack",
+    "title": "CryptoHack",
+    "summary": "Twelve categories and five structured courses: the best hands-on introduction to attacking real cryptography.",
+    "url": "https://cryptohack.org",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cryptopals",
+    "title": "Cryptopals (Matasano)",
+    "summary": "Forty-eight exercises built from real-world crypto failures. The classic crypto programmer's workout.",
+    "url": "https://cryptopals.com",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cryptopals-guided-tour",
+    "title": "CryptoPals Guided Tour (Eli Sohl)",
+    "summary": "Challenge-by-challenge video walkthroughs of Cryptopals, for when you get stuck.",
+    "url": "https://www.youtube.com/@EliSohl",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cryptography-i-dan-boneh",
+    "title": "Cryptography I (Dan Boneh, Stanford / Coursera)",
+    "summary": "The rigorous university crypto course, from number theory to zero knowledge, with a free graduate textbook alongside it.",
+    "url": "https://www.coursera.org/learn/crypto",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "Course",
+    "level": "Advanced",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "serious-cryptography",
+    "title": "Serious Cryptography (Jean-Philippe Aumasson, No Starch, 2nd ed. 2024)",
+    "summary": "Modern, practical crypto engineering (TLS, post-quantum, zero knowledge) by an applied cryptographer. The 2nd edition is current.",
+    "url": "https://www.alibris.com/Serious-Cryptography-2nd-Edition-A-Practical-Introduction-to-Modern-Encryption-Jean-Philippe-Aumasson/book/54866481?svs=1",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "2nd ed. new from $39.52; 1st ed. paperback $49.99"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "understanding-cryptography",
+    "title": "Understanding Cryptography (Christof Paar & Jan Pelzl)",
+    "summary": "The applied crypto textbook that explains the math step by step with minimal prerequisites, plus about 24 free lectures on YouTube.",
+    "url": "https://www.crypto-textbook.com",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cyberchef",
+    "title": "CyberChef",
+    "summary": "The 'cyber Swiss Army knife' from GCHQ. Runs fully in the browser and is indispensable for CTF crypto and encoding work.",
+    "url": "https://gchq.github.io/CyberChef/",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "handbook-of-applied-cryptography",
+    "title": "Handbook of Applied Cryptography",
+    "summary": "The free encyclopedic crypto reference. It deepens any topic the courses touch lightly.",
+    "url": "https://cacr.uwaterloo.ca/hac/",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "Book",
+    "level": "Advanced",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "picoctf-crypto",
+    "title": "PicoCTF (CMU) - Crypto Category",
+    "summary": "A year-round free CTF with a crypto category. Note: 2026 reports suggest picoCTF is folding into the CyLab Security Academy, so verify before linking.",
+    "url": "https://picoctf.org/",
+    "domains": [
+      "Cryptography"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pwn-college",
+    "title": "pwn.college",
+    "summary": "A fully modular pwn and RE curriculum from first principles, from Arizona State University. The closest thing to a free degree module in exploitation.",
+    "url": "https://pwn.college",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "nightmare",
+    "title": "Nightmare (guyinatuxedo)",
+    "summary": "Over 90 binary-exploitation challenges with documented writeups, all solvable with open-source tools.",
+    "url": "https://guyinatuxedo.github.io/",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "rop-emporium",
+    "title": "ROP Emporium",
+    "summary": "A focused ROP practice ladder from 32-bit to 64-bit. The standard ROP drill set.",
+    "url": "https://ropemporium.com/",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "mbe",
+    "title": "MBE - Modern Binary Exploitation (RPISEC)",
+    "summary": "University course materials with VM labs covering modern exploitation end to end.",
+    "url": "https://github.com/RPISEC/MBE",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Course",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "exploit-education",
+    "title": "exploit.education",
+    "summary": "The classic exploit-development VMs (Protostar, Phoenix, Nebula) teaching primitives step by step.",
+    "url": "https://exploit.education",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "liveoverflow",
+    "title": "LiveOverflow",
+    "summary": "The best binary-exploitation theory series on YouTube. Builds the 'why' behind each technique.",
+    "url": "https://www.youtube.com/@LiveOverflow",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pwnable-kr",
+    "title": "pwnable.kr",
+    "summary": "The classic pwn wargame, graded from a baby's first stack overflow upward.",
+    "url": "http://pwnable.kr",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "hacking-art-of-exploitation",
+    "title": "Hacking: The Art of Exploitation (Jon Erickson, No Starch 2nd ed. 2008, 488 pp)",
+    "summary": "The beloved hands-on exploit primer with its own liveCD lab environment. Unbeatable value used.",
+    "url": "https://www.abebooks.co.uk/9781593270070/Hacking-Art-Exploitation-Jon-Erickson-1593270070/plp",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "used from £3.80"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "corelan-tutorials",
+    "title": "Corelan exploit-writing tutorials",
+    "summary": "The classic Windows exploit-writing tutorial series that every exploit developer has read.",
+    "url": "https://www.corelan.be/index.php/articles/",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Course",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "azeria-labs",
+    "title": "Azeria Labs",
+    "summary": "The standard ARM assembly and ARM exploitation reference. Fills the non-x86 gap.",
+    "url": "https://azeria-labs.com/",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Reference",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "gef",
+    "title": "GEF (GDB Enhanced Features)",
+    "summary": "Makes GDB usable for exploit development: ROP search, heap inspection, context display. The pwn.college workflow standard.",
+    "url": "https://github.com/hugsy/gef",
+    "domains": [
+      "Binary Exploitation"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "portswigger-web-security-academy",
+    "title": "PortSwigger Web Security Academy",
+    "summary": "Free labs built by the Burp Suite makers. The single best hands-on way to learn web security from first principles.",
+    "url": "https://portswigger.net/web-security",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "burp-suite",
+    "title": "Burp Suite",
+    "summary": "The industry-standard web proxy. The Community edition is free, and it carries most learners through the Academy labs.",
+    "url": "https://portswigger.net/burp/releases",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium",
+      "price": "Community free; Pro $449/yr"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "caido",
+    "title": "Caido",
+    "summary": "A fast, modern Burp alternative with AI plugins.",
+    "url": "https://caido.io",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "freemium",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-zap",
+    "title": "OWASP ZAP",
+    "summary": "The free open-source scanner from OWASP. An ideal first DAST tool.",
+    "url": "https://www.zaproxy.org",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "nuclei",
+    "title": "Nuclei",
+    "summary": "A template-based vulnerability scanner with a huge community template library.",
+    "url": "https://github.com/projectdiscovery/nuclei",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-juice-shop",
+    "title": "OWASP Juice Shop",
+    "summary": "OWASP's flagship modern vulnerable application (MIT license): a realistic shop to practice real vulnerabilities in.",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "dvwa",
+    "title": "DVWA",
+    "summary": "The classic deliberately vulnerable PHP app with difficulty levels. The quickest local XSS and SQLi practice.",
+    "url": "https://github.com/digininja/DVWA",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-webgoat",
+    "title": "OWASP WebGoat",
+    "summary": "OWASP's insecure Java app with guided lessons per vulnerability class.",
+    "url": "https://github.com/WebGoat/WebGoat",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-top-10",
+    "title": "OWASP Top 10",
+    "summary": "The industry-standard web risk list. The 2025 edition is current.",
+    "url": "https://github.com/owasp/top10/blob/HEAD/README.md",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "hacktricks",
+    "title": "HackTricks",
+    "summary": "A massive pentest and CTF methodology wiki, actively maintained.",
+    "url": "https://github.com/hacktricks-wiki/hacktricks",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "payloadsallthethings",
+    "title": "PayloadsAllTheThings",
+    "summary": "The biggest payload and bypass collection per vulnerability class. You will open this daily.",
+    "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "portswigger-xss-cheat-sheet",
+    "title": "PortSwigger XSS Cheat Sheet",
+    "summary": "The 2026-edition filter-evasion vectors, tested against real browsers. Pairs with the Academy labs.",
+    "url": "https://portswigger.net/web-security/cross-site-scripting/cheat-sheet",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "pentesterlab",
+    "title": "PentesterLab",
+    "summary": "Over 700 hands-on labs and 700+ videos with badges. The best structured web-hacking progression.",
+    "url": "https://pentesterlab.com/pro",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "Pro $19.99/mo or $199.99/yr; free bootcamp"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tryhackme",
+    "title": "TryHackMe",
+    "summary": "Gamified, beginner-friendly rooms. The free tier includes one hour a day of AttackBox.",
+    "url": "https://tryhackme.com",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium",
+      "price": "~$17–18/mo or ~$126–134/yr",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "hackthebox",
+    "title": "HackTheBox",
+    "summary": "The flagship hacking lab platform. Retired machines pair perfectly with IppSec walkthroughs.",
+    "url": "https://www.hackthebox.com/",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "CTF Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "VIP+ $25/mo or $223/yr (plans vary)"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ippsec",
+    "title": "IppSec",
+    "summary": "Over 250 retired HTB machine walkthroughs that teach methodology, not just flags.",
+    "url": "https://www.youtube.com/@ippsec",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "YouTube Channel",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "stok",
+    "title": "STÖK",
+    "summary": "Bug bounty methodology and mindset from a multi-award hunter (Uber, Salesforce, US DoD).",
+    "url": "https://www.youtube.com/c/STOKfredrik",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "YouTube Channel",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "web-application-hackers-handbook",
+    "title": "The Web Application Hacker's Handbook",
+    "summary": "The web application security bible by Burp's creator. From 2011, but its fundamentals still hold.",
+    "url": "https://www.thenile.co.nz/books/dafydd-stuttard/the-web-application-hackers-handbook/9781118026472",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "$79.20 NZD paperback"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "real-world-bug-hunting",
+    "title": "Real-World Bug Hunting",
+    "summary": "Real rewarded bug-bounty case studies from Twitter, Facebook, Google, and Uber. Learn from findings that actually got paid.",
+    "url": "https://www.bestbookstore.ca/products/real-world-bug-hunting-paperback-by-peter-yaworski",
+    "domains": [
+      "Web Security"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "$59.39 CAD paperback"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "nmap",
+    "title": "Nmap",
+    "summary": "The network scanner everything else builds on. Essential for discovery and enumeration.",
+    "url": "https://nmap.org",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "wireshark",
+    "title": "Wireshark",
+    "summary": "The protocol analyzer (GPLv2), shipping TShark for CLI capture and analysis.",
+    "url": "https://www.wireshark.org",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "metasploit-framework",
+    "title": "Metasploit Framework",
+    "summary": "Rapid7's open-source exploitation framework, preinstalled on Kali.",
+    "url": "https://github.com/rapid7/metasploit-framework",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "responder",
+    "title": "Responder",
+    "summary": "An LLMNR, NBT-NS, and mDNS poisoner that captures NTLMv2 hashes. An Active Directory pentest staple.",
+    "url": "https://github.com/lgandx/Responder",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "bloodhound",
+    "title": "BloodHound",
+    "summary": "Graph-based Active Directory attack-path mapping by SpecterOps. Shows the paths attackers actually take.",
+    "url": "https://github.com/SpecterOps/BloodHound",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "freemium",
+      "price": "Community Edition free; Enterprise paid"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "impacket",
+    "title": "Impacket",
+    "summary": "Python classes for network protocols (SMB1-3, MSRPC, NTLM, Kerberos), maintained by Fortra.",
+    "url": "https://github.com/fortra/impacket",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "seclists",
+    "title": "SecLists",
+    "summary": "The canonical wordlist collection for fuzzing and content discovery.",
+    "url": "https://github.com/danielmiessler/SecLists",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "gtfobins",
+    "title": "GTFOBins",
+    "summary": "A reference of Unix binaries usable for privilege escalation and bypass.",
+    "url": "https://github.com/GTFOBins/GTFOBins.github.io",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "lolbas",
+    "title": "LOLBAS",
+    "summary": "The Windows living-off-the-land binaries reference for post-exploitation.",
+    "url": "https://github.com/LOLBAS-Project/LOLBAS",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Cheatsheet",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "metasploit-unleashed",
+    "title": "Metasploit Unleashed",
+    "summary": "OffSec's free Metasploit course with no registration. The official starting point.",
+    "url": "https://www.offsec.com/metasploit-unleashed/",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "nmap-network-scanning",
+    "title": "Nmap Network Scanning",
+    "summary": "Written by Nmap's author, Fyodor. The 9th edition (August 2025) is current, and more than half the book is free at nmap.org/book.",
+    "url": "https://www.amazon.com/dp/B0FP1SXZV3",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "$49.95 publisher price"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcm-practical-ethical-hacking",
+    "title": "TCM Security Practical Ethical Hacking",
+    "summary": "A full beginner-to-pentester video course covering networking, Active Directory, and web basics.",
+    "url": "https://tcm-sec.com/academy/practical-ethical-hacking/",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "From $29.99/mo (All-Access)"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "darknet-diaries",
+    "title": "Darknet Diaries",
+    "summary": "Narrative real-hack stories by Jack Rhysider. Builds security intuition better than any textbook.",
+    "url": "https://darknetdiaries.com",
+    "domains": [
+      "Network Security"
+    ],
+    "type": "Podcast",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "professor-messer-network-plus",
+    "title": "Professor Messer Network+",
+    "summary": "A free exam-mapped video course for the current N10-009 Network+ cycle.",
+    "url": "https://www.professormesser.com/get-n10-009-network-plus-certified/",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium",
+      "priceNote": "Free videos; paid study notes and practice exams"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "jeremys-it-lab-ccna",
+    "title": "Jeremy's IT Lab CCNA",
+    "summary": "A complete free CCNA 200-301 video course with free flashcards and labs.",
+    "url": "https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cisco-networking-academy",
+    "title": "Cisco Networking Academy",
+    "summary": "Cisco's own free courses (Networking Basics at 22 hours, Ethical Hacker at 70 hours) with digital badges.",
+    "url": "https://www.netacad.com/courses/networking-basics",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "cisco-packet-tracer",
+    "title": "Cisco Packet Tracer",
+    "summary": "Cisco's network simulator. Sufficient for all CCNA-level practice.",
+    "url": "https://www.netacad.com/courses/packet-tracer",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "gns3",
+    "title": "GNS3",
+    "summary": "An open-source emulator running real device images, with an 800K+ community. No hardware needed.",
+    "url": "https://gns3.com/",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "subnettingpractice",
+    "title": "SubnettingPractice.com",
+    "summary": "Free interactive subnetting drills. Subnetting is free marks on exams.",
+    "url": "https://subnettingpractice.com/",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "freecodecamp-networking",
+    "title": "freeCodeCamp Computer Networking Full Course",
+    "summary": "A compact 1.5-hour full networking course: OSI, TCP/IP, HTTP, DNS, TLS.",
+    "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "networkchuck",
+    "title": "NetworkChuck",
+    "summary": "Entertaining, practical networking and IT certification content, with a network fundamentals playlist.",
+    "url": "https://youtube.com/@NetworkChuck",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "chris-greer",
+    "title": "Chris Greer (Practical Networking)",
+    "summary": "Wireshark and TCP/IP packet analysis made approachable, with 140K+ subscribers.",
+    "url": "https://www.youtube.com/c/@chrisgreer/",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "YouTube Channel",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "networklessons",
+    "title": "NetworkLessons.com",
+    "summary": "820 lessons and 100+ hours of video for CCNA, CCNP, and CCIE, with a $1 seven-day trial.",
+    "url": "http://networklessons.com/pricing",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "$39/mo or $390/yr"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcp-ip-illustrated-vol-1",
+    "title": "TCP/IP Illustrated, Vol 1",
+    "summary": "The definitive protocol reference, endorsed by Vint Cerf.",
+    "url": "https://www.amazon.ie/TCP-IP-Illustrated-Protocols-1/dp/0321336313",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "price": "£51.99 hardback"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "computer-networking-top-down",
+    "title": "Computer Networking: A Top-Down Approach",
+    "summary": "The standard university networking textbook. The 9th edition (2025) covers HTTP/3, QUIC, Wi-Fi 6, and 5G.",
+    "url": "https://gaia.cs.umass.edu/kurose_ross/index.php",
+    "domains": [
+      "Networking Fundamentals"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "comptia-security-plus",
+    "title": "CompTIA Security+ (SY0-701)",
+    "summary": "The baseline certification that still opens doors. Every employer recognizes it, and it teaches core security vocabulary.",
+    "url": "https://www.comptia.org",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ceh-v13",
+    "title": "EC-Council CEH v13",
+    "summary": "Heavy on theory and tool names. Useful when a job posting or HR filter asks for it by name.",
+    "url": "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ine-ejpt",
+    "title": "INE eJPT",
+    "summary": "A 48-hour practical lab exam with one free retake. A friendly first hands-on pentest cert before harder ones, and the 2026 update adds web app testing, recon, and offensive AI.",
+    "url": "https://ine.com/security/certifications/ejpt-certification",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ine-ecppt",
+    "title": "INE eCPPT",
+    "summary": "A 24-hour practical exam that tests real pentest methodology. A solid step up from eJPT.",
+    "url": "https://ine.com/security/certifications/ecppt-certification",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcm-pjpt",
+    "title": "TCM Security PJPT",
+    "summary": "The exam spans two days plus two for the report, the certification never expires, and training is included in the price. Confirmed on the official TCM FAQ, October 2026.",
+    "url": "https://certifications.tcm-sec.com/PJPT/",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "$249 (includes 12 months of Practical Ethical Hacking course access)"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcm-pnpt",
+    "title": "TCM Security PNPT",
+    "summary": "A five-day practical network pentest plus a live debrief. One of the best-value professional certs, and it never expires.",
+    "url": "https://certifications.tcm-sec.com/pnpt/",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "oscp-pen-200",
+    "title": "OffSec OSCP (PEN-200)",
+    "summary": "The gold standard pentest certification. The brutal 24-hour exam teaches real persistence and enumeration.",
+    "url": "https://www.offsec.com/courses/pen-200/",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "isc2-cissp",
+    "title": "ISC2 CISSP",
+    "summary": "The most asked-for security certification on senior job postings. Proves breadth across security domains, not just hacking.",
+    "url": "https://www.isc2.org",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Advanced",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "comptia-pentest-plus",
+    "title": "CompTIA PenTest+ (PT0-003)",
+    "summary": "A good structured path between Security+ and OSCP, covering pentest planning, tools, and reporting.",
+    "url": "https://www.comptia.org/certifications/pentest",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "zero-point-security-crto",
+    "title": "Zero-Point Security CRTO",
+    "summary": "A 48-hour red-team ops exam built around Cobalt Strike. The respected certification for real-world operator tradecraft.",
+    "url": "https://training.zeropointsecurity.co.uk/courses/red-team-ops",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Advanced",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "giac-gsec",
+    "title": "GIAC GSEC",
+    "summary": "Vendor-neutral security fundamentals with hands-on CyberLive questions, valid four years and widely respected.",
+    "url": "https://www.giac.org",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "htb-cpts",
+    "title": "HTB CPTS (Certified Penetration Testing Specialist)",
+    "summary": "Rapidly gaining industry respect. An exam-based certification from the HTB Academy track.",
+    "url": "https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist",
+    "domains": [
+      "Career"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-masvs",
+    "title": "OWASP MASVS",
+    "summary": "The industry standard for mobile app security requirements, organized into clear control groups from storage to privacy.",
+    "url": "https://mas.owasp.org/MASVS/",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Standard",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "mobsf",
+    "title": "MobSF",
+    "summary": "Static plus dynamic analysis for Android, iOS, and Windows apps in one automated, regularly updated framework.",
+    "url": "https://github.com/MobSF",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "diva-android",
+    "title": "DIVA Android",
+    "summary": "Thirteen deliberately vulnerable challenges that teach Android insecurity basics step by step.",
+    "url": "https://github.com/payatu/diva-android",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "insecurebankv2",
+    "title": "InsecureBankv2",
+    "summary": "A realistic vulnerable banking app with about 25 vulnerability classes and a Python backend to attack end to end.",
+    "url": "https://github.com/dineshshetty/Android-InsecureBankv2",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-mas-crackmes",
+    "title": "OWASP MAS Crackmes",
+    "summary": "Android and iOS reverse-engineering challenges straight from OWASP's mobile security team.",
+    "url": "https://github.com/OWASP/mas-crackmes",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Interactive Lab",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "frida",
+    "title": "Frida",
+    "summary": "Dynamic instrumentation for mobile and desktop. Inject JavaScript into running apps for hooking and bypasses.",
+    "url": "https://frida.re/",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "objection",
+    "title": "Objection",
+    "summary": "A Frida-powered runtime exploration toolkit. The fastest way to bypass SSL pinning and poke at app behavior.",
+    "url": "https://github.com/sensepost/objection/blob/HEAD/README.md",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "jadx",
+    "title": "jadx",
+    "summary": "The standard Dex-to-Java decompiler for turning Android APKs back into readable code.",
+    "url": "https://github.com/skylot/jadx/blob/HEAD/README.md",
+    "domains": [
+      "Mobile Security"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "semgrep",
+    "title": "Semgrep",
+    "summary": "Fast static analysis across 30+ languages with thousands of rules. Easy to drop into any CI pipeline.",
+    "url": "https://semgrep.dev/",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "trivy",
+    "title": "Trivy",
+    "summary": "One scanner for vulnerabilities, misconfigurations, and secrets across containers, infrastructure as code, and SBOMs.",
+    "url": "https://aquasecurity.github.io/trivy/",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "gitleaks",
+    "title": "Gitleaks",
+    "summary": "The go-to secrets scanner for git repositories. Note the project is feature-complete and now receives security patches only.",
+    "url": "https://github.com/gitleaks/gitleaks",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "owasp-dsomm",
+    "title": "OWASP DSOMM",
+    "summary": "A maturity model that tells teams exactly where their DevSecOps program stands and what to fix next.",
+    "url": "https://dsomm.owasp.org/",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Framework",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "practical-devsecops-cdp",
+    "title": "Practical DevSecOps CDP",
+    "summary": "Over 100 guided labs and a six-hour practical exam, with lifetime certification and CPE points.",
+    "url": "https://www.practical-devsecops.com/certified-devsecops-professional/",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Certification",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "defectdojo",
+    "title": "DefectDojo",
+    "summary": "A vulnerability management hub that imports results from more than 150 scanners into one trackable dashboard.",
+    "url": "https://github.com/owasp/devguide/blob/HEAD/docs/en/06-verification/04-vulnerability-management/01-defectdojo.md",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "checkov",
+    "title": "Checkov",
+    "summary": "Static analysis for Terraform, CloudFormation, and other IaC. Catches misconfigurations before they deploy.",
+    "url": "https://github.com/bridgecrewio/checkov/blob/HEAD/README.md",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "snyk",
+    "title": "Snyk",
+    "summary": "Developer-friendly scanning for code, containers, and IaC, with direct GitHub, GitLab, and IDE integrations.",
+    "url": "https://snyk.io/",
+    "domains": [
+      "DevSecOps"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "overthewire-bandit",
+    "title": "OverTheWire Bandit",
+    "summary": "Thirty-four SSH levels that teach real Linux commands by playing. The classic first stop for hackers learning Linux.",
+    "url": "https://overthewire.org/wargames/bandit/",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "linux-journey",
+    "title": "Linux Journey",
+    "summary": "Clean guided lessons with an in-browser terminal, from basics to users and permissions.",
+    "url": "https://labex.io/linuxjourney",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "linux-basics-for-hackers",
+    "title": "Linux Basics for Hackers, 2nd ed.",
+    "summary": "Written specifically for the security mindset: networking, scripting, and wireless from a hacker's angle.",
+    "url": "https://openlibrary.org/books/OL50722062M/Linux_Basics_for_Hackers",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "the-linux-command-line",
+    "title": "The Linux Command Line",
+    "summary": "596 pages of proper command-line depth by William Shotts. The free book that keeps paying off.",
+    "url": "http://linuxcommand.org/tlcl.php",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "Book",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "explainshell",
+    "title": "explainshell",
+    "summary": "Paste any scary command and it explains every flag. The fastest way to stop fearing the terminal.",
+    "url": "http://explainshell.com/",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "Tool",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "kodekloud-linux",
+    "title": "KodeKloud Linux",
+    "summary": "A hands-on learning path that also prepares for LFCS, RHCSA, and LPIC-1 style Linux exams.",
+    "url": "https://kodekloud.com/learning-path/linux/",
+    "domains": [
+      "Linux Fundamentals"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "black-hat-python",
+    "title": "Black Hat Python, 2nd ed.",
+    "summary": "The definitive book on Python for hacking: network tools, trojans, and Windows tradecraft, project by project.",
+    "url": "https://nostarch.com/catalog/rum",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Book",
+    "level": "Intermediate",
+    "cost": {
+      "model": "paid",
+      "priceNote": "unverified"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "freecodecamp-python-v9",
+    "title": "freeCodeCamp Python v9",
+    "summary": "The 2026 curriculum with 531 steps, five projects, and an exam. A solid zero-to-coding foundation.",
+    "url": "https://www.freecodecamp.org/learn/python-v9/",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tcm-python-101-for-hackers",
+    "title": "TCM Security Python 101 for Hackers",
+    "summary": "Five and a half hours of Python taught purely through a hacker's lens, with a completion certificate.",
+    "url": "https://academy.tcm-sec.com/p/python-101-for-hackers",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Course",
+    "level": "Beginner",
+    "cost": {
+      "model": "paid",
+      "price": "All-Access from $29.99/month"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "htb-academy",
+    "title": "HackTheBox Academy",
+    "summary": "Over 355 guided modules and 20+ career paths with in-browser Pwnbox machines. The structured route into HTB.",
+    "url": "https://academy.hackthebox.com/",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "freemium"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "codeabbey",
+    "title": "CodeAbbey",
+    "summary": "Over 400 short programming tasks with certificates. Great for drilling problem-solving speed.",
+    "url": "http://codeabbey.com",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Interactive Lab",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "go-by-example",
+    "title": "Go by Example",
+    "summary": "Clean annotated Go examples across about 90 topics. The quickest way to pick up Go for tooling.",
+    "url": "https://gobyexample.com/",
+    "domains": [
+      "Programming"
+    ],
+    "type": "Reference",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "picoctf",
+    "title": "picoCTF",
+    "summary": "CMU's free competition plus year-round practice through picoGym. The friendliest first CTF. Note: 2026 reports suggest it is folding into the CyLab Security Academy, so verify before linking.",
+    "url": "https://picoctf.org/",
+    "domains": [
+      "CTF"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "ctftime",
+    "title": "CTFtime",
+    "summary": "The calendar of every upcoming CTF plus team rankings. Plan your competition season here.",
+    "url": "https://ctftime.org/",
+    "domains": [
+      "CTF"
+    ],
+    "type": "CTF Platform",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "root-me",
+    "title": "Root-Me",
+    "summary": "400 to 500+ challenges across web, crypto, forensics, and more. Endless free practice.",
+    "url": "https://www.root-me.org/",
+    "domains": [
+      "CTF"
+    ],
+    "type": "CTF Platform",
+    "level": "Beginner",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "vulnhub",
+    "title": "VulnHub",
+    "summary": "Downloadable vulnerable VMs for fully offline practice on your own machine.",
+    "url": "https://www.vulnhub.com/",
+    "domains": [
+      "CTF"
+    ],
+    "type": "CTF Platform",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "hackerone",
+    "title": "HackerOne",
+    "summary": "The largest bounty platform, with over $230 million paid out and customers like the US DoD, GitHub, and Google.",
+    "url": "https://www.hackerone.com",
+    "domains": [
+      "Bug Bounty"
+    ],
+    "type": "Bug Bounty Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "bugcrowd",
+    "title": "Bugcrowd",
+    "summary": "A major alternative with VRT severity ratings and both private and public programs.",
+    "url": "https://www.bugcrowd.com",
+    "domains": [
+      "Bug Bounty"
+    ],
+    "type": "Bug Bounty Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "yeswehack",
+    "title": "YesWeHack",
+    "summary": "Europe's leading platform (Paris HQ, EU-hosted, GDPR). Trusted by the European Commission.",
+    "url": "https://www.yeswehack.com",
+    "domains": [
+      "Bug Bounty"
+    ],
+    "type": "Bug Bounty Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "intigriti",
+    "title": "Intigriti",
+    "summary": "Belgian-founded (Antwerp HQ) with more than 125,000 researchers and a pay-for-impact model.",
+    "url": "https://www.intigriti.com",
+    "domains": [
+      "Bug Bounty"
+    ],
+    "type": "Bug Bounty Platform",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "black-hat-usa-2026",
+    "title": "Black Hat USA 2026",
+    "summary": "August 1 to 6, 2026, Las Vegas. Over 100 briefings and trainings: the industry's flagship research event.",
+    "url": "https://www.blackhat.com/",
+    "domains": [
+      "Community"
+    ],
+    "type": "Conference",
+    "level": "All Levels",
+    "cost": {
+      "model": "paid"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "def-con-34",
+    "title": "DEF CON 34",
+    "summary": "August 6 to 9, 2026, Las Vegas. 20,000 to 30,000 hackers, villages, and contests: the world's biggest hacker gathering.",
+    "url": "https://www.defcon.org/",
+    "domains": [
+      "Community"
+    ],
+    "type": "Conference",
+    "level": "All Levels",
+    "cost": {
+      "model": "paid",
+      "price": "~$560 early / $580 regular / $600 late via Black Hat add-on in 2026"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "rsa-conference-2026",
+    "title": "RSA Conference 2026",
+    "summary": "March 23 to 26, 2026, San Francisco. About 45,000 attendees: the enterprise security event of the year.",
+    "url": "https://www.rsaconference.com",
+    "domains": [
+      "Community"
+    ],
+    "type": "Conference",
+    "level": "All Levels",
+    "cost": {
+      "model": "paid"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "brucon",
+    "title": "BruCON",
+    "summary": "September 24 to 25, 2026, Mechelen, Belgium, with trainings September 21 to 23. Belgium's own top-tier security conference.",
+    "url": "https://www.brucon.org",
+    "domains": [
+      "Community"
+    ],
+    "type": "Conference",
+    "level": "All Levels",
+    "cost": {
+      "model": "paid"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "bsides-las-vegas-2026",
+    "title": "BSides Las Vegas 2026",
+    "summary": "August 3 to 5, 2026, Las Vegas. The community con during hacker summer camp: friendly and accessible.",
+    "url": "https://bsideslv.org",
+    "domains": [
+      "Community"
+    ],
+    "type": "Conference",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "risky-biz",
+    "title": "Risky Biz",
+    "summary": "Patrick Gray's sharp weekly security news. The show professionals actually listen to.",
+    "url": "https://risky.biz/",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Podcast",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "krebs-on-security",
+    "title": "Krebs on Security",
+    "summary": "Brian Krebs' investigative reporting on cybercrime. Essential reading for understanding the threat landscape.",
+    "url": "https://krebsonsecurity.com/",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Newsletter",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "tldr-sec",
+    "title": "TL;DR Sec",
+    "summary": "A curated security newsletter that saves you hours by surfacing only what matters.",
+    "url": "https://tldrsec.com/",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Newsletter",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "crypto-gram",
+    "title": "Crypto-Gram",
+    "summary": "Bruce Schneier's monthly on cryptography and security policy. Unmatched depth and perspective.",
+    "url": "https://www.schneier.com/crypto-gram/",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Newsletter",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "unsupervised-learning",
+    "title": "Unsupervised Learning",
+    "summary": "Daniel Miessler's thoughtful essays on security, AI, and the future. Great for big-picture thinking.",
+    "url": "https://danielmiessler.com/",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Newsletter",
+    "level": "Intermediate",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  },
+  {
+    "id": "smashing-security",
+    "title": "Smashing Security",
+    "summary": "Graham Cluley and Carole Theriault's weekly security news with humor. Verified active with episode 486 in September 2026.",
+    "url": "https://smashingsecurity.com",
+    "domains": [
+      "News & Media"
+    ],
+    "type": "Podcast",
+    "level": "All Levels",
+    "cost": {
+      "model": "free"
+    },
+    "language": "English",
+    "lastVerified": "2026-10-01"
+  }
+]

@@ -26,6 +26,53 @@ export default function Footer() {
           <nav aria-label="Footer" className="flex gap-16">
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+                Learn
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                <li>
+                  <Link
+                    href="/start-here"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    Start here
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/cheatsheets"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    Cheat sheets
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/glossary"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    Glossary
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/faq"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
                 Explore
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -43,6 +90,14 @@ export default function Footer() {
                     className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
                   >
                     Roadmaps
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/tools"
+                    className="text-sm text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                  >
+                    Tools
                   </Link>
                 </li>
                 <li>

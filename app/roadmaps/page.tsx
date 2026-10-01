@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Reveal } from "@/components/Reveal";
+import { RoadmapFeature, RoadmapIndexRow } from "@/components/RoadmapCard";
 import { getRoadmaps } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -9,37 +8,6 @@ export const metadata: Metadata = {
   description:
     "Sequenced cybersecurity learning paths. Each step sits in order for a reason, and the reason is written on the step.",
 };
-
-function difficultyTone(level: string): string {
-  if (/advanced/i.test(level)) {
-    return "border-rose-400/30 bg-rose-400/10 text-rose-300";
-  }
-  if (/intermediate/i.test(level)) {
-    return "border-gold/30 bg-gold/10 text-gold";
-  }
-  return "border-signal/30 bg-signal/10 text-signal";
-}
-
-function DifficultyBadge({ level }: { level: string }) {
-  return (
-    <span
-      className={`inline-block rounded-full border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.14em] ${difficultyTone(level)}`}
-    >
-      {level}
-    </span>
-  );
-}
-
-function formatWeeks(estWeeks: string | number): string {
-  if (typeof estWeeks === "number") {
-    return `${estWeeks} ${estWeeks === 1 ? "week" : "weeks"}`;
-  }
-  return `${estWeeks} weeks`;
-}
-
-function formatSteps(count: number): string {
-  return `${count} ${count === 1 ? "step" : "steps"}`;
-}
 
 const HOW_TO_USE = [
   {
@@ -52,12 +20,13 @@ const HOW_TO_USE = [
   },
   {
     title: "Check the why-next note before skipping",
-    body: "Every step carries a gold note explaining why it comes next. Read it before you jump ahead. It tells you what the next step assumes you already know.",
+    body: "Every step carries a short note explaining why it comes next. Read it before you jump ahead. It tells you what the next step assumes you already know.",
   },
 ];
 
 export default function RoadmapsPage() {
   const roadmaps = getRoadmaps();
+  const [lead, ...rest] = roadmaps;
 
   return (
     <main className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-20">
@@ -67,48 +36,23 @@ export default function RoadmapsPage() {
         lede="A roadmap is a sequence, not a pile of links. Each path below runs in a deliberate order, and every step carries a short note explaining why it comes next. Follow the order, or skip a step on purpose after reading its note."
       />
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
-        {roadmaps.map((roadmap, i) => (
-          <Reveal key={roadmap.slug} delay={i * 0.06} className="h-full">
-            <Link
-              href={`/roadmaps/${roadmap.slug}`}
-              className="group flex h-full flex-col rounded-lg border border-line bg-surface p-6 transition-colors duration-200 hover:border-gold/50"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <DifficultyBadge level={roadmap.difficulty} />
-                <span className="font-mono text-xs text-muted">
-                  {formatWeeks(roadmap.estWeeks)}
-                </span>
-              </div>
+      {lead ? (
+        <div className="mt-12">
+          <RoadmapFeature roadmap={lead} index={0} />
+        </div>
+      ) : null}
 
-              <h3 className="mt-4 font-display text-xl font-semibold tracking-tight text-zinc-100">
-                {roadmap.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {roadmap.tagline}
-              </p>
-              <p className="mb-6 mt-4 text-xs leading-relaxed text-zinc-500">
-                <span className="font-mono uppercase tracking-[0.14em]">
-                  Audience
-                </span>
-                <span aria-hidden="true"> · </span>
-                {roadmap.audience}
-              </p>
-
-              <div className="mt-auto border-t border-line pt-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-muted">
-                    {formatSteps(roadmap.steps.length)}
-                  </span>
-                  <span className="text-sm font-medium text-gold transition-transform duration-200 group-hover:translate-x-0.5">
-                    Open roadmap <span aria-hidden="true">→</span>
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </Reveal>
-        ))}
-      </div>
+      {rest.length > 0 ? (
+        <ul className="mt-2 divide-y divide-line border-b border-line">
+          {rest.map((roadmap, i) => (
+            <RoadmapIndexRow
+              key={roadmap.slug}
+              roadmap={roadmap}
+              index={i + 1}
+            />
+          ))}
+        </ul>
+      ) : null}
 
       <section
         aria-label="How to use a roadmap"

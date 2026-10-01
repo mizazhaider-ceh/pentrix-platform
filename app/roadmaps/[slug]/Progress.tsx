@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Resource } from "@/lib/data";
-import { ResourceCard } from "@/components/ResourceCard";
-import { Reveal } from "@/components/Reveal";
 
 export type StepView = {
   index: number;
@@ -19,6 +17,44 @@ function formatMinutes(minutes: number | undefined): string | null {
   const hours = Math.floor(minutes / 60);
   const rest = minutes % 60;
   return rest === 0 ? `${hours} h` : `${hours} h ${rest} min`;
+}
+
+function costLabel(model: string): string {
+  const normalized = model.trim().toLowerCase();
+  if (normalized === "free") return "Free";
+  if (normalized === "freemium") return "Freemium";
+  if (normalized === "paid") return "Paid";
+  return model;
+}
+
+/**
+ * Compact resource row: title plus a mono fact line. Steps already sit
+ * inside cards, so full ResourceCards here would be cards inside cards.
+ */
+function StepResourceRow({ resource }: { resource: Resource }) {
+  return (
+    <li>
+      <a
+        href={resource.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-baseline gap-3 py-3"
+      >
+        <span className="min-w-0 flex-1 truncate text-sm font-medium text-zinc-200 transition-colors duration-200 group-hover:text-signal">
+          {resource.title}
+        </span>
+        <span className="hidden shrink-0 font-mono text-xs text-zinc-500 sm:block">
+          {resource.type} · {resource.level} · {costLabel(resource.cost.model)}
+        </span>
+        <span
+          aria-hidden="true"
+          className="shrink-0 text-xs text-zinc-600 transition-[transform,color] duration-200 group-hover:-translate-y-px group-hover:translate-x-px group-hover:text-signal"
+        >
+          ↗
+        </span>
+      </a>
+    </li>
+  );
 }
 
 export function Progress({ slug, steps }: { slug: string; steps: StepView[] }) {
@@ -93,7 +129,7 @@ export function Progress({ slug, steps }: { slug: string; steps: StepView[] }) {
         aria-label="Roadmap progress"
       >
         <div
-          className="h-px bg-gold transition-[width] duration-300"
+          className="h-px bg-signal transition-[width] duration-300"
           style={{ width: `${percent}%` }}
         />
       </div>
@@ -132,64 +168,72 @@ export function Progress({ slug, steps }: { slug: string; steps: StepView[] }) {
               )}
               <span
                 aria-hidden="true"
-                className="absolute left-0 top-1 w-8 font-mono text-sm text-gold"
+                className={`absolute left-0 top-1.5 w-8 font-mono text-sm transition-colors duration-200 ${
+                  isDone ? "text-signal" : "text-gold"
+                }`}
               >
                 {number}
               </span>
 
-              <Reveal>
-                <div
-                  className={`rounded-xl border p-5 transition-colors duration-200 sm:p-6 ${
-                    isDone
-                      ? "border-line bg-surface/60"
-                      : "border-line bg-surface"
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <label className="flex cursor-pointer items-start gap-3">
-                      <input
-                        type="checkbox"
-                        checked={isDone}
-                        onChange={() => toggle(step.index)}
-                        aria-label={`Mark step ${step.index + 1} complete: ${step.title}`}
-                        className="mt-1.5 h-4 w-4 shrink-0 accent-gold"
-                      />
-                      <span
-                        className={`text-base font-semibold tracking-tight sm:text-lg ${
-                          isDone ? "text-zinc-500" : "text-zinc-100"
-                        }`}
-                      >
-                        {step.title}
+              <div
+                className={`rounded-lg border p-5 transition-[border-color,background-color] duration-200 sm:p-6 ${
+                  isDone
+                    ? "border-line bg-surface/60"
+                    : "border-line bg-surface"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <label className="flex cursor-pointer items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={isDone}
+                      onChange={() => toggle(step.index)}
+                      aria-label={`Mark step ${step.index + 1} complete: ${step.title}`}
+                      className="mt-1.5 h-4 w-4 shrink-0 accent-signal"
+                    />
+                    <span
+                      className={`font-display text-base font-semibold tracking-tight transition-colors duration-200 sm:text-lg ${
+                        isDone ? "text-zinc-500" : "text-zinc-100"
+                      }`}
+                    >
+                      {step.title}
+                    </span>
+                  </label>
+                  <span className="flex shrink-0 items-center gap-3 pt-1">
+                    {isDone ? (
+                      <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
+                        Done
                       </span>
-                    </label>
+                    ) : null}
                     {time && (
-                      <span className="shrink-0 pt-1 font-mono text-xs text-muted">
+                      <span className="font-mono text-xs text-muted">
                         {time}
                       </span>
                     )}
-                  </div>
-
-                  {step.whyNext && (
-                    <p className="mt-3 font-mono text-[13px] italic leading-relaxed text-muted">
-                      <span
-                        aria-hidden="true"
-                        className="mr-2 inline-block h-1.5 w-1.5 rotate-45 bg-gold align-baseline"
-                      />
-                      Why this comes next: {step.whyNext}
-                    </p>
-                  )}
-
-                  {step.resources.length > 0 && (
-                    <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                      {step.resources.map((resource) => (
-                        <li key={resource.id}>
-                          <ResourceCard resource={resource} />
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  </span>
                 </div>
-              </Reveal>
+
+                {step.whyNext && (
+                  <p className="mt-3 font-mono text-[13px] italic leading-relaxed text-muted">
+                    <span
+                      aria-hidden="true"
+                      className="mr-2 inline-block h-1.5 w-1.5 rotate-45 bg-gold align-baseline"
+                    />
+                    Why this comes next: {step.whyNext}
+                  </p>
+                )}
+
+                {step.resources.length > 0 && (
+                  <ul className="mt-5 divide-y divide-white/[0.06] border-t border-white/[0.06]">
+                    {step.resources.map((resource) => (
+                      <StepResourceRow
+                        key={resource.id}
+                        resource={resource}
+                      />
+                    ))}
+                  </ul>
+                )}
+              </div>
             </li>
           );
         })}

@@ -1,0 +1,135 @@
+[
+  {
+    "slug": "bug-bounty-recon-workflow",
+    "title": "My bug bounty recon workflow, start to finish",
+    "excerpt": "The full pipeline with real commands: subfinder, httpx, nmap, gau, ffuf, nuclei. What I look for at every stage, and the anomaly mindset behind it.",
+    "date": "2026-01-20",
+    "tags": [
+      "bug bounty",
+      "recon",
+      "methodology"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "unrestricted-file-upload",
+    "title": "Unrestricted file upload: the bug that keeps paying",
+    "excerpt": "CWE-434 is the bug that never retires. How the trust gap works, where uploads hide, the bypass playbook in order, and the accepted finding behind it.",
+    "date": "2026-02-22",
+    "tags": [
+      "bug bounty",
+      "web hacking",
+      "CWE-434"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "cscb-web-hacking-lessons",
+    "title": "What CSCB taught me about web hacking",
+    "excerpt": "Lessons from placing #1 in Web (Junior) at the Belgian national CTF: methodology under time pressure, the challenges that rewired my thinking, and what I would do differently.",
+    "date": "2026-05-30",
+    "tags": [
+      "CTF",
+      "web hacking",
+      "methodology"
+    ],
+    "minutes": 9
+  },
+  {
+    "slug": "ai-bug-bounty-copilot",
+    "title": "AI x bug bounty: how I hunt with an AI copilot",
+    "excerpt": "Concrete uses for AI in hunting: triaging JS, payload variations, explaining weird behavior, report drafts. And an honest section on where it fails.",
+    "date": "2026-07-16",
+    "tags": [
+      "bug bounty",
+      "AI",
+      "workflow"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "the-60-60-study-system",
+    "title": "The 60/60 study system",
+    "excerpt": "How I passed all 60 ECTS on the first attempt with a 16.40 GPA: labs before theory, notes like you teach, the weekly rhythm, and exam prep.",
+    "date": "2026-03-08",
+    "tags": [
+      "study",
+      "university",
+      "productivity"
+    ],
+    "minutes": 7
+  },
+  {
+    "slug": "start-bug-bounty-2026",
+    "title": "So you want to start bug bounty in 2026",
+    "excerpt": "The honest beginner guide: what to learn in what order, realistic timelines, platform and program choice, the truth about dupe rates, and a 90-day plan.",
+    "date": "2026-09-18",
+    "tags": [
+      "bug bounty",
+      "beginners",
+      "guide"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "home-lab-legal-hacking",
+    "title": "My home lab: how I practice hacking legally",
+    "excerpt": "My full VM setup: Kali, DVWA, Juice Shop, Metasploitable 2, VulnHub boxes on a host-only network. Plus the legal line you never cross, and my weekly practice routine.",
+    "date": "2026-04-12",
+    "tags": [
+      "home lab",
+      "beginners",
+      "legal",
+      "methodology"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "reading-hackerone-reports",
+    "title": "How I read disclosed HackerOne reports (and actually learn from them)",
+    "excerpt": "Two reports a week, one pattern extracted per report. How to read Hacktivity in the right order, turn payloads into permanent checks, and reproduce everything in your lab.",
+    "date": "2026-05-08",
+    "tags": [
+      "bug bounty",
+      "methodology",
+      "learning"
+    ],
+    "minutes": 7
+  },
+  {
+    "slug": "burp-suite-daily-driver",
+    "title": "Burp Suite: the 10 things I actually use every day",
+    "excerpt": "Forget the full feature tour. Repeater, Intruder Sniper, scope discipline, Comparer, Collaborator, and the six others my fingers reach for every single session. Opinionated and practical.",
+    "date": "2026-06-14",
+    "tags": [
+      "tools",
+      "burp suite",
+      "web hacking"
+    ],
+    "minutes": 8
+  },
+  {
+    "slug": "duplicates-mindset",
+    "title": "Duplicates happen: the mindset that keeps you hunting",
+    "excerpt": "The honest math of bug bounty: most submissions will not pay. What a duplicate actually means, my dry-spell protocol, and why process goals beat outcome goals.",
+    "date": "2026-08-09",
+    "tags": [
+      "bug bounty",
+      "mindset",
+      "motivation"
+    ],
+    "minutes": 7
+  },
+  {
+    "slug": "ctf-to-real-targets",
+    "title": "From CTFs to real targets: what transfers and what does not",
+    "excerpt": "CSCB #1 in Web to real bounty hunting: what CTFs gave me (methodology, tool fluency, persistence), what did not transfer (no flag, scope law, patience), and what surprised me.",
+    "date": "2026-09-02",
+    "tags": [
+      "CTF",
+      "bug bounty",
+      "career"
+    ],
+    "minutes": 8
+  }
+]

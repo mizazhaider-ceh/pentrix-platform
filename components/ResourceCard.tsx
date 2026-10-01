@@ -43,21 +43,23 @@ function normalizeCost(cost: CardResource["cost"]): {
 export function ResourceCard({ resource }: { resource: CardResource }) {
   const cost = normalizeCost(resource.cost);
   return (
-    <article className="flex h-full flex-col rounded-lg border border-white/[0.08] bg-surface p-5 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/[0.15]">
-      <div className="flex flex-wrap gap-1.5">
+    <article className="group flex h-full flex-col rounded-lg border border-line bg-surface p-5 transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:bg-surface-raised focus-within:border-line-strong">
+      <div className="flex flex-wrap items-center gap-1.5">
         {resource.domains.slice(0, 2).map((domain) => (
           <TagBadge key={domain} label={domain} />
         ))}
         <TagBadge label={resource.type} />
-        <LevelBadge level={resource.level} />
+        <span className="ml-auto">
+          <LevelBadge level={resource.level} />
+        </span>
       </div>
 
-      <h3 className="mt-3 text-[17px] font-semibold leading-snug tracking-tight text-zinc-100">
+      <h3 className="mt-3.5 font-display text-[17px] font-semibold leading-snug tracking-tight text-zinc-100">
         <a
           href={resource.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="transition-colors duration-200 hover:text-signal"
+          className="transition-colors duration-200 group-hover:text-signal"
         >
           {resource.title}
         </a>
@@ -75,7 +77,7 @@ export function ResourceCard({ resource }: { resource: CardResource }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Open ${resource.title} in a new tab`}
-          className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-md text-zinc-500 transition-colors duration-200 hover:bg-white/[0.06] hover:text-signal"
+          className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-md text-zinc-500 transition-[background-color,color,transform] duration-200 hover:bg-white/[0.06] hover:text-signal group-hover:translate-x-px group-hover:-translate-y-px"
         >
           <ArrowIcon />
         </a>
