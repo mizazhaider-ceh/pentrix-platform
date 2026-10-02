@@ -889,5 +889,349 @@
     "estMinutes": 600
    }
   ]
+ },
+ {
+  "audience": "Web hackers who know the basics and want to specialize in APIs, the most common bug bounty target",
+  "difficulty": "Beginner to Intermediate",
+  "estWeeks": "8-14",
+  "slug": "api-hacking-fundamentals",
+  "steps": [
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "portswigger-web-security-academy",
+     "owasp-top-10",
+     "linux-journey"
+    ],
+    "title": "Learn how APIs and HTTP actually work",
+    "whyNext": "Every API attack is HTTP behavior turned against itself. You need methods, status codes, headers, and auth schemes in your head before any vulnerability makes sense."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "burp-suite",
+     "owasp-zap",
+     "portswigger-web-security-academy"
+    ],
+    "title": "Make Burp your API laboratory",
+    "whyNext": "Burp is where API testing happens: Repeater for manual requests, Intruder for fuzzing, and the site map for discovering hidden endpoints. Get fluent now because every later step runs through it."
+   },
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "owasp-testing-guide",
+     "hacktricks",
+     "owasp-cheat-sheet-series"
+    ],
+    "title": "Read API documentation like an attacker",
+    "whyNext": "Swagger, OpenAPI, and Postman collections describe every endpoint the developers intended. Attackers read docs to find what was forgotten. Learn to enumerate from documentation before you fuzz blindly."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "hacktricks",
+     "portswigger-web-security-academy",
+     "seclists"
+    ],
+    "title": "Discover hidden endpoints in JavaScript",
+    "whyNext": "The endpoints nobody documented are the endpoints nobody secured. JS bundles leak internal routes, versioned APIs, and debug endpoints. This is pure recon, and it feeds everything after."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "portswigger-web-security-academy",
+     "owasp-testing-guide",
+     "owasp-juice-shop"
+    ],
+    "title": "Break object-level authorization (BOLA/IDOR)",
+    "whyNext": "The number one API vulnerability in the real world: the endpoint checks that you are logged in but not that the object is yours. Learn to swap IDs, GUIDs, and UUIDs systematically, because this one pays."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "portswigger-web-security-academy",
+     "hacktricks",
+     "payloadsallthethings"
+    ],
+    "title": "Attack authentication and JWTs",
+    "whyNext": "APIs live and die by tokens. Learn how JWTs are structured, how the none algorithm and weak secrets break them, and how to test token handling, refresh flows, and password reset APIs."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "burp-suite",
+     "seclists",
+     "payloadsallthethings",
+     "portswigger-xss-cheat-sheet"
+    ],
+    "title": "Fuzz inputs: injection in API clothing",
+    "whyNext": "APIs take JSON, XML, and query parameters, and they trust them. SQLi, command injection, and SSTI all work through API bodies. Intruder plus good wordlists turn parameter fuzzing into a repeatable process."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "owasp-testing-guide",
+     "owasp-wrongsecrets",
+     "portswigger-web-security-academy"
+    ],
+    "title": "Abuse business logic and rate limits",
+    "whyNext": "Scanners cannot find logic bugs. Price manipulation, coupon stacking, mass assignment, and missing rate limits on sensitive endpoints need a human who reads the API like a user with bad intentions."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "hacktricks",
+     "portswigger-web-security-academy",
+     "crlfuzz"
+    ],
+    "title": "Test GraphQL and modern API flavors",
+    "whyNext": "GraphQL endpoints expose their whole schema through introspection, which is a gift to attackers. Learn query batching, introspection abuse, and how REST assumptions break on newer API styles."
+   },
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "owasp-juice-shop",
+     "owasp-webgoat",
+     "owasp-mutillidae",
+     "tryhackme"
+    ],
+    "title": "Practice on vulnerable APIs end to end",
+    "whyNext": "Theory becomes skill on targets built to be broken. Work full API labs from recon to exploit to written finding, so your process is smooth before you touch a real scope."
+   },
+   {
+    "estMinutes": 900,
+    "resourceIds": [
+     "portswigger-web-security-academy",
+     "hacktricks",
+     "owasp-cheat-sheet-series"
+    ],
+    "title": "Hunt APIs on real bounty programs",
+    "whyNext": "Now the full chain is yours: recon, discovery, exploitation, reporting. Pick a program with API scope, map every endpoint first, and submit findings with clean, reproducible reports."
+   }
+  ],
+  "tagline": "From your first HTTP request to finding real API vulnerabilities, one sequenced path.",
+  "title": "API Hacking Fundamentals"
+ },
+ {
+  "audience": "Beginners who want the command-line fluency that hacking tools and CTFs assume you have",
+  "difficulty": "Beginner",
+  "estWeeks": "6-10",
+  "slug": "linux-command-line-for-hackers",
+  "steps": [
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-journey",
+     "explainshell"
+    ],
+    "title": "Survive the terminal: files, navigation, help",
+    "whyNext": "Every hacking tool runs in a terminal and assumes you can move around. Learn ls, cd, cp, mv, rm, and how to read man pages, because everything after this builds on it."
+   },
+   {
+    "estMinutes": 420,
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-journey",
+     "the-linux-command-line"
+    ],
+    "title": "Read and search files like an investigator",
+    "whyNext": "Hacking is reading: configs, logs, source code, output files. cat, less, grep, and find turn a filesystem from a maze into a searchable database."
+   },
+   {
+    "estMinutes": 420,
+    "resourceIds": [
+     "linux-journey",
+     "the-linux-command-line",
+     "linux-basics-for-hackers"
+    ],
+    "title": "Users, permissions, and why they matter",
+    "whyNext": "Privilege escalation is the art of abusing permissions. Learn users, groups, chmod, chown, sudo, and SUID now, because half of Linux hacking is permission logic."
+   },
+   {
+    "estMinutes": 420,
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-journey",
+     "explainshell"
+    ],
+    "title": "Pipes, redirection, and text processing",
+    "whyNext": "Real terminal work chains small tools into pipelines. Pipes, redirection, cut, sort, uniq, and awk let you slice tool output into exactly the data you need."
+   },
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "linux-basics-for-hackers",
+     "the-linux-command-line",
+     "kodekloud-linux"
+    ],
+    "title": "Processes, services, and the system underneath",
+    "whyNext": "Attackers live in processes: backdoors, persistence, and enumeration all show up in ps and friends. Learn to see what the machine is doing before you try to change it."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "linux-basics-for-hackers",
+     "overthewire-bandit",
+     "kodekloud-linux"
+    ],
+    "title": "Networking from the command line",
+    "whyNext": "Scanning, connecting, transferring files, and pivoting all happen in the terminal. Learn ip, ss, netcat, curl, wget, and ssh properly, because these are your hands on a remote box."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "the-linux-command-line",
+     "linux-basics-for-hackers",
+     "overthewire-bandit"
+    ],
+    "title": "Bash scripting: automate the boring parts",
+    "whyNext": "One-liners become scripts, scripts become tooling. Loops, conditionals, and variables turn repetitive recon and enumeration into something you run while you think about the next step."
+   },
+   {
+    "estMinutes": 240,
+    "resourceIds": [
+     "linux-journey",
+     "the-linux-command-line",
+     "kodekloud-linux"
+    ],
+    "title": "Edit fast: vim survival skills",
+    "whyNext": "Sooner or later you will be stuck in vim on a remote machine with no GUI. Learn to open, edit, save, and quit confidently, because panic-editing configs is how outages happen."
+   },
+   {
+    "estMinutes": 360,
+    "resourceIds": [
+     "kali-linux",
+     "linux-basics-for-hackers",
+     "kodekloud-linux"
+    ],
+    "title": "Package management and your Kali setup",
+    "whyNext": "Hacking tools come from repositories. Learn apt, installing from source, and keeping a Kali or Debian VM healthy, because a broken tool install at midnight is a rite of passage you only want once."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "overthewire-bandit",
+     "linux-basics-for-hackers",
+     "tryhackme"
+    ],
+    "title": "Prove it: Bandit to real boxes",
+    "whyNext": "Finish the Bandit wargame end to end, then apply the same commands on a real vulnerable VM. The terminal stops being a place you visit and becomes the place you live."
+   }
+  ],
+  "tagline": "From your first ls to weaponized shell fluency: the terminal skills every hacker actually uses.",
+  "title": "Linux Command Line for Hackers"
+ },
+ {
+  "audience": "Pentesters and blue teamers who want to understand full adversary operations, not just single exploits",
+  "difficulty": "Intermediate to Advanced",
+  "estWeeks": "12-20",
+  "slug": "red-team-operations-intro",
+  "steps": [
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "mitre-attack",
+     "atomic-red-team",
+     "hacktricks"
+    ],
+    "title": "Think in kill chains, not exploits",
+    "whyNext": "Red teaming is a campaign, not a vulnerability scan. Learn the attack lifecycle, MITRE ATT&CK as the shared language, and how single techniques chain into an operation."
+   },
+   {
+    "estMinutes": 480,
+    "resourceIds": [
+     "kali-linux",
+     "metasploit-unleashed",
+     "tryhackme"
+    ],
+    "title": "Set up your operator workstation",
+    "whyNext": "Operators need clean infrastructure: a Kali or Debian attack VM, segmented lab networks, and safe handling of credentials and payloads. Build it once, use it for every step below."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "responder",
+     "kerbrute",
+     "seclists",
+     "hackthebox"
+    ],
+    "title": "Get initial access the quiet way",
+    "whyNext": "Operations start with a foothold: phishing, password spraying, LLMNR poisoning, exposed services. Learn the realistic entry points before the fancy post-exploitation, because access is the bottleneck of every op."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "metasploit-framework",
+     "metasploit-unleashed",
+     "atomic-red-team"
+    ],
+    "title": "Establish command and control",
+    "whyNext": "A shell that dies when you close the laptop is not an operation. Learn payloads, listeners, and persistence basics with Metasploit so your access survives reboots and bad luck."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "bloodhound",
+     "impacket",
+     "hacktricks"
+    ],
+    "title": "Enumerate the domain like an insider",
+    "whyNext": "Once inside, you map before you move. BloodHound graphs the paths to Domain Admin, Impacket runs the queries, and enumeration tells you which attack to run instead of guessing."
+   },
+   {
+    "estMinutes": 720,
+    "resourceIds": [
+     "rubeus",
+     "impacket",
+     "kerbrute",
+     "hacktricks"
+    ],
+    "title": "Steal credentials and move laterally",
+    "whyNext": "One host becomes many through credential theft and lateral movement: Kerberoasting, token abuse, pass-the-hash. This is the engine room of every red team op."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "lolbas",
+     "atomic-red-team",
+     "mitre-attack"
+    ],
+    "title": "Evade defenses and stay quiet",
+    "whyNext": "Real environments fight back: EDR, logging, alerting. Learn what LOLBAS binaries are, why living off the land beats custom malware, and how your techniques look in the logs you are trying to avoid."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "bloodhound",
+     "impacket",
+     "mitre-d3fend"
+    ],
+    "title": "Reach the objective: data and domain dominance",
+    "whyNext": "Access is a means, not the goal. Learn to identify crown jewels, exfiltrate carefully, and take full domain control, because an op without an objective is just noise."
+   },
+   {
+    "estMinutes": 600,
+    "resourceIds": [
+     "splunk-bots",
+     "mitre-attack",
+     "atomic-red-team"
+    ],
+    "title": "See yourself through blue team eyes",
+    "whyNext": "Every technique you ran left evidence. Learn the detections, event IDs, and Sigma rules behind your own attacks, because the best operators know exactly what the defenders see."
+   },
+   {
+    "estMinutes": 1200,
+    "resourceIds": [
+     "offsec-osep",
+     "zero-point-security-crto",
+     "hackthebox"
+    ],
+    "title": "Run a full lab operation, then certify",
+    "whyNext": "Chain everything into one end-to-end operation in your lab: access, persistence, lateral movement, objective, and a professional report. OSEP and CRTO are the hands-on certs that prove you can do it for real."
+   }
+  ],
+  "tagline": "Think like an adversary: from initial access to objectives, the full red team kill chain.",
+  "title": "Red Team Operations: Introduction"
  }
 ]

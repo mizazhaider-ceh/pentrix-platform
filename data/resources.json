@@ -6579,5 +6579,1505 @@
   "title": "Seytonic",
   "type": "YouTube Channel",
   "url": "https://www.youtube.com/@Seytonic"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "ffuf-web-fuzzer",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "A fast web fuzzer written in Go for discovering hidden files, directories, and parameters. A core tool in most bug bounty recon workflows.",
+  "title": "ffuf",
+  "type": "Tool",
+  "url": "https://github.com/ffuf/ffuf"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "gobuster-bruteforcer",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Directory, DNS, and vhost brute-forcer written in Go. Beginners use it for their first content discovery scans.",
+  "title": "Gobuster",
+  "type": "Tool",
+  "url": "https://github.com/OJ/gobuster"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "subfinder-subdomain",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Passive subdomain enumeration from dozens of sources by ProjectDiscovery. The standard first step in attack-surface mapping.",
+  "title": "Subfinder",
+  "type": "Tool",
+  "url": "https://github.com/projectdiscovery/subfinder"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "httpx-prober",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Fast HTTP prober by ProjectDiscovery that takes a list of hosts and reports status codes, titles, and tech fingerprints. Used to filter subdomain lists down to live targets.",
+  "title": "httpx",
+  "type": "Tool",
+  "url": "https://github.com/projectdiscovery/httpx"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "amass-attack-surface",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "OWASP's attack-surface mapping tool combining passive OSINT, certificate scraping, and active brute-forcing. Better for deep dives than quick scans.",
+  "title": "Amass",
+  "type": "Tool",
+  "url": "https://github.com/OWASP/Amass"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "waybackurls-archive",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Pulls archived URLs for a domain from the Wayback Machine. A quick way to find old endpoints and parameters nobody remembers.",
+  "title": "waybackurls",
+  "type": "Tool",
+  "url": "https://github.com/tomnomnom/waybackurls"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "gau-url-collector",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "GetAllUrls fetches known URLs for a domain from AlienVault OTX, Common Crawl, and the Wayback Machine. Feeds parameter discovery workflows.",
+  "title": "gau",
+  "type": "Tool",
+  "url": "https://github.com/lc/gau"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "gf-patterns",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Wrapper around grep with community patterns for bug bounty data like SSRF params, debug endpoints, and secrets in responses. Speeds up triage of recon output.",
+  "title": "gf",
+  "type": "Tool",
+  "url": "https://github.com/tomnomnom/gf"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "qsreplace-injector",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Replaces every query parameter value in a URL list with a string you choose. Handy for mass-testing XSS or open-redirect payloads across parameters.",
+  "title": "qsreplace",
+  "type": "Tool",
+  "url": "https://github.com/tomnomnom/qsreplace"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "sqlmap-injector",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "The automatic SQL injection exploitation tool. Detects injection points and can enumerate databases, useful after you find a suspicious parameter.",
+  "title": "sqlmap",
+  "type": "Tool",
+  "url": "https://github.com/sqlmapproject/sqlmap"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "dalfox-xss-scanner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Fast XSS scanner that tests parameters for reflected and DOM-based cross-site scripting. A good first automated check before manual payload crafting.",
+  "title": "DalFox",
+  "type": "Tool",
+  "url": "https://github.com/hahwul/dalfox"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "arjun-param-discovery",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Discovers hidden HTTP parameters by fuzzing with a large parameter wordlist. Useful when an endpoint seems to accept more than it documents.",
+  "title": "Arjun",
+  "type": "Tool",
+  "url": "https://github.com/s0md3v/Arjun"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "xsstrike-xss-fuzzer",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Advanced XSS detection suite with payload generation and fuzzing. A step up from basic scanners for hunters who already understand XSS contexts.",
+  "title": "XSStrike",
+  "type": "Tool",
+  "url": "https://github.com/s0md3v/XSStrike"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "ssrfmap-ssrf-tester",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Advanced",
+  "summary": "Tests for server-side request forgery with module-based payloads. Built for manual testers who found a suspicious URL-fetching feature.",
+  "title": "SSRFmap",
+  "type": "Tool",
+  "url": "https://github.com/swisskyrepo/SSRFmap"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "crt-sh-cert-search",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Certificate Transparency log search. Finds subdomains from issued TLS certificates without touching the target. One of the most-used passive recon sources.",
+  "title": "crt.sh",
+  "type": "Tool",
+  "url": "https://crt.sh"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "urlscan-scanner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Scans a URL and shows the full page load: requests, domains, cookies, and technologies. Great for studying a target's attack surface from outside.",
+  "title": "urlscan.io",
+  "type": "Tool",
+  "url": "https://urlscan.io"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "shodan-search-engine",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Search engine for internet-connected devices and services. Hunters use it to find exposed panels, databases, and forgotten servers.",
+  "title": "Shodan",
+  "type": "Tool",
+  "url": "https://www.shodan.io"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "virustotal-file-scanner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Multi-engine file and URL analyzer that also shows passive DNS, certificates, and related samples. Useful for pivoting on infrastructure.",
+  "title": "VirusTotal",
+  "type": "Tool",
+  "url": "https://www.virustotal.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "param-miner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Advanced",
+  "summary": "PortSwigger's Burp extension for finding unlinked parameters, including cache-poisoning variants. A must-have for thorough Burp users.",
+  "title": "Param Miner",
+  "type": "Tool",
+  "url": "https://github.com/PortSwigger/param-miner"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "upload-scanner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "PortSwigger's Burp extension that automates file-upload vulnerability testing. Saves hours on upload endpoints.",
+  "title": "Upload Scanner",
+  "type": "Tool",
+  "url": "https://github.com/PortSwigger/upload-scanner"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "autorize",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Burp extension that automatically replays requests as a low-privileged user to find authorization flaws. The standard tool for automated IDOR checks.",
+  "title": "Autorize",
+  "type": "Tool",
+  "url": "https://github.com/Quitten/Autorize"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty",
+   "OSINT"
+  ],
+  "id": "gitleaks-secret-scanner",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Scans git repos and history for hardcoded secrets like API keys and tokens. Hunters point it at public repos tied to a target.",
+  "title": "Gitleaks",
+  "type": "Tool",
+  "url": "https://github.com/gitleaks/gitleaks"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "git-dumper",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Downloads exposed .git directories from web servers. Turns a misconfigured web root into full source code access.",
+  "title": "GitDumper",
+  "type": "Tool",
+  "url": "https://github.com/arthaud/git-dumper"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty"
+  ],
+  "id": "hackerone-platform",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "The largest bug bounty platform with thousands of programs and a public Hacktivity feed of disclosed reports. Where most hunters start.",
+  "title": "HackerOne",
+  "type": "Bug Bounty Platform",
+  "url": "https://www.hackerone.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty"
+  ],
+  "id": "bugcrowd-platform",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Major bounty platform with structured free training through Bugcrowd University. Good for beginners who want guided learning plus real programs.",
+  "title": "Bugcrowd",
+  "type": "Bug Bounty Platform",
+  "url": "https://www.bugcrowd.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty"
+  ],
+  "id": "yeswehack-platform",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "European bug bounty platform with strong French and EU program coverage. Less crowded than the US giants.",
+  "title": "YesWeHack",
+  "type": "Bug Bounty Platform",
+  "url": "https://www.yeswehack.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty"
+  ],
+  "id": "intigriti-platform",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "EU-focused bounty platform known for its Bug Bytes writeup roundups and researcher community. A good second home for European hunters.",
+  "title": "Intigriti",
+  "type": "Bug Bounty Platform",
+  "url": "https://www.intigriti.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "owasp-juice-shop-lab",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "The most popular deliberately vulnerable web app, covering the OWASP Top 10 with scoreboard challenges. The default practice target for web hackers.",
+  "title": "OWASP Juice Shop",
+  "type": "Interactive Lab",
+  "url": "https://github.com/juice-shop/juice-shop"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "dvwa-lab",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Damn Vulnerable Web Application: classic PHP and MySQL training app with adjustable difficulty. Still the simplest first lab for web basics.",
+  "title": "DVWA",
+  "type": "Interactive Lab",
+  "url": "https://github.com/digininja/DVWA"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "bwapp",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Buggy Web Application with over 100 deliberately vulnerable pages. Covers a huge range of classic web bugs in one deploy.",
+  "title": "bWAPP",
+  "type": "Interactive Lab",
+  "url": "https://github.com/raesene/bWAPP"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "owasp-crapi",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Completely Ridiculous API: a modern vulnerable API for practicing the OWASP API Top 10, including BOLA and mass assignment.",
+  "title": "OWASP crAPI",
+  "type": "Interactive Lab",
+  "url": "https://github.com/OWASP/crAPI"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "pwnfunction",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Free browser-based XSS challenge series with creative filter-evasion puzzles. Sharpens the manual XSS skills scanners miss.",
+  "title": "PwnFunction XSS Challenges",
+  "type": "Interactive Lab",
+  "url": "https://xss.pwnfunction.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "hacker101-course",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "HackerOne's free video course and CTF series for new hunters. Completing the CTF can earn invites to private programs.",
+  "title": "Hacker101",
+  "type": "Course",
+  "url": "https://www.hacker101.com"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "bugcrowd-university",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Free courses on recon, vulnerability classes, and report writing from Bugcrowd. Structured and beginner-friendly.",
+  "title": "Bugcrowd University",
+  "type": "Course",
+  "url": "https://www.bugcrowd.com/hackers/bugcrowd-university/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "web-hacking-101",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Peter Yaworski's short book of real bug bounty case studies. Teaches how real reports are found and written.",
+  "title": "Web Hacking 101",
+  "type": "Book",
+  "url": "https://leanpub.com/web-hacking-101"
+ },
+ {
+  "cost": {
+   "model": "paid"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "bug-bounty-bootcamp",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Vickie Li's hands-on guide to finding and reporting web vulnerabilities, with exercises throughout. A solid intermediate read.",
+  "title": "Bug Bounty Bootcamp",
+  "type": "Book",
+  "url": "https://nostarch.com/bugbountybootcamp"
+ },
+ {
+  "cost": {
+   "model": "paid"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "real-world-bug-hunting-book",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Peter Yaworski's deeper second book covering recon, OAuth flaws, and API hacking with real disclosed reports.",
+  "title": "Real-World Bug Hunting",
+  "type": "Book",
+  "url": "https://nostarch.com/real-world-bug-hunting-2e"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "jhaddix-methodology",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Jason Haddix's famous recon and testing methodology, maintained on GitHub across versions one to four. The reference workflow for systematic hunting.",
+  "title": "The Bug Hunter's Methodology",
+  "type": "Guide",
+  "url": "https://github.com/jhaddix/tbhm"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "nahamsec-beginner-resources",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "NahamSec's curated 12k-star list of courses, tools, labs, and writeups for new hunters. The best single starting bookmark.",
+  "title": "Resources for Beginner Bug Bounty Hunters",
+  "type": "Guide",
+  "url": "https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty",
+   "Web Security"
+  ],
+  "id": "pentesterland-writeups",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Weekly curated compilations of bug bounty and pentest writeups. The fastest way to keep up with new techniques.",
+  "title": "PentesterLand Writeups",
+  "type": "Writeup",
+  "url": "https://pentester.land/writeups/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Bug Bounty",
+   "Web Security"
+  ],
+  "id": "hacktivity",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Public feed of disclosed HackerOne reports with bounty amounts. Study real reports to learn what companies pay for.",
+  "title": "HackerOne Hacktivity",
+  "type": "Writeup",
+  "url": "https://hackerone.com/hacktivity"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "seclists-wordlists",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "The standard collection of usernames, passwords, URLs, and fuzzing payloads used across security tooling. Ships with most distros.",
+  "title": "SecLists",
+  "type": "Reference",
+  "url": "https://github.com/danielmiessler/SecLists"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "payloadsallthethings-payloads",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Community cheat sheet of payloads for XSS, SQLi, SSTI, file inclusion, and more. The copy-paste companion for manual testing.",
+  "title": "PayloadsAllTheThings",
+  "type": "Reference",
+  "url": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security"
+  ],
+  "id": "owasp-api-top-10",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "The standard list of the ten most critical API risks, from BOLA to mass assignment. Required reading before testing any API.",
+  "title": "OWASP API Security Top 10",
+  "type": "Standard",
+  "url": "https://owasp.org/API-Security/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Web Security",
+   "Bug Bounty"
+  ],
+  "id": "portswigger-research",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Advanced",
+  "summary": "The blog behind novel web attack classes like HTTP request smuggling and web cache poisoning. Where new techniques are published first.",
+  "title": "PortSwigger Research",
+  "type": "Blog",
+  "url": "https://portswigger.net/research"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security"
+  ],
+  "id": "nmap-reference-guide",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "The official Nmap manual: every scan type, timing option, NSE script category, and evasion technique explained in one place. The page to keep open while learning port scanning.",
+  "title": "Nmap Reference Guide",
+  "type": "Reference",
+  "url": "https://nmap.org/book/man.html"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security"
+  ],
+  "id": "wireshark-docs",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Official Wireshark docs: the user guide, command-line man pages for TShark and dumpcap, and the full display filter reference. Everything needed to go from a first capture to writing precise filters.",
+  "title": "Wireshark Documentation",
+  "type": "Reference",
+  "url": "https://www.wireshark.org/docs/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security",
+   "Blue Team / SOC"
+  ],
+  "id": "snort",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "The classic open-source network intrusion detection and prevention system from Cisco Talos. Write your own detection rules and learn how signature-based IDS thinks; the community ruleset is free.",
+  "title": "Snort",
+  "type": "Tool",
+  "url": "https://www.snort.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security"
+  ],
+  "id": "openvas",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Greenbone's full-featured open-source vulnerability scanner. Run authenticated and unauthenticated scans and learn to work with the results the way a real vulnerability management program does.",
+  "title": "OpenVAS",
+  "type": "Tool",
+  "url": "https://www.openvas.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security"
+  ],
+  "id": "kismet",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Wireless network detector, sniffer, and intrusion detection system for Wi-Fi, Bluetooth, Zigbee, and RF. Essential for learning wireless security and wardriving fundamentals.",
+  "title": "Kismet",
+  "type": "Tool",
+  "url": "https://kismetwireless.net/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Network Security",
+   "Networking Fundamentals"
+  ],
+  "id": "tcpip-guide",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "A free, plain-English encyclopedia of the TCP/IP protocol suite: ARP, IP, TCP, UDP, DNS, DHCP, and more, with hundreds of illustrations. The best free deep reference for networking fundamentals.",
+  "title": "The TCP/IP Guide",
+  "type": "Reference",
+  "url": "https://tcpipguide.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cloud Security"
+  ],
+  "id": "cloudsplaining",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Salesforce's AWS IAM security assessment tool. It flags violations of least privilege in IAM policies and generates a risk-prioritized HTML report. Great for learning how IAM misconfigurations look in practice.",
+  "title": "Cloudsplaining",
+  "type": "Tool",
+  "url": "https://github.com/salesforce/cloudsplaining"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cloud Security",
+   "DevSecOps"
+  ],
+  "id": "terrascan",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Static analyzer for infrastructure as code (Terraform, CloudFormation, Kubernetes, Dockerfiles) with 500+ compliance policies. Note: the project is archived, but the tool still works and the concepts transfer directly to maintained alternatives.",
+  "title": "Terrascan",
+  "type": "Tool",
+  "url": "https://github.com/tenable/terrascan"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cloud Security"
+  ],
+  "id": "kube-hunter",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Hunts for security weaknesses in Kubernetes clusters from an attacker's perspective. Run it against your own lab cluster to learn Kubernetes attack surface; active hunting is off by default so it stays safe.",
+  "title": "kube-hunter",
+  "type": "Tool",
+  "url": "https://github.com/aquasecurity/kube-hunter"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Cloud Security",
+   "Network Security"
+  ],
+  "id": "cis-benchmarks",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Consensus-built secure configuration guides for operating systems, cloud platforms, and network devices. The PDFs are free with a free account and they are the industry baseline for hardening checklists.",
+  "title": "CIS Benchmarks",
+  "type": "Standard",
+  "url": "https://www.cisecurity.org/cis-benchmarks"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Blue Team / SOC"
+  ],
+  "id": "sysmon-config",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "A heavily commented Sysmon configuration template that turns on high-quality Windows event tracing. Read it as a tutorial on what to monitor on Windows, then deploy it in your lab.",
+  "title": "SwiftOnSecurity sysmon-config",
+  "type": "Tool",
+  "url": "https://github.com/SwiftOnSecurity/sysmon-config"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Blue Team / SOC"
+  ],
+  "id": "loldrivers",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "A community catalog of known vulnerable and malicious Windows drivers used in BYOVD (bring your own vulnerable driver) attacks, with hashes, detections, and block policies. Key reference for EDR bypass research and defense.",
+  "title": "LOLDrivers",
+  "type": "Reference",
+  "url": "https://www.loldrivers.io/"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Blue Team / SOC"
+  ],
+  "id": "elastic-security",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "SIEM and XDR built on Elasticsearch with 1300+ open detection rules. The self-hosted stack is free and widely used in home SOC labs for ingesting and hunting through logs.",
+  "title": "Elastic Security",
+  "type": "Tool",
+  "url": "https://www.elastic.co/security"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Blue Team / SOC"
+  ],
+  "id": "graylog",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Open-source log management and SIEM platform. Centralize logs from your lab machines and practice building dashboards, alerts, and investigations on real data.",
+  "title": "Graylog",
+  "type": "Tool",
+  "url": "https://graylog.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Forensics"
+  ],
+  "id": "timesketch",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Google's open-source collaborative forensic timeline analysis tool. Import Plaso timelines and let a team annotate, tag, and analyze events together. A staple of DFIR investigations.",
+  "title": "Timesketch",
+  "type": "Tool",
+  "url": "https://github.com/google/timesketch"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Forensics"
+  ],
+  "id": "regripper",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Harlan Carvey's Windows Registry parser with hundreds of plugins. Point it at a registry hive and it extracts the forensically interesting keys automatically. The first tool most analysts reach for in Windows forensics.",
+  "title": "RegRipper",
+  "type": "Tool",
+  "url": "https://github.com/keydet89/RegRipper3.0"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Forensics"
+  ],
+  "id": "analyzemft",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Python tool that parses the NTFS Master File Table into CSV, JSON, or timeline formats. Perfect for learning file-system forensics and building your first super-timeline.",
+  "title": "analyzeMFT",
+  "type": "Tool",
+  "url": "https://github.com/dkovar/analyzeMFT"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Forensics"
+  ],
+  "id": "forensics-wiki",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Community wiki covering digital forensics tools, file formats, papers, and techniques. A good first stop when you meet an unfamiliar artifact or tool name.",
+  "title": "Forensics Wiki",
+  "type": "Reference",
+  "url": "https://forensics.wiki/"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Forensics",
+   "Network Security"
+  ],
+  "id": "networkminer",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Network forensics tool that extracts files, images, emails, and credentials from PCAP files. The free edition is generous and ideal for learning packet-level forensics; a paid Professional edition adds more.",
+  "title": "NetworkMiner",
+  "type": "Tool",
+  "url": "https://www.netresec.com/?page=NetworkMiner"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cryptography"
+  ],
+  "id": "cryptii",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Interactive in-browser workbench for encodings, ciphers, and hashes, from Base64 and Caesar to the Enigma machine. Great for building intuition about classical and modern crypto.",
+  "title": "Cryptii",
+  "type": "Tool",
+  "url": "https://cryptii.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cryptography",
+   "CTF"
+  ],
+  "id": "factordb",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Community database for factoring integers, used constantly in RSA CTF challenges. Paste a modulus and it returns known factors. A must-have for crypto CTF players.",
+  "title": "factordb",
+  "type": "Tool",
+  "url": "https://factordb.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cryptography"
+  ],
+  "id": "keylength",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Compares cryptographic key length recommendations from NIST, ECRYPT, and academic sources. Settles arguments about whether 128-bit keys are still enough.",
+  "title": "Keylength",
+  "type": "Reference",
+  "url": "https://www.keylength.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cryptography"
+  ],
+  "id": "cryptographic-right-answers",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Latacora's famous opinionated guide to boring, correct crypto choices: which cipher, which hash, which KDF. Required reading before you design anything that touches cryptography.",
+  "title": "Cryptographic Right Answers",
+  "type": "Blog",
+  "url": "https://latacora.micro.blog/2018/04/03/cryptographic-right-answers.html"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Cryptography",
+   "Programming"
+  ],
+  "id": "practical-cryptography-for-developers",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Free book by Svetlin Nakov covering hashes, MACs, KDFs, symmetric and asymmetric ciphers, ECC, and digital signatures with Python code examples. Dense but practical.",
+  "title": "Practical Cryptography for Developers",
+  "type": "Book",
+  "url": "https://cryptobook.nakov.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Reverse Engineering"
+  ],
+  "id": "dogbolt",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Upload a binary and see it decompiled by a dozen decompilers side by side: Ghidra, Binary Ninja, Hex-Rays, RetDec, and more. Excellent for learning how decompilers differ.",
+  "title": "Dogbolt (Decompiler Explorer)",
+  "type": "Tool",
+  "url": "https://dogbolt.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Reverse Engineering"
+  ],
+  "id": "tuts4you",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Non-commercial reverse engineering community running since 2003, with tutorials, crackme write-ups, and tools. One of the oldest RE knowledge bases on the internet.",
+  "title": "Tuts 4 You",
+  "type": "Community",
+  "url": "https://tuts4you.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Reverse Engineering"
+  ],
+  "id": "rizin",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Unix-friendly command-line reverse engineering framework, a maintained fork of radare2 with a redesigned shell. Pairs with Cutter for a graphical interface.",
+  "title": "Rizin",
+  "type": "Tool",
+  "url": "https://rizin.re/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Reverse Engineering",
+   "Malware Analysis"
+  ],
+  "id": "mandiant-capa",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Mandiant FLARE's tool that identifies capabilities in executables: give it a binary and it tells you it is a backdoor that uses HTTP and installs services. The standard first step in malware triage.",
+  "title": "CAPA",
+  "type": "Tool",
+  "url": "https://github.com/mandiant/capa"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Reverse Engineering"
+  ],
+  "id": "ghidra-official",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "The NSA's open-source software reverse engineering framework: disassembler, decompiler, and scripting for many architectures. The free industry-standard RE platform; start with the official docs and downloads here.",
+  "title": "Ghidra (Official Site)",
+  "type": "Tool",
+  "url": "https://ghidra-sre.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Active Directory"
+  ],
+  "id": "powerview",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "The classic PowerShell toolkit for Windows domain enumeration, part of the archived PowerSploit framework. Still the reference for learning AD recon concepts; modern forks keep it alive.",
+  "title": "PowerView",
+  "type": "Tool",
+  "url": "https://github.com/PowerShellMafia/PowerSploit"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Active Directory"
+  ],
+  "id": "pingcastle",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Free Active Directory security health check: scans your domain, scores its maturity, and produces management-ready reports of critical risks. Excellent for learning AD auditing and reporting.",
+  "title": "PingCastle",
+  "type": "Tool",
+  "url": "https://pingcastle.com/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Active Directory",
+   "Blue Team / SOC"
+  ],
+  "id": "detectionlab",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Automated build scripts for a Windows domain lab with Sysmon, Splunk, osquery, Zeek, and Suricata installed. Built for defenders learning detection; unmaintained since 2023 but still a beloved lab blueprint.",
+  "title": "DetectionLab",
+  "type": "Interactive Lab",
+  "url": "https://github.com/clong/DetectionLab"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Active Directory"
+  ],
+  "id": "misconfiguration-manager",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Advanced",
+  "summary": "SpecterOps-backed knowledge base of Microsoft SCCM attack techniques and defenses, plus an auditing PowerShell script. The authority on SCCM tradecraft, organized like an ATT&CK matrix.",
+  "title": "Misconfiguration Manager",
+  "type": "Reference",
+  "url": "https://github.com/subat0mik/Misconfiguration-Manager"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Active Directory"
+  ],
+  "id": "ldapdomaindump",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "Queries AD users, groups, computers, and policies over LDAP and exports them to readable HTML, JSON, and greppable files. Useful for the recon phase of an internal pentest.",
+  "title": "ldapdomaindump",
+  "type": "Tool",
+  "url": "https://github.com/dirkjanm/ldapdomaindump"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Linux Fundamentals"
+  ],
+  "id": "linux-man-pages",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "The official HTML rendering of the Linux man-pages project. When in doubt about a syscall or command, this is the authoritative answer.",
+  "title": "Linux man pages online",
+  "type": "Reference",
+  "url": "https://man7.org/linux/man-pages/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Linux Fundamentals",
+   "Programming"
+  ],
+  "id": "shellcheck",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Static analyzer that finds bugs in shell scripts, with an online playground. Paste your Bash and it teaches you what you did wrong; every scripter should run it.",
+  "title": "ShellCheck",
+  "type": "Tool",
+  "url": "https://www.shellcheck.net/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Linux Fundamentals",
+   "Network Security"
+  ],
+  "id": "madaidan-linux-hardening",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Advanced",
+  "summary": "Deep, opinionated guide to hardening Linux: kernel sysctls, sandboxing, mandatory access control, and attack surface reduction. Dense and advanced, but the best free resource on the topic.",
+  "title": "Madaidan Linux Hardening Guide",
+  "type": "Guide",
+  "url": "https://madaidans-insecurities.github.io/guides/linux-hardening.html"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Linux Fundamentals"
+  ],
+  "id": "devhints-bash",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Concise, well-organized Bash reference: variables, expansions, loops, conditionals, and strict mode. Keep it open while writing your first scripts.",
+  "title": "Bash Cheatsheet (Devhints)",
+  "type": "Cheatsheet",
+  "url": "https://devhints.io/bash"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "OSINT"
+  ],
+  "id": "intelx",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Intermediate",
+  "summary": "OSINT search engine indexing emails, domains, IPs, leaks, and more. The free tier allows limited searches; paid plans unlock the phonebook and full archive. A staple of OSINT investigations.",
+  "title": "Intelligence X",
+  "type": "Tool",
+  "url": "https://intelx.io/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "OSINT"
+  ],
+  "id": "phoneinfoga",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "OSINT framework for phone numbers: carrier, line type, reputation, and social media footprint. Note: the project is stable but unmaintained.",
+  "title": "PhoneInfoga",
+  "type": "Tool",
+  "url": "https://github.com/sundowndev/phoneinfoga"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "OSINT"
+  ],
+  "id": "maigret",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "Collects a dossier on a person from a username alone, checking thousands of sites and building link graphs. The modern successor to Sherlock for username OSINT.",
+  "title": "Maigret",
+  "type": "Tool",
+  "url": "https://github.com/soxoj/maigret"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Career"
+  ],
+  "id": "niccs",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "CISA National Initiative for Cybersecurity Careers and Studies: training catalog, NICE Framework work roles, and career pathway tools. The official starting point for mapping cyber careers.",
+  "title": "NICCS",
+  "type": "Reference",
+  "url": "https://niccs.cisa.gov/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Career"
+  ],
+  "id": "cyberseek",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Interactive heatmap of the US cybersecurity job market: open roles, in-demand skills, and typical career pathways, built from real job posting data. Use it to decide what to learn next.",
+  "title": "CyberSeek",
+  "type": "Reference",
+  "url": "https://www.cyberseek.org/"
+ },
+ {
+  "cost": {
+   "model": "free"
+  },
+  "domains": [
+   "Career",
+   "Community"
+  ],
+  "id": "wicys",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "All Levels",
+  "summary": "Women in Cybersecurity: global community with mentorship, scholarships, conferences, and a job board. Open to members and allies; student chapters are a great entry point.",
+  "title": "WiCyS",
+  "type": "Community",
+  "url": "https://www.wicys.org/"
+ },
+ {
+  "cost": {
+   "model": "freemium"
+  },
+  "domains": [
+   "Career"
+  ],
+  "id": "sans-new-to-cyber",
+  "language": "English",
+  "lastVerified": "2026-10-02",
+  "level": "Beginner",
+  "summary": "SANS hub for breaking into cybersecurity: learning paths, the free New2Cyber field manual, and course roadmaps. Courses are paid, but the guidance and free resources are genuinely useful.",
+  "title": "SANS New to Cyber",
+  "type": "Guide",
+  "url": "https://www.sans.org/mlp/new-to-cyber"
  }
 ]

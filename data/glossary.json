@@ -1,1 +1,677 @@
-[{"category":"Active Directory","definition":"An attack against accounts that do not require Kerberos pre-authentication. You request an AS-REP for the account, grab the encrypted timestamp in the response, and crack it offline to recover the password. It matters because one misconfigured account with no pre-auth is often the first foothold into a domain.","term":"AS-REP Roasting"},{"category":"Cryptography","definition":"Encryption that uses a key pair: a public key to encrypt and a private key to decrypt. It powers TLS, SSH key logins, and PGP. The tradeoff is speed, so it is usually only used to exchange a faster symmetric key.","term":"Asymmetric Encryption"},{"category":"Career & Concepts","definition":"Proving who you are: logging in with a password, a token, or a fingerprint. It matters because almost every attack chain starts by beating authentication, through phishing, password spraying, or stolen session cookies.","term":"Authentication"},{"category":"Career & Concepts","definition":"What you are allowed to do after you log in. Authentication is the door, authorization is which rooms you can enter. Most privilege escalation bugs are really authorization bugs: the app lets a low-privilege user touch something reserved for admins.","term":"Authorization"},{"category":"Active Directory","definition":"An open-source tool that maps Active Directory attack paths: users, groups, sessions, and which accounts can reach Domain Admin. Defenders use it to find and cut risky paths; attackers use it to find the shortest road to the crown jewels. Learn to read its graphs and AD suddenly makes sense.","term":"BloodHound"},{"category":"Career & Concepts","definition":"The defenders: SOC analysts, incident responders, and detection engineers who protect the network. They build alerts, hunt threats, and kick intruders out. Blue team is where most junior jobs are, because every company needs people watching the screens.","term":"Blue Team"},{"category":"Career & Concepts","definition":"Trying every possible password or PIN until one works. It is slow but it works against weak passwords, which is why rate limiting, lockouts, and MFA exist. In CTFs and labs you will run this against login forms, hashes, and zip files constantly.","term":"Brute Force Attack"},{"category":"DFIR","definition":"The documented trail showing who collected, handled, and stored evidence, and when. If the chain breaks, the evidence can be thrown out of court. It is why forensics people image drives with write blockers and hash everything immediately.","term":"Chain of Custody"},{"category":"Web Security","definition":"Using leaked username and password pairs from one breach to log into other sites, counting on people reusing passwords. It is automated, cheap, and brutally effective. It is the reason unique passwords and MFA matter more than password complexity rules.","term":"Credential Stuffing"},{"category":"Web Security","definition":"Tricking a logged-in user's browser into performing an unwanted action, like changing an email address or transferring money, by getting them to visit a malicious page. The browser sends the victim's cookies along automatically, so the site cannot tell the request was forged. Anti-CSRF tokens break the trick by requiring a secret the attacker's page cannot know.","term":"Cross-Site Request Forgery (CSRF)"},{"category":"Web Security","definition":"Injecting JavaScript into a web page that other users then load in their browsers. Stored XSS lives in the database and hits everyone who views the page; reflected XSS needs the victim to click a crafted link. It matters because a successful payload runs with the victim's session, which often means full account takeover.","term":"Cross-Site Scripting (XSS)"},{"category":"Career & Concepts","definition":"A unique public ID for a known vulnerability, like CVE-2021-44228 for Log4Shell. It gives the whole industry one shared name for the same bug. When a scanner or a news post mentions a CVE, this is the identifier you look up.","term":"CVE"},{"category":"Career & Concepts","definition":"A 0 to 10 score that rates how severe a vulnerability is, based on factors like attack complexity and impact. A 9.8 means drop everything and patch; a 3.1 means schedule it. It is useful for prioritizing, but a score is not a full risk picture: exploitability in your environment matters too.","term":"CVSS"},{"category":"Career & Concepts","definition":"A catalog of weakness types, like CWE-79 for XSS or CWE-89 for SQL injection. Where CVE names specific bugs, CWE names the underlying mistake. Learn the top CWEs and you start recognizing bug patterns instead of isolated findings.","term":"CWE"},{"category":"Active Directory","definition":"Abusing domain replication privileges to ask a domain controller for the password hashes of any account, including the krbtgt account. It looks like a normal replica syncing, so it blends in. One DCSync and you own every credential in the domain.","term":"DCSync"},{"category":"Reverse Engineering","definition":"Forcing a running process to load a malicious DLL so your code executes inside that process. It is used by malware to hide inside trusted programs and by analysts to hook functions and watch behavior. Seeing an unexpected DLL inside a legit process is a classic red flag.","term":"DLL Injection"},{"category":"Network Security","definition":"Smuggling data inside DNS queries and responses, which are rarely blocked because DNS has to work. Malware uses it to exfiltrate data or receive commands when normal web traffic is filtered. It matters because it turns a protocol everyone trusts into a covert channel.","term":"DNS Tunneling"},{"category":"Active Directory","definition":"The server that holds the Active Directory database and handles logins for the whole domain. Compromising it usually means compromising everything. Almost every AD attack, from Kerberoasting to Golden Tickets, is aimed at this box.","term":"Domain Controller"},{"category":"Reverse Engineering","definition":"Studying malware by running it and watching what it does: files touched, registry keys set, network connections opened. You do this in an isolated VM with snapshots, using tools like Process Monitor and Wireshark. It is faster than reading disassembly when you just need to know what the sample does.","term":"Dynamic Analysis"},{"category":"Cryptography","definition":"Scrambling data with a key so only someone with the key can read it. Unlike hashing, encryption is reversible. It protects data in transit (TLS) and at rest (disk encryption), and losing the key usually means losing the data.","term":"Encryption"},{"category":"DFIR","definition":"Software on endpoints that watches for malicious behavior and can respond: killing processes, isolating hosts from the network. It is the blue team's eyes on every laptop and server. Attackers study which EDR is installed so they can try to blind or bypass it.","term":"Endpoint Detection and Response (EDR)"},{"category":"Career & Concepts","definition":"Code or a technique that takes advantage of a vulnerability to cause unintended behavior. A vulnerability is the open window; the exploit is climbing through it. Publishing an exploit turns a theoretical bug into something anyone can use, which is why disclosure timelines matter.","term":"Exploit"},{"category":"Web Security","definition":"A bug where user input controls which file the server loads. Local File Inclusion reads files on the server, like /etc/passwd; Remote File Inclusion pulls code from an attacker URL and executes it. It happens when developers concatenate user input into file paths without validation.","term":"File Inclusion (LFI/RFI)"},{"category":"Network Security","definition":"A device or software that filters network traffic based on rules: block this port, allow that IP. It is the bouncer at the network's door. It matters because misconfigured rules are common, and attackers constantly probe for the ports someone forgot to close.","term":"Firewall"},{"category":"Active Directory","definition":"A forged Kerberos ticket-granting ticket, created with the stolen hash of the krbtgt account. It grants access to anything in the domain and can last for years if you set the lifetime. It is the ultimate AD persistence: even password changes do not kill it until the krbtgt password is reset twice.","term":"Golden Ticket"},{"category":"Cryptography","definition":"A one-way function that turns input into a fixed-length fingerprint. You cannot reverse it to get the original data back. It is used to store passwords safely, verify file integrity, and build digital signatures. Hashing is not encryption: there is no key and no decryption.","term":"Hashing"},{"category":"Cloud Security","definition":"The cloud's system for managing who can do what: users, roles, and policies. A single overly broad policy, like admin rights on a role anyone can assume, can hand over the whole account. In cloud pentests, IAM misconfiguration is the vulnerability you will exploit most often.","term":"IAM (Identity and Access Management)"},{"category":"Web Security","definition":"A bug where changing an ID in a request, like user_id=123 to user_id=124, gives you someone else's data. The app trusts the client-supplied identifier without checking ownership. It is embarrassingly common and shows up in APIs constantly, so always test it.","term":"IDOR (Insecure Direct Object Reference)"},{"category":"Cloud Security","definition":"A link-local service at 169.254.169.254 that hands cloud VMs their temporary credentials and config. If an app has SSRF, an attacker can make the server query IMDS and steal its cloud credentials. Locking down IMDS, for example requiring IMDSv2, kills a huge class of cloud attacks.","term":"IMDS (Instance Metadata Service)"},{"category":"DFIR","definition":"A piece of evidence that a system is compromised: a malicious IP, a bad file hash, a strange domain. IOCs are what you feed into your SIEM to find other infected machines. They go stale fast, so responders share them quickly and hunt with them immediately.","term":"Indicator of Compromise (IOC)"},{"category":"Active Directory","definition":"Requesting service tickets for accounts with Service Principal Names, then cracking the tickets offline to recover the service account's password. Service accounts often have weak, never-changed passwords and sometimes high privileges. It is quiet, needs no special access, and works depressingly often.","term":"Kerberoasting"},{"category":"Active Directory","definition":"The authentication protocol Active Directory uses, built around tickets instead of sending passwords over the wire. You get a ticket-granting ticket at logon, then service tickets for each resource. Understanding its ticket flow is mandatory for AD work, because most AD attacks are just abusing steps of this protocol.","term":"Kerberos"},{"category":"Network Security","definition":"Moving from one compromised machine to others inside the network: harvesting credentials, using remote admin tools, exploiting trust between systems. Getting one shell is the start; lateral movement is how it becomes a breach. Defenders fight it with network segmentation and monitoring east-west traffic.","term":"Lateral Movement"},{"category":"Active Directory","definition":"The protocol Windows uses to query Active Directory: users, groups, computers, and their attributes. Anonymous or low-privilege LDAP binds can leak the whole directory structure to an attacker. It is also how BloodHound and most AD enumeration tools gather their data.","term":"LDAP"},{"category":"Career & Concepts","definition":"Give every user and service only the permissions they need and nothing more. It limits blast radius: a compromised account can only reach what it was allowed to touch. Most privilege escalation findings exist because someone skipped this principle.","term":"Least Privilege"},{"category":"Career & Concepts","definition":"Any software designed to harm: viruses, worms, trojans, ransomware, spyware. The name describes intent, not technique. Your job on either side is the same: understand what it does, how it got in, and how to stop it.","term":"Malware"},{"category":"DFIR","definition":"Analyzing a live RAM dump to find what was happening on a machine: running processes, injected code, open connections, encryption keys. Malware often lives only in memory to avoid disk forensics, so this is how you catch it. Volatility is the standard tool you will learn first.","term":"Memory Forensics"},{"category":"DFIR","definition":"A public knowledge base of adversary tactics and techniques, organized as a matrix from initial access to impact. Both sides use it: red teams plan campaigns with it, blue teams map detections to it. If someone says T1486, they mean ransomware-style data encryption, and everyone knows exactly what that means.","term":"MITRE ATT&CK"},{"category":"Active Directory","definition":"Windows' legacy authentication protocol, still everywhere despite Kerberos being preferred. It relies on password hashes, which is what makes Pass-the-Hash possible. You will see NTLM hashes in every AD lab, and cracking or relaying them is core AD tradecraft.","term":"NTLM"},{"category":"Reverse Engineering","definition":"Deliberately making code hard to read: renamed variables, encrypted strings, junk instructions, control-flow tricks. Malware authors use it to slow analysts down; legitimate software uses it to protect intellectual property. Your job is to strip it back layer by layer until the logic shows.","term":"Obfuscation"},{"category":"Career & Concepts","definition":"Operational security: the discipline of not getting caught by your own trail. For a pentester it means staying in scope and not breaking production; for a red teamer it means hiding infrastructure and cleaning logs. Sloppy OPSEC burns operations and, in real engagements, can have legal consequences.","term":"OPSEC"},{"category":"Active Directory","definition":"Using a stolen NTLM hash to request a Kerberos ticket-granting ticket, giving you full Kerberos authentication as that user without knowing their password. It is the upgrade from Pass-the-Hash: instead of being limited to NTLM services, you get the whole Kerberos ecosystem. The fix is the same as ever: stop hashes from leaking in the first place.","term":"Overpass-the-Hash"},{"category":"Reverse Engineering","definition":"A program that compresses or encrypts an executable and wraps it in a small loader that restores it at runtime. Packers like UPX are used legitimately to shrink files, but malware loves them because they hide the real code from static analysis. Your first step with a packed sample is unpacking it, often just by letting it run and dumping memory.","term":"Packer"},{"category":"Active Directory","definition":"Authenticating with a stolen NTLM password hash instead of the plaintext password. NTLM accepts the hash as proof, so cracking it is optional. Dump hashes from one box with Mimikatz or secretsdump and you can log into others as that user.","term":"Pass-the-Hash"},{"category":"Career & Concepts","definition":"The code or commands you run after an exploit lands: a reverse shell, a credential dumper, a persistence mechanism. The exploit opens the door; the payload is what you carry through it. Choosing the right payload for the target, OS and architecture, is half the skill in exploitation.","term":"Payload"},{"category":"Career & Concepts","definition":"An authorized, time-boxed security test with a defined scope and a report at the end. It is not just hacking: it is hacking plus documentation, risk ratings, and remediation advice a client can act on. The OSCP and real pentest jobs live and die by report quality, not just shells.","term":"Penetration Test"},{"category":"Network Security","definition":"Routing your traffic through a compromised machine to reach networks you cannot see directly. The owned box becomes your stepping stone into internal subnets. Tools like chisel, ligolo, and SSH tunnels do the plumbing; pivoting is the tactic that turns one foothold into a whole network.","term":"Pivoting"},{"category":"Career & Concepts","definition":"Gaining higher permissions than you started with: from normal user to admin, or from admin to SYSTEM. Vertical escalation climbs the privilege ladder; horizontal escalation grabs a different account at the same level. Nearly every engagement and CTF box includes at least one privesc step.","term":"Privilege Escalation"},{"category":"Career & Concepts","definition":"Red and blue working together: attackers run their playbook while defenders watch, detect, and respond in real time. The point is to test and improve detection, not just to break in. It is the most honest security exercise a company can run.","term":"Purple Team"},{"category":"Career & Concepts","definition":"Malware that encrypts a victim's files and demands payment for the key. Modern crews also steal the data first and threaten to leak it, so backups alone no longer save you. It is the most expensive common cybercrime, which is why it dominates headlines and security budgets.","term":"Ransomware"},{"category":"Career & Concepts","definition":"The attackers in a security exercise: they emulate real adversaries to test defenses. Unlike a pentest, a red team engagement has a goal, like stealing specific data, and nobody on the blue side knows it is happening. It tests people and process, not just technology.","term":"Red Team"},{"category":"Network Security","definition":"A shell where the target connects back to your machine, instead of you connecting to it. This dodges inbound firewall rules, because the connection looks like normal outbound traffic. Listeners with netcat or Metasploit catching that callback are the bread and butter of exploitation.","term":"Reverse Shell"},{"category":"Cloud Security","definition":"An S3 bucket left publicly readable, writable, or both, often exposing backups, keys, or customer data. It is one of the most repeated cloud mistakes in history and still shows up in breaches. The fix is boring but effective: block public access at the account level and audit bucket policies.","term":"S3 Bucket Misconfiguration"},{"category":"Cryptography","definition":"Random data mixed into a password before hashing, unique per user. It stops rainbow table attacks, where precomputed hashes are matched against stolen databases. Storing unsalted password hashes in 2026 is negligence, not a mistake.","term":"Salt (Cryptography)"},{"category":"DFIR","definition":"A central platform that collects logs from across the network and fires alerts when something looks wrong. Analysts live in it during incidents, pivoting from an alert to the raw events behind it. Writing good detection rules for it is a core blue team skill.","term":"Security Information and Event Management (SIEM)"},{"category":"Web Security","definition":"Tricking a server into making HTTP requests to somewhere it should not: internal services, cloud metadata endpoints, other customers' resources. The attacker abuses a feature like a URL fetcher or webhook to turn the server into their proxy. It is dangerous because the malicious request comes from inside the trusted network.","term":"Server-Side Request Forgery (SSRF)"},{"category":"Web Security","definition":"Injecting template syntax, like {{7*7}}, into a page that gets rendered server-side, which can lead to remote code execution. It happens when user input is embedded in templates without sandboxing. A quick test is injecting simple math: if the page renders 49, you have a problem.","term":"Server-Side Template Injection (SSTI)"},{"category":"Reverse Engineering","definition":"Tiny machine code, often injected into a running process, that performs one job: open a shell, download a file, pop calc. Exploit payloads are frequently shellcode because it is small enough to fit in tight buffers. Analysts learn to recognize its patterns in disassembly and memory dumps.","term":"Shellcode"},{"category":"Active Directory","definition":"A forged Kerberos service ticket for one specific service, made with that service account's hash. Unlike a Golden Ticket, it only works against that service, but it is stealthier because it never touches the domain controller. Dump the service hash with Kerberoasting, forge the ticket, and walk in.","term":"Silver Ticket"},{"category":"Network Security","definition":"The Windows file-sharing protocol, also used for remote administration and named pipes. It is ancient, chatty, and full of history: EternalBlue, PsExec, and relay attacks all ride on SMB. In AD labs you will enumerate its shares first, because misconfigured shares leak files and credentials constantly.","term":"SMB (Server Message Block)"},{"category":"Career & Concepts","definition":"The team that monitors an organization's security around the clock: triaging alerts, escalating incidents, and coordinating response. Tier 1 analysts handle the alert queue; higher tiers hunt and investigate. It is the most common entry point into cybersecurity careers.","term":"SOC (Security Operations Center)"},{"category":"Web Security","definition":"Injecting SQL commands into a query the application builds from user input, letting you read, modify, or delete database contents. The classic test is a single quote in a login field. It is still near the top of every vulnerability list because string-built queries refuse to die: parameterized queries fix it completely.","term":"SQL Injection (SQLi)"},{"category":"Reverse Engineering","definition":"Studying malware without running it: reading strings, imports, and disassembly to understand its logic. It is safe, since nothing executes, but packers and obfuscation fight you. Pair it with dynamic analysis: static tells you what the code could do, dynamic shows what it actually does.","term":"Static Analysis"},{"category":"Network Security","definition":"Splitting a network into smaller segments, each with its own address range. It limits broadcast traffic and, more importantly, contains breaches: one compromised subnet does not automatically mean access to the others. Know your CIDR notation cold, because every networking question assumes it.","term":"Subnetting"},{"category":"Cryptography","definition":"Encryption where the same key encrypts and decrypts, like AES. It is fast, which is why it handles the bulk of real data protection. The hard part is key distribution: both sides need the same secret without anyone else seeing it, which is where asymmetric encryption helps.","term":"Symmetric Encryption"},{"category":"Network Security","definition":"How two machines open a TCP connection: SYN, SYN-ACK, ACK. Each side synchronizes sequence numbers so data arrives in order. You need this cold because half of network attacks and tools, from SYN scans to session hijacking, are just abusing steps of this handshake.","term":"TCP Three-Way Handshake"},{"category":"DFIR","definition":"Proactively searching for intruders that your alerts missed, using hypotheses like: if an attacker were here, what would they have touched. It is detection done by humans instead of rules. Good hunters know attacker behavior from frameworks like MITRE ATT&CK and look for the gaps.","term":"Threat Hunting"},{"category":"Network Security","definition":"The protocol that encrypts traffic between your browser and a server: the S in HTTPS. It handles authentication via certificates and negotiates encryption keys. When it is misconfigured, with expired certs or weak ciphers, attackers can intercept or downgrade the connection.","term":"TLS (Transport Layer Security)"},{"category":"DFIR","definition":"Tactics, Techniques, and Procedures: the how of an attacker. Tactics are the goals, techniques are the methods, procedures are the exact steps. Defenders track TTPs because attacker infrastructure changes daily but their habits change slowly.","term":"TTP (Tactics, Techniques, and Procedures)"},{"category":"Reverse Engineering","definition":"Reversing a packer to recover the original executable underneath. The usual trick is letting the packed program run until it unpacks itself in memory, then dumping the process. An unpacked binary is what you actually analyze, so this step comes before everything else.","term":"Unpacking"},{"category":"Career & Concepts","definition":"A weakness in software, hardware, or process that can be exploited. Not every bug is a vulnerability: it only counts if it can actually be abused to break security properties. Finding, rating, and fixing these is the core loop of both offense and defense.","term":"Vulnerability"},{"category":"Web Security","definition":"A filter that sits in front of a web app and blocks malicious requests: SQL injection strings, XSS payloads, known attack patterns. It is a seatbelt, not a fix: it reduces noise and stops script kiddies, but a determined attacker can usually bypass signature-based rules. Never treat a WAF as a substitute for secure code.","term":"Web Application Firewall (WAF)"},{"category":"Network Security","definition":"Windows' native remote management protocol, running over HTTP/HTTPS on ports 5985 and 5986. With valid credentials it gives you a remote PowerShell session, which makes it a favorite for lateral movement. Evil-WinRM is the tool you will reach for in AD labs.","term":"WinRM (Windows Remote Management)"},{"category":"Web Security","definition":"Abusing an XML parser that resolves external entities, letting you read local files, scan internal ports, or in bad cases execute code. It happens when apps parse XML with external entity resolution left on. The fix is disabling external entities or switching to a safer data format like JSON.","term":"XML External Entity (XXE)"},{"category":"Career & Concepts","definition":"A vulnerability nobody knew about before it was exploited: no patch, no signature, no defense ready. The name comes from developers having had zero days to fix it. They are rare, expensive, and the reason defense in depth exists: you cannot patch what you do not know about.","term":"Zero-Day"}]
+[
+ {
+  "category": "Active Directory",
+  "definition": "An attack against accounts that do not require Kerberos pre-authentication. You request an AS-REP for the account, grab the encrypted timestamp in the response, and crack it offline to recover the password. It matters because one misconfigured account with no pre-auth is often the first foothold into a domain.",
+  "term": "AS-REP Roasting"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "Encryption that uses a key pair: a public key to encrypt and a private key to decrypt. It powers TLS, SSH key logins, and PGP. The tradeoff is speed, so it is usually only used to exchange a faster symmetric key.",
+  "term": "Asymmetric Encryption"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Proving who you are: logging in with a password, a token, or a fingerprint. It matters because almost every attack chain starts by beating authentication, through phishing, password spraying, or stolen session cookies.",
+  "term": "Authentication"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "What you are allowed to do after you log in. Authentication is the door, authorization is which rooms you can enter. Most privilege escalation bugs are really authorization bugs: the app lets a low-privilege user touch something reserved for admins.",
+  "term": "Authorization"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "An open-source tool that maps Active Directory attack paths: users, groups, sessions, and which accounts can reach Domain Admin. Defenders use it to find and cut risky paths; attackers use it to find the shortest road to the crown jewels. Learn to read its graphs and AD suddenly makes sense.",
+  "term": "BloodHound"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "The defenders: SOC analysts, incident responders, and detection engineers who protect the network. They build alerts, hunt threats, and kick intruders out. Blue team is where most junior jobs are, because every company needs people watching the screens.",
+  "term": "Blue Team"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Trying every possible password or PIN until one works. It is slow but it works against weak passwords, which is why rate limiting, lockouts, and MFA exist. In CTFs and labs you will run this against login forms, hashes, and zip files constantly.",
+  "term": "Brute Force Attack"
+ },
+ {
+  "category": "DFIR",
+  "definition": "The documented trail showing who collected, handled, and stored evidence, and when. If the chain breaks, the evidence can be thrown out of court. It is why forensics people image drives with write blockers and hash everything immediately.",
+  "term": "Chain of Custody"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Using leaked username and password pairs from one breach to log into other sites, counting on people reusing passwords. It is automated, cheap, and brutally effective. It is the reason unique passwords and MFA matter more than password complexity rules.",
+  "term": "Credential Stuffing"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Tricking a logged-in user's browser into performing an unwanted action, like changing an email address or transferring money, by getting them to visit a malicious page. The browser sends the victim's cookies along automatically, so the site cannot tell the request was forged. Anti-CSRF tokens break the trick by requiring a secret the attacker's page cannot know.",
+  "term": "Cross-Site Request Forgery (CSRF)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Injecting JavaScript into a web page that other users then load in their browsers. Stored XSS lives in the database and hits everyone who views the page; reflected XSS needs the victim to click a crafted link. It matters because a successful payload runs with the victim's session, which often means full account takeover.",
+  "term": "Cross-Site Scripting (XSS)"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "A unique public ID for a known vulnerability, like CVE-2021-44228 for Log4Shell. It gives the whole industry one shared name for the same bug. When a scanner or a news post mentions a CVE, this is the identifier you look up.",
+  "term": "CVE"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "A 0 to 10 score that rates how severe a vulnerability is, based on factors like attack complexity and impact. A 9.8 means drop everything and patch; a 3.1 means schedule it. It is useful for prioritizing, but a score is not a full risk picture: exploitability in your environment matters too.",
+  "term": "CVSS"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "A catalog of weakness types, like CWE-79 for XSS or CWE-89 for SQL injection. Where CVE names specific bugs, CWE names the underlying mistake. Learn the top CWEs and you start recognizing bug patterns instead of isolated findings.",
+  "term": "CWE"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Abusing domain replication privileges to ask a domain controller for the password hashes of any account, including the krbtgt account. It looks like a normal replica syncing, so it blends in. One DCSync and you own every credential in the domain.",
+  "term": "DCSync"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Forcing a running process to load a malicious DLL so your code executes inside that process. It is used by malware to hide inside trusted programs and by analysts to hook functions and watch behavior. Seeing an unexpected DLL inside a legit process is a classic red flag.",
+  "term": "DLL Injection"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Smuggling data inside DNS queries and responses, which are rarely blocked because DNS has to work. Malware uses it to exfiltrate data or receive commands when normal web traffic is filtered. It matters because it turns a protocol everyone trusts into a covert channel.",
+  "term": "DNS Tunneling"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "The server that holds the Active Directory database and handles logins for the whole domain. Compromising it usually means compromising everything. Almost every AD attack, from Kerberoasting to Golden Tickets, is aimed at this box.",
+  "term": "Domain Controller"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Studying malware by running it and watching what it does: files touched, registry keys set, network connections opened. You do this in an isolated VM with snapshots, using tools like Process Monitor and Wireshark. It is faster than reading disassembly when you just need to know what the sample does.",
+  "term": "Dynamic Analysis"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "Scrambling data with a key so only someone with the key can read it. Unlike hashing, encryption is reversible. It protects data in transit (TLS) and at rest (disk encryption), and losing the key usually means losing the data.",
+  "term": "Encryption"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Software on endpoints that watches for malicious behavior and can respond: killing processes, isolating hosts from the network. It is the blue team's eyes on every laptop and server. Attackers study which EDR is installed so they can try to blind or bypass it.",
+  "term": "Endpoint Detection and Response (EDR)"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Code or a technique that takes advantage of a vulnerability to cause unintended behavior. A vulnerability is the open window; the exploit is climbing through it. Publishing an exploit turns a theoretical bug into something anyone can use, which is why disclosure timelines matter.",
+  "term": "Exploit"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A bug where user input controls which file the server loads. Local File Inclusion reads files on the server, like /etc/passwd; Remote File Inclusion pulls code from an attacker URL and executes it. It happens when developers concatenate user input into file paths without validation.",
+  "term": "File Inclusion (LFI/RFI)"
+ },
+ {
+  "category": "Network Security",
+  "definition": "A device or software that filters network traffic based on rules: block this port, allow that IP. It is the bouncer at the network's door. It matters because misconfigured rules are common, and attackers constantly probe for the ports someone forgot to close.",
+  "term": "Firewall"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "A forged Kerberos ticket-granting ticket, created with the stolen hash of the krbtgt account. It grants access to anything in the domain and can last for years if you set the lifetime. It is the ultimate AD persistence: even password changes do not kill it until the krbtgt password is reset twice.",
+  "term": "Golden Ticket"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "A one-way function that turns input into a fixed-length fingerprint. You cannot reverse it to get the original data back. It is used to store passwords safely, verify file integrity, and build digital signatures. Hashing is not encryption: there is no key and no decryption.",
+  "term": "Hashing"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "The cloud's system for managing who can do what: users, roles, and policies. A single overly broad policy, like admin rights on a role anyone can assume, can hand over the whole account. In cloud pentests, IAM misconfiguration is the vulnerability you will exploit most often.",
+  "term": "IAM (Identity and Access Management)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A bug where changing an ID in a request, like user_id=123 to user_id=124, gives you someone else's data. The app trusts the client-supplied identifier without checking ownership. It is embarrassingly common and shows up in APIs constantly, so always test it.",
+  "term": "IDOR (Insecure Direct Object Reference)"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "A link-local service at 169.254.169.254 that hands cloud VMs their temporary credentials and config. If an app has SSRF, an attacker can make the server query IMDS and steal its cloud credentials. Locking down IMDS, for example requiring IMDSv2, kills a huge class of cloud attacks.",
+  "term": "IMDS (Instance Metadata Service)"
+ },
+ {
+  "category": "DFIR",
+  "definition": "A piece of evidence that a system is compromised: a malicious IP, a bad file hash, a strange domain. IOCs are what you feed into your SIEM to find other infected machines. They go stale fast, so responders share them quickly and hunt with them immediately.",
+  "term": "Indicator of Compromise (IOC)"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Requesting service tickets for accounts with Service Principal Names, then cracking the tickets offline to recover the service account's password. Service accounts often have weak, never-changed passwords and sometimes high privileges. It is quiet, needs no special access, and works depressingly often.",
+  "term": "Kerberoasting"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "The authentication protocol Active Directory uses, built around tickets instead of sending passwords over the wire. You get a ticket-granting ticket at logon, then service tickets for each resource. Understanding its ticket flow is mandatory for AD work, because most AD attacks are just abusing steps of this protocol.",
+  "term": "Kerberos"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Moving from one compromised machine to others inside the network: harvesting credentials, using remote admin tools, exploiting trust between systems. Getting one shell is the start; lateral movement is how it becomes a breach. Defenders fight it with network segmentation and monitoring east-west traffic.",
+  "term": "Lateral Movement"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "The protocol Windows uses to query Active Directory: users, groups, computers, and their attributes. Anonymous or low-privilege LDAP binds can leak the whole directory structure to an attacker. It is also how BloodHound and most AD enumeration tools gather their data.",
+  "term": "LDAP"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Give every user and service only the permissions they need and nothing more. It limits blast radius: a compromised account can only reach what it was allowed to touch. Most privilege escalation findings exist because someone skipped this principle.",
+  "term": "Least Privilege"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Any software designed to harm: viruses, worms, trojans, ransomware, spyware. The name describes intent, not technique. Your job on either side is the same: understand what it does, how it got in, and how to stop it.",
+  "term": "Malware"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Analyzing a live RAM dump to find what was happening on a machine: running processes, injected code, open connections, encryption keys. Malware often lives only in memory to avoid disk forensics, so this is how you catch it. Volatility is the standard tool you will learn first.",
+  "term": "Memory Forensics"
+ },
+ {
+  "category": "DFIR",
+  "definition": "A public knowledge base of adversary tactics and techniques, organized as a matrix from initial access to impact. Both sides use it: red teams plan campaigns with it, blue teams map detections to it. If someone says T1486, they mean ransomware-style data encryption, and everyone knows exactly what that means.",
+  "term": "MITRE ATT&CK"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Windows' legacy authentication protocol, still everywhere despite Kerberos being preferred. It relies on password hashes, which is what makes Pass-the-Hash possible. You will see NTLM hashes in every AD lab, and cracking or relaying them is core AD tradecraft.",
+  "term": "NTLM"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Deliberately making code hard to read: renamed variables, encrypted strings, junk instructions, control-flow tricks. Malware authors use it to slow analysts down; legitimate software uses it to protect intellectual property. Your job is to strip it back layer by layer until the logic shows.",
+  "term": "Obfuscation"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Operational security: the discipline of not getting caught by your own trail. For a pentester it means staying in scope and not breaking production; for a red teamer it means hiding infrastructure and cleaning logs. Sloppy OPSEC burns operations and, in real engagements, can have legal consequences.",
+  "term": "OPSEC"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Using a stolen NTLM hash to request a Kerberos ticket-granting ticket, giving you full Kerberos authentication as that user without knowing their password. It is the upgrade from Pass-the-Hash: instead of being limited to NTLM services, you get the whole Kerberos ecosystem. The fix is the same as ever: stop hashes from leaking in the first place.",
+  "term": "Overpass-the-Hash"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "A program that compresses or encrypts an executable and wraps it in a small loader that restores it at runtime. Packers like UPX are used legitimately to shrink files, but malware loves them because they hide the real code from static analysis. Your first step with a packed sample is unpacking it, often just by letting it run and dumping memory.",
+  "term": "Packer"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Authenticating with a stolen NTLM password hash instead of the plaintext password. NTLM accepts the hash as proof, so cracking it is optional. Dump hashes from one box with Mimikatz or secretsdump and you can log into others as that user.",
+  "term": "Pass-the-Hash"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "The code or commands you run after an exploit lands: a reverse shell, a credential dumper, a persistence mechanism. The exploit opens the door; the payload is what you carry through it. Choosing the right payload for the target, OS and architecture, is half the skill in exploitation.",
+  "term": "Payload"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "An authorized, time-boxed security test with a defined scope and a report at the end. It is not just hacking: it is hacking plus documentation, risk ratings, and remediation advice a client can act on. The OSCP and real pentest jobs live and die by report quality, not just shells.",
+  "term": "Penetration Test"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Routing your traffic through a compromised machine to reach networks you cannot see directly. The owned box becomes your stepping stone into internal subnets. Tools like chisel, ligolo, and SSH tunnels do the plumbing; pivoting is the tactic that turns one foothold into a whole network.",
+  "term": "Pivoting"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Gaining higher permissions than you started with: from normal user to admin, or from admin to SYSTEM. Vertical escalation climbs the privilege ladder; horizontal escalation grabs a different account at the same level. Nearly every engagement and CTF box includes at least one privesc step.",
+  "term": "Privilege Escalation"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Red and blue working together: attackers run their playbook while defenders watch, detect, and respond in real time. The point is to test and improve detection, not just to break in. It is the most honest security exercise a company can run.",
+  "term": "Purple Team"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Malware that encrypts a victim's files and demands payment for the key. Modern crews also steal the data first and threaten to leak it, so backups alone no longer save you. It is the most expensive common cybercrime, which is why it dominates headlines and security budgets.",
+  "term": "Ransomware"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "The attackers in a security exercise: they emulate real adversaries to test defenses. Unlike a pentest, a red team engagement has a goal, like stealing specific data, and nobody on the blue side knows it is happening. It tests people and process, not just technology.",
+  "term": "Red Team"
+ },
+ {
+  "category": "Network Security",
+  "definition": "A shell where the target connects back to your machine, instead of you connecting to it. This dodges inbound firewall rules, because the connection looks like normal outbound traffic. Listeners with netcat or Metasploit catching that callback are the bread and butter of exploitation.",
+  "term": "Reverse Shell"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "An S3 bucket left publicly readable, writable, or both, often exposing backups, keys, or customer data. It is one of the most repeated cloud mistakes in history and still shows up in breaches. The fix is boring but effective: block public access at the account level and audit bucket policies.",
+  "term": "S3 Bucket Misconfiguration"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "Random data mixed into a password before hashing, unique per user. It stops rainbow table attacks, where precomputed hashes are matched against stolen databases. Storing unsalted password hashes in 2026 is negligence, not a mistake.",
+  "term": "Salt (Cryptography)"
+ },
+ {
+  "category": "DFIR",
+  "definition": "A central platform that collects logs from across the network and fires alerts when something looks wrong. Analysts live in it during incidents, pivoting from an alert to the raw events behind it. Writing good detection rules for it is a core blue team skill.",
+  "term": "Security Information and Event Management (SIEM)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Tricking a server into making HTTP requests to somewhere it should not: internal services, cloud metadata endpoints, other customers' resources. The attacker abuses a feature like a URL fetcher or webhook to turn the server into their proxy. It is dangerous because the malicious request comes from inside the trusted network.",
+  "term": "Server-Side Request Forgery (SSRF)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Injecting template syntax, like {{7*7}}, into a page that gets rendered server-side, which can lead to remote code execution. It happens when user input is embedded in templates without sandboxing. A quick test is injecting simple math: if the page renders 49, you have a problem.",
+  "term": "Server-Side Template Injection (SSTI)"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Tiny machine code, often injected into a running process, that performs one job: open a shell, download a file, pop calc. Exploit payloads are frequently shellcode because it is small enough to fit in tight buffers. Analysts learn to recognize its patterns in disassembly and memory dumps.",
+  "term": "Shellcode"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "A forged Kerberos service ticket for one specific service, made with that service account's hash. Unlike a Golden Ticket, it only works against that service, but it is stealthier because it never touches the domain controller. Dump the service hash with Kerberoasting, forge the ticket, and walk in.",
+  "term": "Silver Ticket"
+ },
+ {
+  "category": "Network Security",
+  "definition": "The Windows file-sharing protocol, also used for remote administration and named pipes. It is ancient, chatty, and full of history: EternalBlue, PsExec, and relay attacks all ride on SMB. In AD labs you will enumerate its shares first, because misconfigured shares leak files and credentials constantly.",
+  "term": "SMB (Server Message Block)"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "The team that monitors an organization's security around the clock: triaging alerts, escalating incidents, and coordinating response. Tier 1 analysts handle the alert queue; higher tiers hunt and investigate. It is the most common entry point into cybersecurity careers.",
+  "term": "SOC (Security Operations Center)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Injecting SQL commands into a query the application builds from user input, letting you read, modify, or delete database contents. The classic test is a single quote in a login field. It is still near the top of every vulnerability list because string-built queries refuse to die: parameterized queries fix it completely.",
+  "term": "SQL Injection (SQLi)"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Studying malware without running it: reading strings, imports, and disassembly to understand its logic. It is safe, since nothing executes, but packers and obfuscation fight you. Pair it with dynamic analysis: static tells you what the code could do, dynamic shows what it actually does.",
+  "term": "Static Analysis"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Splitting a network into smaller segments, each with its own address range. It limits broadcast traffic and, more importantly, contains breaches: one compromised subnet does not automatically mean access to the others. Know your CIDR notation cold, because every networking question assumes it.",
+  "term": "Subnetting"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "Encryption where the same key encrypts and decrypts, like AES. It is fast, which is why it handles the bulk of real data protection. The hard part is key distribution: both sides need the same secret without anyone else seeing it, which is where asymmetric encryption helps.",
+  "term": "Symmetric Encryption"
+ },
+ {
+  "category": "Network Security",
+  "definition": "How two machines open a TCP connection: SYN, SYN-ACK, ACK. Each side synchronizes sequence numbers so data arrives in order. You need this cold because half of network attacks and tools, from SYN scans to session hijacking, are just abusing steps of this handshake.",
+  "term": "TCP Three-Way Handshake"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Proactively searching for intruders that your alerts missed, using hypotheses like: if an attacker were here, what would they have touched. It is detection done by humans instead of rules. Good hunters know attacker behavior from frameworks like MITRE ATT&CK and look for the gaps.",
+  "term": "Threat Hunting"
+ },
+ {
+  "category": "Network Security",
+  "definition": "The protocol that encrypts traffic between your browser and a server: the S in HTTPS. It handles authentication via certificates and negotiates encryption keys. When it is misconfigured, with expired certs or weak ciphers, attackers can intercept or downgrade the connection.",
+  "term": "TLS (Transport Layer Security)"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Tactics, Techniques, and Procedures: the how of an attacker. Tactics are the goals, techniques are the methods, procedures are the exact steps. Defenders track TTPs because attacker infrastructure changes daily but their habits change slowly.",
+  "term": "TTP (Tactics, Techniques, and Procedures)"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Reversing a packer to recover the original executable underneath. The usual trick is letting the packed program run until it unpacks itself in memory, then dumping the process. An unpacked binary is what you actually analyze, so this step comes before everything else.",
+  "term": "Unpacking"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "A weakness in software, hardware, or process that can be exploited. Not every bug is a vulnerability: it only counts if it can actually be abused to break security properties. Finding, rating, and fixing these is the core loop of both offense and defense.",
+  "term": "Vulnerability"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A filter that sits in front of a web app and blocks malicious requests: SQL injection strings, XSS payloads, known attack patterns. It is a seatbelt, not a fix: it reduces noise and stops script kiddies, but a determined attacker can usually bypass signature-based rules. Never treat a WAF as a substitute for secure code.",
+  "term": "Web Application Firewall (WAF)"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Windows' native remote management protocol, running over HTTP/HTTPS on ports 5985 and 5986. With valid credentials it gives you a remote PowerShell session, which makes it a favorite for lateral movement. Evil-WinRM is the tool you will reach for in AD labs.",
+  "term": "WinRM (Windows Remote Management)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Abusing an XML parser that resolves external entities, letting you read local files, scan internal ports, or in bad cases execute code. It happens when apps parse XML with external entity resolution left on. The fix is disabling external entities or switching to a safer data format like JSON.",
+  "term": "XML External Entity (XXE)"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "A vulnerability nobody knew about before it was exploited: no patch, no signature, no defense ready. The name comes from developers having had zero days to fix it. They are rare, expensive, and the reason defense in depth exists: you cannot patch what you do not know about.",
+  "term": "Zero-Day"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A compact, signed token with three base64url parts: header, payload, and signature. Servers use it for stateless authentication instead of session cookies. It matters because weak secrets, the none algorithm, or missing signature checks let attackers forge tokens and log in as anyone.",
+  "term": "JWT (JSON Web Token)"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A server misconfiguration that tells browsers which foreign origins may read responses, for example reflecting any Origin header with credentials allowed. An attacker site can then make the victim's browser fetch private data and read the response. It turns a browser security boundary into an open door, so APIs must use a strict allowlist of origins.",
+  "term": "CORS Misconfiguration"
+ },
+ {
+  "category": "Web Security",
+  "definition": "An attack that exploits disagreement between a front-end proxy and a back-end server about where one HTTP request ends and the next begins. Using conflicting Content-Length and Transfer-Encoding headers, the attacker smuggles a second request inside the first. It can poison caches, hijack other users' sessions, and bypass front-end security controls.",
+  "term": "HTTP Request Smuggling"
+ },
+ {
+  "category": "Web Security",
+  "definition": "An attack where the attacker forces a victim to use a session ID the attacker already knows, then waits for the victim to log in. If the app keeps the same session ID after login, the attacker can ride the authenticated session. The fix is simple: generate a fresh session ID the moment authentication succeeds.",
+  "term": "Session Fixation"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A flaw where an app redirects users to a URL taken from a request parameter without validating it. Attackers use it to make phishing links look trustworthy, since the domain in the link is the real site. The fix is to redirect only to relative paths or a strict allowlist of destinations.",
+  "term": "Open Redirect"
+ },
+ {
+  "category": "Web Security",
+  "definition": "Tricking a user into clicking something different from what they see, usually by layering a transparent iframe of a target site under a decoy page. The victim's clicks land on hidden buttons like delete account or transfer funds. Sites defend with frame-busting headers such as X-Frame-Options or the frame-ancestors CSP directive.",
+  "term": "Clickjacking"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A bug where an app deserializes untrusted data into live objects, for example Java readObject or Python pickle on attacker input. Crafted payloads can chain library gadgets into remote code execution. The fix is to never deserialize untrusted input and to use safe formats like JSON instead.",
+  "term": "Insecure Deserialization"
+ },
+ {
+  "category": "Web Security",
+  "definition": "A flaw where user input containing sequences like ../../ is used in a file path, letting the attacker escape the intended directory. It exposes files like /etc/passwd or application configs. The fix is to canonicalize paths, reject traversal sequences, and never build file paths directly from user input.",
+  "term": "Path Traversal"
+ },
+ {
+  "category": "Network Security",
+  "definition": "A half-open port scan: you send a SYN, and if the port is open the target replies SYN-ACK, at which point you send RST instead of completing the handshake. It is faster and quieter than a full connect scan because no real connection is logged by the application. Nmap's -sS mode made it the default technique for network discovery.",
+  "term": "SYN Scan"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Sending forged ARP replies that link the attacker's MAC address to someone else's IP, like the gateway's. Victim traffic then flows through the attacker, enabling sniffing and session hijacking on the LAN. It is the classic man-in-the-middle on switched networks, countered by Dynamic ARP Inspection on managed switches.",
+  "term": "ARP Spoofing"
+ },
+ {
+  "category": "Network Security",
+  "definition": "An attack that jumps traffic from one VLAN to another, for example with double 802.1Q tagging where the first switch strips the outer tag. It lets an attacker reach restricted network segments from an access port. The defense is boring but effective: prune unused VLANs, set a dedicated native VLAN, and never trunk to end-user ports.",
+  "term": "VLAN Hopping"
+ },
+ {
+  "category": "Network Security",
+  "definition": "A technique where a server only opens a protected port after the client knocks on a secret sequence of closed ports first. It hides services like SSH from casual scanners. It is security through obscurity, so treat it as a noise reducer layered on top of real authentication, not a replacement for it.",
+  "term": "Port Knocking"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Two related but different tools: an IDS watches traffic and raises alerts, while an IPS sits inline and can actively block malicious packets. IDS is passive and safe to deploy; IPS can stop attacks but risks blocking legit traffic if rules are sloppy. Both live or die by tuning: noisy signatures cause alert fatigue and real attacks get ignored.",
+  "term": "IDS vs IPS"
+ },
+ {
+  "category": "Network Security",
+  "definition": "A rogue Wi-Fi access point broadcasting the same SSID as a legitimate network to lure victims into connecting. Once joined, the attacker can intercept traffic, serve phishing captive portals, and harvest credentials. Defenses are verifying certificates, using a VPN on unknown networks, and preferring known networks with WPA2 or WPA3 Enterprise.",
+  "term": "Evil Twin"
+ },
+ {
+  "category": "Network Security",
+  "definition": "An attack where a rogue DHCP server on the LAN hands out leases that point victims at the attacker as gateway or DNS server. All victim traffic then routes through the attacker for interception or modification. Enterprise switches fight it with DHCP snooping, which only trusts DHCP replies on designated uplink ports.",
+  "term": "Rogue DHCP Server"
+ },
+ {
+  "category": "Network Security",
+  "definition": "Flooding a switch with frames from thousands of fake MAC addresses until its CAM table overflows. Many switches then fail open and broadcast all traffic like a hub, letting the attacker sniff everything. The mitigation is port security: limit how many MAC addresses each physical port may learn.",
+  "term": "MAC Flooding"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Abusing Group Policy Objects, which push settings, scripts, and software to domain machines. An attacker with rights to edit or link a GPO can deploy malicious logon scripts or weaken security settings across hundreds of machines at once. Historically, Group Policy Preferences even stored passwords reversibly. Audit who can edit GPOs like you audit Domain Admins.",
+  "term": "Group Policy Abuse"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Authenticating with a stolen Kerberos ticket instead of a password or hash. You extract a ticket from memory with tools like Mimikatz or Rubeus, then inject it into your own session. It is limited by the ticket's lifetime, but it is stealthy and avoids touching the domain controller, unlike forging fresh tickets.",
+  "term": "Pass-the-Ticket"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Capturing an NTLM authentication attempt and forwarding it to a different service to authenticate as the victim. Attackers coerce authentication with tricks like PetitPotam or the Printer Bug, then relay it to LDAP or SMB for takeover. Enforcing SMB signing plus LDAP signing and channel binding shuts this down.",
+  "term": "NTLM Relay"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "An attack where someone with the right permissions adds a KeyCredentialLink to a victim account, then authenticates as that account using certificate-based PKINIT with no password needed. It is stealthy persistence: password changes do not remove it. The root cause is usually a misconfigured ACL granting WriteKeyCredentialLink, which BloodHound flags clearly.",
+  "term": "Shadow Credentials"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "A Kerberos feature letting a service act on behalf of users toward other services. Unconstrained delegation is the dangerous one: a compromised server can impersonate any user to any service. Constrained delegation and resource-based constrained delegation limit the targets, but misconfiguring them still hands attackers an escalation path. Hunt for these settings during AD enumeration.",
+  "term": "Kerberos Delegation"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Abusing misconfigured permissions on AD objects, where access control entries grant too much power. Rights like GenericAll, WriteDacl, or ForceChangePassword over a user or group let a low-privilege account reset passwords, add shadow credentials, or take over objects. BloodHound maps these paths explicitly, and the fix is auditing and stripping excessive ACEs.",
+  "term": "DACL Abuse"
+ },
+ {
+  "category": "Active Directory",
+  "definition": "Microsoft's solution for randomizing the local Administrator password on every domain-joined machine and storing it securely in AD. It kills the classic lateral movement trick of reusing one shared local admin password everywhere. In engagements, attackers specifically hunt machines where LAPS is missing or misconfigured.",
+  "term": "LAPS (Local Administrator Password Solution)"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "Chaining allowed IAM actions into more power than intended, for example combining iam:PassRole with permission to update a Lambda function to run code as a privileged role. Cloud pentests revolve around mapping effective permissions rather than obvious admin flags. The fix is least privilege plus permission boundaries and regular access reviews.",
+  "term": "IAM Privilege Escalation"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "Using a server-side request forgery to reach the cloud instance metadata service at 169.254.169.254 and steal the temporary credentials of the instance's IAM role. It turns a web bug into full cloud account access. Defenses are requiring IMDSv2 with hop limits, blocking the metadata IP at egress, and scoping instance roles tightly.",
+  "term": "SSRF to Cloud Metadata"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "AWS's audit log recording nearly every API call: who did it, from where, and when. It is the first place responders look during a cloud incident. Attackers try to stop logging or delete trails, so mature setups use immutable multi-region trails with log file validation and alerts on tampering.",
+  "term": "CloudTrail"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "Firewall rules for cloud instances that are far too permissive, like opening SSH, RDP, or databases to 0.0.0.0/0. One lazy rule exposes management ports to the entire internet. Regular audits and managing rules as code catch these before scanners and attackers do.",
+  "term": "Misconfigured Security Groups"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "EC2 disk snapshots accidentally shared publicly, leaking full disk contents including credentials, keys, and customer data. An attacker simply copies the shared snapshot into their own account and mounts it. The fix is auditing snapshot permissions and using policies that block public sharing account-wide.",
+  "term": "Public EBS Snapshot"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "API keys, passwords, and tokens baked into source code, container images, AMIs, or environment variables that end up in repos. Scanners and simple GitHub searches find them within minutes of a leak. The fix is a secrets manager, automatic rotation, and pre-commit scanning so secrets never reach version control.",
+  "term": "Hardcoded Secrets"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "Backdoors that survive password resets in cloud accounts: extra IAM users, long-lived access keys, malicious Lambda triggers, or abused federation trust policies. Attackers plant them after initial access to keep a way back in. Detection means regularly auditing IAM entities, trust policies, and CloudTrail for creations you did not authorize.",
+  "term": "Cloud Persistence"
+ },
+ {
+  "category": "Cloud Security",
+  "definition": "The division of security duties between provider and customer: the provider secures the physical infrastructure and hypervisor, while you secure your data, configurations, identities, and access. Misunderstanding it causes breaches, because AWS patches the underlying platform but your publicly open storage bucket is your problem. The line shifts with IaaS, PaaS, and SaaS, so know exactly what you own.",
+  "term": "Shared Responsibility Model"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "Two different tools people constantly confuse: hashing is one-way and keyless, turning data into a fixed fingerprint, while encryption is two-way and keyed, scrambling data so it can be unscrambled later. Use hashing for password storage and integrity checks, encryption for confidentiality. Storing decryptable passwords because someone said encrypted is a classic real-world failure.",
+  "term": "Hash vs Encryption"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "A public-key cryptosystem based on the difficulty of factoring large prime numbers. It powers TLS certificates, key exchange, and digital signatures through its public and private key pair. It is slow compared to symmetric ciphers, so it normally protects small data like symmetric keys rather than bulk traffic. 2048-bit keys are the current minimum baseline.",
+  "term": "RSA"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "AES encrypts fixed-size blocks, and the mode decides how those blocks are chained together. ECB encrypts each block independently and leaks patterns, CBC needs unpredictable IVs, and GCM adds authentication on top of encryption. Choosing GCM is the safe modern default; picking ECB can break an otherwise strong cipher completely.",
+  "term": "AES Modes (ECB vs CBC vs GCM)"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "The trust hierarchy behind HTTPS: a root certificate authority signs intermediate CAs, which sign the server's leaf certificate. Browsers trust the leaf only if the full chain validates up to a root they already trust. Broken chains cause browser warnings, and attackers exploit users trained to click through them, so keep chains complete and renew before expiry.",
+  "term": "Certificate Chain"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "A method letting two parties agree on a shared secret over a public channel using modular arithmetic, with no prior shared key. It underpins TLS key agreement, and ephemeral variants provide perfect forward secrecy so past traffic stays safe even if long-term keys leak. On its own it is vulnerable to man-in-the-middle, so it must be paired with authentication.",
+  "term": "Diffie-Hellman Key Exchange"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "A hash-based message authentication code that combines a secret key with a hash function. It proves both that a message was not altered and that it came from someone holding the key. It is used in API request signing and in JWT's HS256 mode. Unlike a plain hash, an attacker without the key cannot forge a valid tag.",
+  "term": "HMAC"
+ },
+ {
+  "category": "Cryptography",
+  "definition": "A precomputed table mapping password hashes back to plaintext, trading disk space for cracking speed. They made unsalted hashes trivially breakable at scale. Salting defeats them entirely, because each password hashes uniquely and the table would need a separate entry per salt. This is why salted hashing is non-negotiable for password storage.",
+  "term": "Rainbow Table"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Reconstructing events into one chronological view from file timestamps, logs, registry keys, and other artifacts. It reveals the attacker's path step by step: initial access, lateral movement, exfiltration. Tools like Plaso and log2timeline build super timelines that analysts pivot through during investigations.",
+  "term": "Timeline Analysis"
+ },
+ {
+  "category": "DFIR",
+  "definition": "A pattern-matching language for describing malware families by strings, byte sequences, or behavioral traits. Analysts write rules for a sample, then scan entire fleets or file shares to find every infected machine. Shared rule sets let the whole community hunt the same threat, and writing tight rules keeps false positives on legitimate software low.",
+  "term": "YARA Rule"
+ },
+ {
+  "category": "DFIR",
+  "definition": "A bit-for-bit copy of a drive created through a write blocker, hashed immediately to prove integrity. Analysts examine the image and never the original, preserving evidence admissibility and allowing safe re-analysis. It is the first step of disk forensics and the reason chain of custody starts at collection.",
+  "term": "Forensic Disk Imaging"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Examining Windows registry hives for evidence of what happened on a machine: installed software, connected USB devices, autostart entries, and user activity. Run and RunOnce keys reveal persistence mechanisms, while USBSTOR records every plugged-in device. It answers the classic question of what the attacker did on this specific box.",
+  "term": "Windows Registry Analysis"
+ },
+ {
+  "category": "DFIR",
+  "definition": "Recovering files from raw disk bytes by recognizing headers and footers, without any filesystem metadata. It works on deleted files and damaged partitions where the file table is gone. Tools like PhotoRec and scalpel automate the process, and it is a staple of data recovery and forensic examination.",
+  "term": "File Carving"
+ },
+ {
+  "category": "DFIR",
+  "definition": "An NTFS feature that stores hidden data in alternate streams attached to a file, invisible in normal Explorer views. Malware hides payloads there, for example launching from a stream like innocent.txt:evil.exe. Detection is straightforward with dir /r or ADS-aware scanners once you know to look.",
+  "term": "Alternate Data Streams (ADS)"
+ },
+ {
+  "category": "DFIR",
+  "definition": "The structured phases of handling a security incident: preparation, detection and analysis, containment, eradication, recovery, and lessons learned. It keeps chaotic incidents organized, defensible, and repeatable. Frameworks like NIST SP 800-61 define it, and mature teams drill the process before they ever need it for real.",
+  "term": "Incident Response Lifecycle"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Two levels of turning machine code back into something readable. Disassembly converts bytes to assembly instructions, which is accurate but low-level. Decompilation goes further and reconstructs C-like source, which is readable but sometimes wrong. Analysts use both: tools like Ghidra and IDA Pro do each job, and you cross-check one against the other.",
+  "term": "Disassembly vs Decompilation"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Tricks malware uses to detect or evade debuggers: IsDebuggerPresent checks, timing measurements, exception-based control flow, and VM detection. Analysts bypass them with plugins, patching, or stealthy debuggers. Spotting these techniques tells you the author expects analysis and raises the sample's priority.",
+  "term": "Anti-Debugging"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Extracting readable text from a binary: URLs, IP addresses, file paths, registry keys, and error messages. It is the fastest first look at what a sample might do. Packers and encrypted strings defeat it, but that failure is itself a useful signal that the sample is hiding something.",
+  "term": "Strings Analysis"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "The table listing external API functions a binary calls, such as CreateRemoteThread or InternetOpenUrl. Reading imports reveals a program's capabilities without executing anything. Malware often hides its imports through dynamic loading precisely to dodge this quick triage step.",
+  "term": "Import Address Table (IAT)"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "Intercepting function calls to monitor or modify behavior at runtime. Malware hooks APIs to hide files, log keystrokes, or redirect network traffic; analysts hook APIs to trace exactly what a sample does. Rootkits live at this layer, so understanding hooking is essential for both writing and defeating them.",
+  "term": "API Hooking"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "The low-level language of Windows malware: registers, the stack, and common instructions like MOV, PUSH, CALL, and JMP. You do not need to master all of it, but reading small functions is a core reversing skill. Start by recognizing function prologues and string references, then grow from there.",
+  "term": "x86 Assembly Basics"
+ },
+ {
+  "category": "Reverse Engineering",
+  "definition": "The address where the real program code begins, hidden by packers beneath their loader stub. Finding the OEP is the key step in unpacking: you let the loader run, break at the OEP, then dump the process and rebuild its imports. Hardware breakpoints on memory writes are the classic way to land on it.",
+  "term": "Original Entry Point (OEP)"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "The practice of reporting a vulnerability to the vendor privately and giving them reasonable time to fix it before any public disclosure. It protects users while still crediting the finder. Bug bounty platforms formalize the process with scopes and timelines; dumping unpatched bugs publicly does the opposite and puts users at risk.",
+  "term": "Responsible Disclosure"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Programs that pay security researchers for valid vulnerability reports, run directly by companies or through platforms like HackerOne and YesWeHack. It is real freelance security work with defined scopes and rules of engagement. Report quality decides payouts: a clear proof of concept with impact earns far more than a vague scanner dump.",
+  "term": "Bug Bounty"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Structured thinking about what you are protecting, from whom, and how they might attack, done before building defenses. Even a simple list of attacker goals versus your assets beats ad-hoc security spending. It focuses effort where the risk actually is instead of where the marketing says it is.",
+  "term": "Threat Model"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Everything an attacker can reach: open ports, web endpoints, APIs, exposed services, and even people. A smaller attack surface means fewer ways in, which is why closing ports and removing unused features is the cheapest security win available. Measuring it before and after changes shows whether you actually reduced exposure.",
+  "term": "Attack Surface"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Layered security designed so that one failure does not mean total compromise: firewall plus patching plus EDR plus backups plus MFA. Each layer catches what the previous one missed. It is the practical answer to the fact that every single control can fail, and why single-point solutions always disappoint in real incidents.",
+  "term": "Defense in Depth"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Attacking people instead of systems: phishing, pretexting, baiting, and tailgating. The human is usually the softest target in any organization, which is why initial access so often starts with an email rather than an exploit. Defense combines training with processes like callback verification for sensitive requests.",
+  "term": "Social Engineering"
+ },
+ {
+  "category": "Career & Concepts",
+  "definition": "Fraudulent messages that trick victims into revealing credentials, sending money, or running malware. It remains the top initial access vector in real breaches year after year. Defense layers email filtering, MFA, and a strong reporting culture, and teams test resilience with simulated phishing campaigns.",
+  "term": "Phishing"
+ },
+ {
+  "term": "PrintNightmare",
+  "definition": "A set of Windows Print Spooler vulnerabilities, including CVE-2021-34527, allowing remote code execution as SYSTEM. The spooler runs by default on domain controllers, making it a prime target for quick domain compromise. The fix is to disable the spooler where it is not needed, especially on servers, and to patch promptly.",
+  "category": "Active Directory"
+ }
+]
